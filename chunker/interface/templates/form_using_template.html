@@ -7,23 +7,21 @@
     <h1>Human task</h1>
     
     <p>&nbsp;</p>
+    
+    <h2 style="width=100%; text-align:center">{{ hyp }}</h2>
+    
+    <p>&nbsp;</p>
         
     <form class="form-{{ layout }}" action="{% url 'annotation' %}" method="post">
         {% csrf_token %}
 
         {% for field in form %}
-        	{% if field.name == 'hypothesis' %}
-        		<h2>زوج أخته يتغل سايق سيارة</h2>
-        	{% else %}
-	            {% include "bootstrap_toolkit/field.html" %}
-            {% endif %}
+	        {% include "bootstrap_toolkit/field.html" %}
         {% endfor %}
 
         <input type="submit" value="Submit" class="btn btn-primary">
 
 
     </form>
-
-    <p>Submit the form to see error messages styled into it.</p>
 
 {% endblock %}

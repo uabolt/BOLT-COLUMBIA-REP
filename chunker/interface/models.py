@@ -25,9 +25,9 @@ class Annotation(models.Model):
 
     # Control fields
     hypothesis = models.CharField(blank=False, max_length=255) # Ref without some chunks
-    reference = models.CharField(blank=False, max_length=255, editable=False) # The ref
-    control_annotation = models.BooleanField(blank=False, editable=False) # If this is true, then this annotation is used for control purposes
-    date = models.DateField(auto_now_add=True, editable=False)
+    reference = models.CharField(blank=False, max_length=255) # The ref
+    control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
+    date = models.DateField(auto_now_add=True)
 
     # Columbia experiment's fields
     legible = models.BooleanField(blank=False) # Is the sentence legible despite the missing chunks?
@@ -42,3 +42,5 @@ class Annotation(models.Model):
     local_merge = models.CharField(blank=True, max_length=255) # Local rephrase merged with the hyp
     global_rephrase = models.CharField(blank=True, max_length=255) # Rephrased sentences
 
+    def __unicode__(self):
+        return '%s - %s' % (self.hypothesis, self.date)

@@ -10,6 +10,10 @@ class AnnotationForm(ModelForm):
 		model = models.Annotation
 		fields = '__all__'
 		widgets = {
+		    'hypothesis': forms.HiddenInput(),
+		    'reference': forms.HiddenInput(),
+		    'control_annotation': forms.HiddenInput(),
+		    'date': forms.HiddenInput(),
 			'local_merge': forms.Textarea(),
 			'global_rephrase': forms.Textarea(),
 			'legible': forms.Select(choices = [(True, 'Yes'), (False, 'No')])
