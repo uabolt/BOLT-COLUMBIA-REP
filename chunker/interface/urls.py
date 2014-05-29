@@ -4,5 +4,6 @@ from interface import views
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
+    url(r'^form$', views.annotation, name='annotation'),
 )
 

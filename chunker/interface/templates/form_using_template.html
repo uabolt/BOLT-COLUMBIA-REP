@@ -4,34 +4,23 @@
 
 {% block content %}
 
-    <h1>This form uses templates</h1>
-    
-    <p>The disabled field gets a $ appended using a template.</p>
+    <h1>Human task</h1>
     
     <p>&nbsp;</p>
         
-    <form class="form-{{ layout }}" action="" method="post">
+    <form class="form-{{ layout }}" action="{% url 'annotation' %}" method="post">
         {% csrf_token %}
 
         {% for field in form %}
-            {% if field.name == 'disabled' %}
-                {% include "bootstrap_toolkit/field.html" with append='$' %}
-            {% else %}
-                {% if field.name != 'color' %}
-                    {% include "bootstrap_toolkit/field.html" %}
-                {% endif %}
+        	{% if field.name == 'hypothesis' %}
+        		<h2>زوج أخته يتغل سايق سيارة</h2>
+        	{% else %}
+	            {% include "bootstrap_toolkit/field.html" %}
             {% endif %}
         {% endfor %}
 
-        {% bootstrap_field form.color layout=layout %}
+        <input type="submit" value="Submit" class="btn btn-primary">
 
-        {% if layout == "horizontal" %}
-            <p class="form-actions">
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </p>
-        {% else %}
-            <input type="submit" value="Submit" class="btn btn-primary">
-        {% endif %}
 
     </form>
 

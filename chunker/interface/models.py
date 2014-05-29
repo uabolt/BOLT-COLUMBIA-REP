@@ -24,7 +24,7 @@ class Annotation(models.Model):
     )
 
     # Control fields
-    hypothesis = models.CharField(blank=False, max_length=255, editable=False) # Ref without some chunks
+    hypothesis = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255, editable=False) # The ref
     control_annotation = models.BooleanField(blank=False, editable=False) # If this is true, then this annotation is used for control purposes
     date = models.DateField(auto_now_add=True, editable=False)
