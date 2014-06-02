@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from interface import views
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
-    url(r'^form$', views.annotation, name='annotation'),
+    url(r'^$', views.pos_annotation, name='pos_annotation'),
+    url(r'^reph$', views.reph_annotation, name='reph_annotation'),
 )
 
