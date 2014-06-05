@@ -85,4 +85,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Dataset files directory
-DATASET_DIR = "/dataset/"
+DATASET_DIR = "%s/../dataset/" % BASE_DIR
