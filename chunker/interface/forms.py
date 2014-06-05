@@ -15,7 +15,9 @@ class POSAnnotationForm(ModelForm):
 		    'control_annotation': forms.HiddenInput(),
 		    'date': forms.HiddenInput(),
 			'session_id': forms.HiddenInput(),
-			'legible': forms.Select(choices = [(True, 'Yes'), (False, 'No')])
+			'legible': forms.Select(choices = [(True, 'Yes'), (False, 'No')]),
+			'ref_id': forms.HiddenInput(),
+			'sample_file': forms.HiddenInput()
 		}
 		
 		labels = {
@@ -44,10 +46,12 @@ class RephAnnotationForm(ModelForm):
 		    'date': forms.HiddenInput(),
 			'local_merge': forms.Textarea(),
 			'global_rephrase': forms.Textarea(),
+			'ref_id': forms.HiddenInput(),
+			'sample_file': forms.HiddenInput()
 		}
 		
 		labels = {
-			'eassines': _('Eassines'),
+			'hardness': _('Hardness'),
 			'local_rephrase': _('Local rephrease'),
 			'reph_type' : _('Rephrase type'),
 			'local_merge' : _('Merged sentence'),
@@ -56,10 +60,10 @@ class RephAnnotationForm(ModelForm):
 		
 		help_texts = {
 			'eassines': _('How hard do you think the missing word or words are to rephrase'),
-			'local_rephrase': _('Try to provide a rephrase ONLY of the missing words. If it\'s too hard, provide a definition if possible'),
-			'local_merge' : _('Retype the sentence with your local rephrase, if possible'),
+			'local_rephrase': _('Try to provide a rephrase ONLY of the text within brakets. If rephrasing is too difficult, try to describe or define what the missing text means'),
+			'local_merge' : _('Try to merge your rephrased text into the original sentence, making minimal changes to the original sentence'),
 			'reph_type' : _('Specify your rephrase type'),
-			'global_rephrase' : _('Try to rephrase the complete sentence'),
+			'global_rephrase' : _('Please provide an alternate rephrasing of the original sentence'),
 			
 		}
 		

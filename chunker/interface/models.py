@@ -12,6 +12,8 @@ class POSAnnotation(models.Model):
 
 
     # Control fields
+    ref_id = models.CharField(blank=False, max_length=50) # Sentence ID
+    sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
     control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
@@ -27,7 +29,7 @@ class POSAnnotation(models.Model):
     
 
     def __unicode__(self):
-        return '%s - %s' % (self.hypothesis, self.date)
+        return '%s - %s' % (self.masked, self.date)
         
 class RephAnnotation(models.Model):
     '''Class that represents an annotation for the replica of AMU's experiment in IA'''
@@ -46,6 +48,8 @@ class RephAnnotation(models.Model):
     )
 
 	# Control fields
+    ref_id = models.CharField(blank=False, max_length=50) # Sentence ID
+    sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
     control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
@@ -53,8 +57,11 @@ class RephAnnotation(models.Model):
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
 
 	# Rephrase fields
-    eassines = models.IntegerField(default=3, choices=EASINESS_CHOICES) # How hard is it to rephrase
+    hardness = models.IntegerField(default=3, choices=EASINESS_CHOICES) # How hard is it to rephrase
     local_rephrase = models.CharField(blank=True, max_length=75) # Local rephrase
     reph_type = models.IntegerField(blank=True, null=True, choices=REPHRASE_CHOICES) # What kind of answer is this
     local_merge = models.CharField(blank=True, max_length=255) # Local rephrase merged with the hyp
     global_rephrase = models.CharField(blank=True, max_length=255) # Rephrased sentences
+    
+    def __unicode__(self):
+        return '%s - %s' % (self.segmented, self.date)
