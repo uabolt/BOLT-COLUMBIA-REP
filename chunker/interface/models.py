@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 
@@ -6,8 +7,42 @@ class POSAnnotation(models.Model):
     '''Class that represents an annotation for the replica of Columbia's experiment in IA'''
 
     POS_TAGS = (
-        ('VRB', 'Verb'),
-        ('NN', 'Noun'),
+        ('C', _('Coordinating conjunction')),
+        ('D', _('Cardinal number')),
+        ('DT', _('Determiner')),
+        ('EX', _('Existential there')),
+        ('FW', _('Foreign word')),
+        ('IN', _('Preposition or subordinating conjunction')),
+        ('JJ', _('Adjective')),
+        ('JJR', _('Adjective, comparative')),
+        ('JJS', _('Adjective, superlative')),
+        ('LS', _('List item marker')),
+        ('MD', _('Modal')),
+        ('NN', _('Noun, singular or mass')),
+        ('NNS', _('Noun, plural')),
+        ('NNP', _('Proper noun, singular')),
+        ('NNPS', _('Proper noun, plural')),
+        ('PDT', _('Predeterminer')),
+        ('POS', _('Possessive ending')),
+        ('PRP', _('Personal pronoun')),
+        ('PRP$', _('Possessive pronoun')),
+        ('RB', _('Adverb')),
+        ('RBR', _('Adverb, comparative')),
+        ('RBS', _('Adverb, superlative')),
+        ('RP', _('Particle')),
+        ('SYM', _('Symbol')),
+        ('TO', _('to')),
+        ('UH', _('Interjection')),
+        ('VB', _('Verb, base form')),
+        ('VBD', _('Verb, past tense')),
+        ('VBG', _('Verb, gerund or present participle')),
+        ('VBN', _('Verb, past participle')),
+        ('VBP', _('Verb, non-3rd person singular present')),
+        ('VBZ', _('Verb, 3rd person singular present')),
+        ('WDT', _('Wh-determiner')),
+        ('WP', _('Wh-pronoun')),
+        ('WP$', _('Possessive wh-pronoun')),
+        ('WRB', _('Wh-adverb')),
     )
 
 
@@ -34,17 +69,18 @@ class POSAnnotation(models.Model):
 class RephAnnotation(models.Model):
     '''Class that represents an annotation for the replica of AMU's experiment in IA'''
 
+    # Scale goes from easy to hard incrementaly
     EASINESS_CHOICES = (
-        (1, 'Strongly disagree'),
-        (2, 'Disagree'),
-        (3, 'More or less'),
-        (4, 'Agree'),
-        (5, 'Strongly agree'),
+        (1, _('Very easy')),
+        (2, _('Easy')),
+        (3, _('More or less')),
+        (4, _('Hard')),
+        (5, _('Very hard')),
     )
 
     REPHRASE_CHOICES = (
-        (0, 'Rephrase'),
-        (1, 'Definition'),
+        (0, _('Rephrase')),
+        (1, _('Definition')),
     )
 
 	# Control fields

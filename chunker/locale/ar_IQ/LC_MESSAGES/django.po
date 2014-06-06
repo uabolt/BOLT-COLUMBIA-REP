@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-06 20:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: interface/forms.py:18
+msgid "Yes"
+msgstr ""
+
+#: interface/forms.py:18
+msgid "No"
+msgstr ""
+
+#: interface/forms.py:24
+msgid "Legible"
+msgstr "مقروء/ واضح المعنى"
+
+#: interface/forms.py:25 interface/views.py:47 interface/views.py:56
+msgid "Guess"
+msgstr "خمن/ إحزر"
+
+#: interface/forms.py:26
+msgid "Question"
+msgstr "سؤال"
+
+#: interface/forms.py:27
+msgid "Part of speech"
+msgstr "جزء من الكلام"
+
+#: interface/forms.py:31
+msgid "Can you understand the meaning of the sentence?"
+msgstr ""
+
+#: interface/forms.py:32
+msgid "Try to guess the words that fit into the ____ place if possible"
+msgstr ""
+
+#: interface/forms.py:33
+msgid ""
+"Try to provide a targeted question to retrieve the missing words if possible"
+msgstr ""
+
+#: interface/forms.py:34
+msgid "Select the part of speech you believe that the ____ word is (i.e. Noun)"
+msgstr ""
+
+#: interface/forms.py:54
+msgid "Hardness"
+msgstr ""
+
+#: interface/forms.py:55
+msgid "Local rephrease"
+msgstr "إعادة صياغة باللهجة العراقية"
+
+#: interface/forms.py:56
+msgid "Rephrase type"
+msgstr "نوع إعادة الصياغة"
+
+#: interface/forms.py:57
+msgid "Merged sentence"
+msgstr "جملة مدمجة"
+
+#: interface/forms.py:58
+msgid "Rephrase the complete sentence"
+msgstr "أعد صياغة الجملة كاملة"
+
+#: interface/forms.py:62
+msgid "How hard do you think the missing word or words are to rephrase"
+msgstr ""
+
+#: interface/forms.py:63
+msgid ""
+"Try to provide a rephrase ONLY of the text within brakets. If rephrasing is "
+"too difficult, try to describe or define what the missing text means"
+msgstr ""
+
+#: interface/forms.py:64
+msgid ""
+"Try to merge your rephrased text into the original sentence, making minimal "
+"changes to the original sentence"
+msgstr ""
+
+#: interface/forms.py:65
+msgid "Specify your rephrase type"
+msgstr "حاول أن تحدد نوع صياغة الجملة. جملة كاملة مثلا أو مجرد تعريف"
+
+#: interface/forms.py:66
+msgid "Please provide an alternate rephrasing of the original sentence"
+msgstr ""
+
+#: interface/models.py:10
+msgid "Coordinating conjunction"
+msgstr ""
+
+#: interface/models.py:11
+msgid "Cardinal number"
+msgstr ""
+
+#: interface/models.py:12
+msgid "Determiner"
+msgstr ""
+
+#: interface/models.py:13
+msgid "Existential there"
+msgstr ""
+
+#: interface/models.py:14
+msgid "Foreign word"
+msgstr ""
+
+#: interface/models.py:15
+msgid "Preposition or subordinating conjunction"
+msgstr ""
+
+#: interface/models.py:16
+msgid "Adjective"
+msgstr ""
+
+#: interface/models.py:17
+msgid "Adjective, comparative"
+msgstr ""
+
+#: interface/models.py:18
+msgid "Adjective, superlative"
+msgstr ""
+
+#: interface/models.py:19
+msgid "List item marker"
+msgstr ""
+
+#: interface/models.py:20
+msgid "Modal"
+msgstr ""
+
+#: interface/models.py:21
+msgid "Noun, singular or mass"
+msgstr ""
+
+#: interface/models.py:22
+msgid "Noun, plural"
+msgstr ""
+
+#: interface/models.py:23
+msgid "Proper noun, singular"
+msgstr ""
+
+#: interface/models.py:24
+msgid "Proper noun, plural"
+msgstr ""
+
+#: interface/models.py:25
+msgid "Predeterminer"
+msgstr ""
+
+#: interface/models.py:26
+msgid "Possessive ending"
+msgstr ""
+
+#: interface/models.py:27
+msgid "Personal pronoun"
+msgstr ""
+
+#: interface/models.py:28
+msgid "Possessive pronoun"
+msgstr ""
+
+#: interface/models.py:29
+msgid "Adverb"
+msgstr ""
+
+#: interface/models.py:30
+msgid "Adverb, comparative"
+msgstr ""
+
+#: interface/models.py:31
+msgid "Adverb, superlative"
+msgstr ""
+
+#: interface/models.py:32
+msgid "Particle"
+msgstr ""
+
+#: interface/models.py:33
+msgid "Symbol"
+msgstr ""
+
+#: interface/models.py:34
+msgid "to"
+msgstr ""
+
+#: interface/models.py:35
+msgid "Interjection"
+msgstr ""
+
+#: interface/models.py:36
+msgid "Verb, base form"
+msgstr ""
+
+#: interface/models.py:37
+msgid "Verb, past tense"
+msgstr ""
+
+#: interface/models.py:38
+msgid "Verb, gerund or present participle"
+msgstr ""
+
+#: interface/models.py:39
+msgid "Verb, past participle"
+msgstr ""
+
+#: interface/models.py:40
+msgid "Verb, non-3rd person singular present"
+msgstr ""
+
+#: interface/models.py:41
+msgid "Verb, 3rd person singular present"
+msgstr ""
+
+#: interface/models.py:42
+msgid "Wh-determiner"
+msgstr ""
+
+#: interface/models.py:43
+msgid "Wh-pronoun"
+msgstr ""
+
+#: interface/models.py:44
+msgid "Possessive wh-pronoun"
+msgstr ""
+
+#: interface/models.py:45
+msgid "Wh-adverb"
+msgstr ""
+
+#: interface/models.py:74
+msgid "Very easy"
+msgstr ""
+
+#: interface/models.py:75
+msgid "Easy"
+msgstr ""
+
+#: interface/models.py:76
+msgid "More or less"
+msgstr ""
+
+#: interface/models.py:77
+msgid "Hard"
+msgstr ""
+
+#: interface/models.py:78
+msgid "Very hard"
+msgstr ""
+
+#: interface/models.py:82
+msgid "Rephrase"
+msgstr ""
+
+#: interface/models.py:83
+msgid "Definition"
+msgstr ""
+
+#: interface/views.py:34
+msgid "POS Annotation saved correctly."
+msgstr ""
+
+#: interface/views.py:79
+msgid "Rephrase Annotation saved correctly."
+msgstr ""
+
+#: interface/views.py:99 interface/views.py:108
+msgid "Reprhase"
+msgstr ""

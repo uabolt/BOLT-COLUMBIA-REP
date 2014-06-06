@@ -15,7 +15,7 @@ class POSAnnotationForm(ModelForm):
 		    'control_annotation': forms.HiddenInput(),
 		    'date': forms.HiddenInput(),
 			'session_id': forms.HiddenInput(),
-			'legible': forms.Select(choices = [(True, 'Yes'), (False, 'No')]),
+			'legible': forms.Select(choices = [(True, _('Yes')), (False, _('No'))]),
 			'ref_id': forms.HiddenInput(),
 			'sample_file': forms.HiddenInput()
 		}
@@ -29,9 +29,9 @@ class POSAnnotationForm(ModelForm):
 		
 		help_texts = {
 			'legible': _('Can you understand the meaning of the sentence?'),
-			'guess' : _('Try to guess the words that fit into the XXXX place if possible'),
+			'guess' : _('Try to guess the words that fit into the ____ place if possible'),
 			'question' : _('Try to provide a targeted question to retrieve the missing words if possible'),
-			'POS': _('Select the part of speech you believe that the XXX word is (i.e. Noun)'),
+			'POS': _('Select the part of speech you believe that the ____ word is (i.e. Noun)'),
 		}
 		
 class RephAnnotationForm(ModelForm):
@@ -59,7 +59,7 @@ class RephAnnotationForm(ModelForm):
 		}
 		
 		help_texts = {
-			'eassines': _('How hard do you think the missing word or words are to rephrase'),
+			'hardness': _('How hard do you think the missing word or words are to rephrase'),
 			'local_rephrase': _('Try to provide a rephrase ONLY of the text within brakets. If rephrasing is too difficult, try to describe or define what the missing text means'),
 			'local_merge' : _('Try to merge your rephrased text into the original sentence, making minimal changes to the original sentence'),
 			'reph_type' : _('Specify your rephrase type'),
