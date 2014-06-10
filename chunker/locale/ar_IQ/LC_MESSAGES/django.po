@@ -3,27 +3,29 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-06 20:52+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-06-10 03:54-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: interface/forms.py:18
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: interface/forms.py:18
 msgid "No"
-msgstr ""
+msgstr "كلا"
 
 #: interface/forms.py:24
 msgid "Legible"
@@ -43,24 +45,26 @@ msgstr "جزء من الكلام"
 
 #: interface/forms.py:31
 msgid "Can you understand the meaning of the sentence?"
-msgstr ""
+msgstr "هل بإمكانك أن تفهم معنى الجملة؟"
 
 #: interface/forms.py:32
 msgid "Try to guess the words that fit into the ____ place if possible"
-msgstr ""
+msgstr "خاول أن تخمن الكلمات التي من قد تملآ الفراغ إذا أمكن ذلك"
 
 #: interface/forms.py:33
 msgid ""
 "Try to provide a targeted question to retrieve the missing words if possible"
 msgstr ""
+"حاول أن تفكر بالسؤال الموجه لهذه الجملة لغرض الحصول على الكلمات المفقودة إن "
+"أمكن ذلك"
 
 #: interface/forms.py:34
 msgid "Select the part of speech you believe that the ____ word is (i.e. Noun)"
-msgstr ""
+msgstr "حاول أن تختار قسم الكلام المفقود في الفراغ (صفة..إسم وهكذا)"
 
 #: interface/forms.py:54
 msgid "Hardness"
-msgstr ""
+msgstr "صعوبة"
 
 #: interface/forms.py:55
 msgid "Local rephrease"
@@ -80,19 +84,22 @@ msgstr "أعد صياغة الجملة كاملة"
 
 #: interface/forms.py:62
 msgid "How hard do you think the missing word or words are to rephrase"
-msgstr ""
+msgstr "مامدى صعوبة تخمين أو إعادة صياغة الكلمات المفقودة"
 
 #: interface/forms.py:63
 msgid ""
 "Try to provide a rephrase ONLY of the text within brakets. If rephrasing is "
 "too difficult, try to describe or define what the missing text means"
 msgstr ""
+"حاول أن تعيد صياغة النص الفقط في مابين الأقواس فقط. إذا تعذر ذلك فحاول أن "
+"تصف أو تعرف النص المفقود ولو عن طريق الشرح الموجز"
 
 #: interface/forms.py:64
 msgid ""
 "Try to merge your rephrased text into the original sentence, making minimal "
 "changes to the original sentence"
 msgstr ""
+"حاول أن تدمج الكلمة الجديدة الى النص الأصلي مع إضافة التعديلات الضرورية فقط"
 
 #: interface/forms.py:65
 msgid "Specify your rephrase type"
@@ -100,188 +107,188 @@ msgstr "حاول أن تحدد نوع صياغة الجملة. جملة كامل
 
 #: interface/forms.py:66
 msgid "Please provide an alternate rephrasing of the original sentence"
-msgstr ""
+msgstr "رجاءا..حاول أن تضيف جملة أو كلمة بديلة للنص الأصلي لو أمكن ذلك"
 
 #: interface/models.py:10
 msgid "Coordinating conjunction"
-msgstr ""
+msgstr "أداة ربط بالتزامن"
 
 #: interface/models.py:11
 msgid "Cardinal number"
-msgstr ""
+msgstr "العدد الأصلي"
 
 #: interface/models.py:12
 msgid "Determiner"
-msgstr ""
+msgstr "الأضافة"
 
 #: interface/models.py:13
 msgid "Existential there"
-msgstr ""
+msgstr "هناك الظاهرة"
 
 #: interface/models.py:14
 msgid "Foreign word"
-msgstr ""
+msgstr "كلمة أجنبية"
 
 #: interface/models.py:15
 msgid "Preposition or subordinating conjunction"
-msgstr ""
+msgstr "حرف جر أو أداة ربط"
 
 #: interface/models.py:16
 msgid "Adjective"
-msgstr ""
+msgstr "صفة"
 
 #: interface/models.py:17
 msgid "Adjective, comparative"
-msgstr ""
+msgstr "صفة, مقارنة"
 
 #: interface/models.py:18
 msgid "Adjective, superlative"
-msgstr ""
+msgstr "صفة, صيغة التفضيل"
 
 #: interface/models.py:19
 msgid "List item marker"
-msgstr ""
+msgstr "??"
 
 #: interface/models.py:20
 msgid "Modal"
-msgstr ""
+msgstr "شكلي"
 
 #: interface/models.py:21
 msgid "Noun, singular or mass"
-msgstr ""
+msgstr "إسم, مفرد أو جمع"
 
 #: interface/models.py:22
 msgid "Noun, plural"
-msgstr ""
+msgstr "إسم, جمع"
 
 #: interface/models.py:23
 msgid "Proper noun, singular"
-msgstr ""
+msgstr "إسم صحيح, مفرد"
 
 #: interface/models.py:24
 msgid "Proper noun, plural"
-msgstr ""
+msgstr "إسم صحيح, جملة"
 
 #: interface/models.py:25
 msgid "Predeterminer"
-msgstr ""
+msgstr "Not needed! Not used the same."
 
 #: interface/models.py:26
 msgid "Possessive ending"
-msgstr ""
+msgstr "Not needed! Not used as the same."
 
 #: interface/models.py:27
 msgid "Personal pronoun"
-msgstr ""
+msgstr "ضمير شخصي"
 
 #: interface/models.py:28
 msgid "Possessive pronoun"
-msgstr ""
+msgstr "ضمير تملكي"
 
 #: interface/models.py:29
 msgid "Adverb"
-msgstr ""
+msgstr "ظرف"
 
 #: interface/models.py:30
 msgid "Adverb, comparative"
-msgstr ""
+msgstr "طرف, مقارن"
 
 #: interface/models.py:31
 msgid "Adverb, superlative"
-msgstr ""
+msgstr "ظرف, صيغة التفضيل"
 
 #: interface/models.py:32
 msgid "Particle"
-msgstr ""
+msgstr "حرف, أداة"
 
 #: interface/models.py:33
 msgid "Symbol"
-msgstr ""
+msgstr "رمز"
 
 #: interface/models.py:34
 msgid "to"
-msgstr ""
+msgstr "إلى, على, حتى"
 
 #: interface/models.py:35
 msgid "Interjection"
-msgstr ""
+msgstr "صيغة تعجب"
 
 #: interface/models.py:36
 msgid "Verb, base form"
-msgstr ""
+msgstr "فعل رئيسي"
 
 #: interface/models.py:37
 msgid "Verb, past tense"
-msgstr ""
+msgstr "فعل ماضي"
 
 #: interface/models.py:38
 msgid "Verb, gerund or present participle"
-msgstr ""
+msgstr "فعل مضارع"
 
 #: interface/models.py:39
 msgid "Verb, past participle"
-msgstr ""
+msgstr "فعل بصيغة التصريف الثالث"
 
 #: interface/models.py:40
 msgid "Verb, non-3rd person singular present"
-msgstr ""
+msgstr "فعل غير مبني للمجهول بصيغة المفرد"
 
 #: interface/models.py:41
 msgid "Verb, 3rd person singular present"
-msgstr ""
+msgstr "فعل مبني للمجهول بصيغة المفرد"
 
 #: interface/models.py:42
 msgid "Wh-determiner"
-msgstr ""
+msgstr "Different in Arabic! Not needed."
 
 #: interface/models.py:43
 msgid "Wh-pronoun"
-msgstr ""
+msgstr "Different in Arabic! Not needed."
 
 #: interface/models.py:44
 msgid "Possessive wh-pronoun"
-msgstr ""
+msgstr "Different in Arabic! Not needed."
 
 #: interface/models.py:45
 msgid "Wh-adverb"
-msgstr ""
+msgstr "Different in Arabic! Not neeed."
 
 #: interface/models.py:74
 msgid "Very easy"
-msgstr ""
+msgstr "سهل جدا"
 
 #: interface/models.py:75
 msgid "Easy"
-msgstr ""
+msgstr "سهل"
 
 #: interface/models.py:76
 msgid "More or less"
-msgstr ""
+msgstr "أكثر أو أقل"
 
 #: interface/models.py:77
 msgid "Hard"
-msgstr ""
+msgstr "صعب"
 
 #: interface/models.py:78
 msgid "Very hard"
-msgstr ""
+msgstr "صعب جدا"
 
 #: interface/models.py:82
 msgid "Rephrase"
-msgstr ""
+msgstr "إعادة صياغة"
 
 #: interface/models.py:83
 msgid "Definition"
-msgstr ""
+msgstr "تعريف"
 
 #: interface/views.py:34
 msgid "POS Annotation saved correctly."
-msgstr ""
+msgstr "???"
 
 #: interface/views.py:79
 msgid "Rephrase Annotation saved correctly."
-msgstr ""
+msgstr "???"
 
 #: interface/views.py:99 interface/views.py:108
 msgid "Reprhase"
-msgstr ""
+msgstr "أعد صياغة"
