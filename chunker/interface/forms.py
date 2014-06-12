@@ -15,7 +15,7 @@ class POSAnnotationForm(ModelForm):
 		    'control_annotation': forms.HiddenInput(),
 		    'date': forms.HiddenInput(),
 			'session_id': forms.HiddenInput(),
-			'legible': forms.Select(choices = [(True, _('Yes')), (False, _('No'))]),
+			'legible': forms.Select(choices = [(False, _('No')), (True, _('Yes'))]), 
 			'ref_id': forms.HiddenInput(),
 			'sample_file': forms.HiddenInput()
 		}
