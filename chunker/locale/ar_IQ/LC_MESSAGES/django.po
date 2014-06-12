@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-06 20:52+0000\n"
-"PO-Revision-Date: 2014-06-10 03:54-0700\n"
+"POT-Creation-Date: 2014-06-12 00:27+0000\n"
+"PO-Revision-Date: 2014-06-12 02:20-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
@@ -49,7 +49,7 @@ msgstr "هل بإمكانك أن تفهم معنى الجملة؟"
 
 #: interface/forms.py:32
 msgid "Try to guess the words that fit into the ____ place if possible"
-msgstr "خاول أن تخمن الكلمات التي من قد تملآ الفراغ إذا أمكن ذلك"
+msgstr "حاول أن تخمن الكلمات التي من قد تملآ الفراغ إذا أمكن ذلك"
 
 #: interface/forms.py:33
 msgid ""
@@ -145,10 +145,6 @@ msgstr "صفة, مقارنة"
 msgid "Adjective, superlative"
 msgstr "صفة, صيغة التفضيل"
 
-#: interface/models.py:19
-msgid "List item marker"
-msgstr "??"
-
 #: interface/models.py:20
 msgid "Modal"
 msgstr "شكلي"
@@ -168,14 +164,6 @@ msgstr "إسم صحيح, مفرد"
 #: interface/models.py:24
 msgid "Proper noun, plural"
 msgstr "إسم صحيح, جملة"
-
-#: interface/models.py:25
-msgid "Predeterminer"
-msgstr "Not needed! Not used the same."
-
-#: interface/models.py:26
-msgid "Possessive ending"
-msgstr "Not needed! Not used as the same."
 
 #: interface/models.py:27
 msgid "Personal pronoun"
@@ -283,12 +271,62 @@ msgstr "تعريف"
 
 #: interface/views.py:34
 msgid "POS Annotation saved correctly."
-msgstr "???"
+msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
 #: interface/views.py:79
 msgid "Rephrase Annotation saved correctly."
-msgstr "???"
+msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
 #: interface/views.py:99 interface/views.py:108
 msgid "Reprhase"
 msgstr "أعد صياغة"
+
+#: interface/templates/finish.html:6
+msgid "Thank you for participating"
+msgstr "شكرا جزيلا على المشاركة في هذا البرنامج"
+
+#: interface/templates/form_using_template.html:23
+msgid "Submit"
+msgstr "أرسل المعلومات "
+
+#: interface/templates/instructions.html:5
+msgid ""
+"   <center>\n"
+"    \t<h3>Welcome to the UA BOLT \"clarification and rephrase\" language "
+"task.</h3></center>\n"
+"<br />\n"
+"<p>In the following pages we will present you with sentences that have parts "
+"of the sentence removed.  For each sentence, you will be shown two pages: On "
+"the first, you will be asked questions about the missing part, then, after "
+"you submit your answers, you will be taken to another page where you will be "
+"shown what was removed and asked some additional questions.  When you have "
+"submitted your answers to both pages, you will then be presented with a new "
+"sentence.</p>\n"
+"<p>You can stop at any time, although we ask that you complete the two pages "
+"of the current system before stopping.</p>\n"
+"<p>Also, you can return to this same web site to continue doing more later "
+"-- the task will pick up where you left off.</p>\n"
+"<p>Your answers to these questions will help us build a better language "
+"translation system!</p>\n"
+"<p>Please do as much as you can, as the more data we get from human language "
+"speakers, the better our computer system will get!</p>\n"
+"<p>Thank you for your help, we really appreciate it!</p> "
+msgstr ""
+"أهلا وسهلا بكم معنا\vبرنامج إختبار نظام الترجمة مابين اللغة الأنكليزية "
+"والعربي باللهجة العراقية\vفي الصفحات القادمة سنقوم بعرض بعض الجمل الغير "
+"متكاملة لإستقطاع بعضا من كلماتها. لكل جملة, ستظهر لك صفحتان: في الصفحة "
+"الأولى, سيتم سؤالك عن الكلمات المفقودة. بعد أن تقوم بإرسال أجوبتك كاملة, "
+"ستذهب الى صفحة أخرى حيث ستظهر فيها الجمل مع الكلمات المفقودة بالإضافة الى "
+"عدة أسئلة. عندما تقوم بإرسال الأجوبة عن نفس الجملة في الصفحتين, ستذهب الى "
+"جملة أخرى مع نفس الخطوات السابقةيمكنك التوقف في أي وقت ولكننا نتمنى أن تقوم "
+"بالأجابة عن كافة الأسئلة في الصفحتين للجملة الواحدة على الأقل قبل أن تغادر"
+"\vيمكنك الرجوع للموقع ذاته لإكمال ماكنت تفعله في أي وقت. ستبدأ حينها من آخر "
+"محطة كنت فيها\vأجوبتك حول هذه الجمل ستساعدنا على إنشاء نظام ترجمة من اللغة "
+"الأنكليزية الى العربية العراقية بصورة أفضل \vرجاءا: حاول أن تجيب على قدر "
+"أكبر من الأسئلة مع جمل مختلفة..كلما جمعنا معلومات أكثر من أشخاص يتكلمون "
+"اللغة العراقية كلما ساعدنا ذلك على تحسين نظام الترجمة\vشكرا جزيلا لك على "
+"المساعدة..جهودك ستساعدنا في إعداد نظام ترجمة آلي بصورة ممتازة بإذن الله "
+
+#: interface/templates/instructions.html:15
+msgid "Start"
+msgstr "إبدأ"
