@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    <h1>{{ title }}</h1>
+    <h1 {% if lang == "arabic"%} style="text-align:right" {% endif %}>{{ title }}</h1>
     
     <p>&nbsp;</p>
     
@@ -20,7 +20,15 @@
 	        {% include "bootstrap_toolkit/field.html" %}
         {% endfor %}
 
+        {% if lang == "arabic" %}
+            <div style="width;100%; text-align:right">
+        {% endif %}
+
         <input type="submit" value="{% trans "Submit" %}" class="btn btn-primary">
+
+        {% if lang == "arabic" %}
+            </div>
+        {% endif %}
 
 
     </form>
