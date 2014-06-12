@@ -16,14 +16,11 @@ class POSAnnotation(models.Model):
         ('JJ', _('Adjective')),
         ('JJR', _('Adjective, comparative')),
         ('JJS', _('Adjective, superlative')),
-        ('LS', _('List item marker')),
         ('MD', _('Modal')),
         ('NN', _('Noun, singular or mass')),
         ('NNS', _('Noun, plural')),
         ('NNP', _('Proper noun, singular')),
         ('NNPS', _('Proper noun, plural')),
-        ('PDT', _('Predeterminer')),
-        ('POS', _('Possessive ending')),
         ('PRP', _('Personal pronoun')),
         ('PRP$', _('Possessive pronoun')),
         ('RB', _('Adverb')),
@@ -39,10 +36,6 @@ class POSAnnotation(models.Model):
         ('VBN', _('Verb, past participle')),
         ('VBP', _('Verb, non-3rd person singular present')),
         ('VBZ', _('Verb, 3rd person singular present')),
-        ('WDT', _('Wh-determiner')),
-        ('WP', _('Wh-pronoun')),
-        ('WP$', _('Possessive wh-pronoun')),
-        ('WRB', _('Wh-adverb')),
     )
 
 

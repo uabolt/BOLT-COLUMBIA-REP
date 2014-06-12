@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load bootstrap_toolkit %}
+{% load i18n %}
 
 {% block content %}
 
@@ -19,7 +20,7 @@
 	        {% include "bootstrap_toolkit/field.html" %}
         {% endfor %}
 
-        <input type="submit" value="Submit" class="btn btn-primary">
+        <input type="submit" value="{% trans "Submit" %}" class="btn btn-primary">
 
 
     </form>
