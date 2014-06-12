@@ -43,7 +43,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'interface.middleware.dataset.AssignDataset'
+    'interface.middleware.dataset.AssignDataset',
+    'interface.middleware.language.AdminLocaleURLMiddleware',
 )
 
 ROOT_URLCONF = 'chunker.urls'
@@ -59,3 +60,5 @@ STATIC_URL = '/static/'
 
 # Locale directories paths
 LOCALE_PATHS = ( "%s/locale/" % BASE_DIR,)
+
+ADMIN_LANGUAGE_CODE = "en_US"

@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from interface.forms import POSAnnotationForm, RephAnnotationForm
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
 import pdb
 
 
@@ -51,6 +52,7 @@ def pos_annotation(request):
 
     return render_to_response('form_using_template.html', RequestContext(request, {
         'form': form,
+        'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',  
         'layout': layout,
         'hyp':hyp,
         'title': _('Guess'),
@@ -103,6 +105,7 @@ def reph_annotation(request):
 
     return render_to_response('form_using_template.html', RequestContext(request, {
         'form': form,
+        'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',  
         'layout': layout,
         'hyp':hyp,
         'title': _('Reprhase')
