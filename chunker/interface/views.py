@@ -14,7 +14,7 @@ import pdb
 
 def pos_annotation(request):
 
-	# If the user already commited this answer, redirect it to the following page	
+    # If the user already commited this answer, redirect it to the following page   
     if 'committed' in request.session:
         return HttpResponseRedirect(reverse('reph_annotation'))
 
@@ -31,23 +31,23 @@ def pos_annotation(request):
         
         form = POSAnnotationForm(request.POST)
         if form.is_valid():
-			form.save()
-			messages.success(request, _('POS Annotation saved correctly.'))
-			
-			# Mark the session not to allow another commit of the answers
-			request.session['committed'] = True
-			return HttpResponseRedirect(reverse('reph_annotation'))
+            form.save()
+            messages.success(request, _('POS Annotation saved correctly.'))
+            
+            # Mark the session not to allow another commit of the answers
+            request.session['committed'] = True
+            return HttpResponseRedirect(reverse('reph_annotation'))
         else:
-        	for error in form.errors:
-        		messages.error(request, "%s: %s"%(error, form.errors[error]))
-        		
-        	return render_to_response('form_using_template.html', RequestContext(request, {
+            for error in form.errors:
+                messages.error(request, "%s: %s"%(error, form.errors[error]))
+                
+            return render_to_response('form_using_template.html', RequestContext(request, {
         'form': form,
         'layout': layout,
         'hyp':hyp,
         'title': _('Guess'),
     }))
-		
+        
     form = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
 
     return render_to_response('form_using_template.html', RequestContext(request, {
@@ -62,7 +62,7 @@ def pos_annotation(request):
 def reph_annotation(request):
 
     if not 'committed' in request.session:
-	    return HttpResponseRedirect(reverse('pos_annotation'))
+        return HttpResponseRedirect(reverse('pos_annotation'))
 
     layout = 'horizontal'
 
@@ -77,30 +77,33 @@ def reph_annotation(request):
         
         form = RephAnnotationForm(request.POST)
         if form.is_valid():
-        	form.save()
-        	messages.success(request, _('Rephrase Annotation saved correctly.'))
-        	
-        	# Allow the user to proceed to the next instance
-        	del request.session['committed']
-        	request.session.modified = True
-        	
-        	# Persist the change in the session
-        	dataset.pop()
-        	request.session['dataset'] = dataset
-        	
-        	return HttpResponseRedirect(reverse('pos_annotation'))
+            form.save()
+            messages.success(request, _('Rephrase Annotation saved correctly.'))
+            
+            # Allow the user to proceed to the next instance
+            del request.session['committed']
+            request.session.modified = True
+            
+            # Persist the change in the session
+            dataset.pop()
+            request.session['dataset'] = dataset
+
+            if len(dataset) > 0:
+                return HttpResponseRedirect(reverse('pos_annotation'))
+            else:
+                return HttpResponseRedirect(reverse('finish'))
 
         else:
-        	for error in form.errors:
-        		messages.error(request, "%s: %s"%(error, form.errors[error]))
-        		
-        	return render_to_response('form_using_template.html', RequestContext(request, {
+            for error in form.errors:
+                messages.error(request, "%s: %s"%(error, form.errors[error]))
+                
+            return render_to_response('form_using_template.html', RequestContext(request, {
         'form': form,
         'layout': layout,
         'hyp':hyp,
         'title': _('Reprhase')
     }))
-		
+        
     form = RephAnnotationForm(initial={'segmented':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
 
     return render_to_response('form_using_template.html', RequestContext(request, {

@@ -10,7 +10,8 @@ class AssignDataset:
     def process_request(self, request):
         ''' Assigns a dataset to the session if it doesn't exist yet. This middleware should go after the session middleware'''
         
-        if not pattern.match(request.path) and not reverse('finish') in request.path:
+        #if not pattern.match(request.path) and not reverse('finish') in request.path and not reverse('instructions') in request.path:
+        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
             path = settings.DATASET_DIR
         
             # Dataset should be a non empty sequence on the

@@ -4,5 +4,7 @@
 {% block content %}
     <center>
     <h1 style="margin-bottom:2em; margin-top:2em">{% trans "Thank you for participating" %}</h1>
+    <br />
+    <a href="{% url "instructions" %}">{% trans "Start again" %}</a>
     </center>
 {% endblock %}
