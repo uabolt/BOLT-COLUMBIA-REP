@@ -2,6 +2,25 @@
 
 {% load bootstrap_toolkit %}
 {% load i18n %}
+{% block extra_head %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            tag = $("#hyp");
+            text = tag.text();
+            if(text.indexOf != -1){
+                pre = text.split("[")[0];
+                suf = text.split("]")[1];
+                bt = text.split("[")[1].split("]")[0]
+                tag.empty()
+                tag.append(pre)
+                color = $("<span style=\"color:red\"></span>")
+                color.text("[" + bt + "]")
+                tag.append(color)
+                tag.append(suf)
+            }
+        });
+    </script>
+{% endblock %}
 
 {% block content %}
 
@@ -9,7 +28,7 @@
     
     <p>&nbsp;</p>
     
-    <h2 style="width=100%; text-align:center">{{ hyp }}</h2>
+    <h2 id="hyp" style="width=100%; text-align:center">{{ hyp }}</h2>
     
     <p>&nbsp;</p>
         
