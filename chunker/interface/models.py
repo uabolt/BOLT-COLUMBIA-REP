@@ -38,6 +38,12 @@ class POSAnnotation(models.Model):
         ('VBZ', _('Verb, 3rd person singular present')),
     )
 
+    LEGIBLENESS_CHOICES = (
+        (2, "---------"),
+        (0, _("No")),
+        (1, _("Yes")),
+    )
+
 
     # Control fields
     ref_id = models.CharField(blank=False, max_length=50) # Sentence ID
@@ -49,7 +55,7 @@ class POSAnnotation(models.Model):
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
 
     # Columbia experiment's fields
-    legible = models.BooleanField(blank=False) # Is the sentence legible despite the missing chunks?
+    legible = models.IntegerField(default=2, choices=LEGIBLENESS_CHOICES)
     guess = models.CharField(blank=True, max_length=50) # The guessed word, or blank if can't be guessed
     POS = models.CharField(blank=True, choices=POS_TAGS, max_length=7) # Part of speech tag of the guessed word
     question = models.CharField(blank=True, max_length=300) # Targeted question/definition to obtain the missing word
@@ -64,11 +70,12 @@ class RephAnnotation(models.Model):
 
     # Scale goes from easy to hard incrementaly
     EASINESS_CHOICES = (
-        (1, _('Very easy')),
-        (2, _('Easy')),
-        (3, _('More or less')),
-        (4, _('Hard')),
-        (5, _('Very hard')),
+        (1, "----------"),
+        (2, _('Very easy')),
+        (3, _('Easy')),
+        (4, _('More or less')),
+        (5, _('Hard')),
+        (6, _('Very hard')),
     )
 
     REPHRASE_CHOICES = (
@@ -86,7 +93,7 @@ class RephAnnotation(models.Model):
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
 
 	# Rephrase fields
-    hardness = models.IntegerField(default=3, choices=EASINESS_CHOICES) # How hard is it to rephrase
+    hardness = models.IntegerField(default=1, choices=EASINESS_CHOICES) # How hard is it to rephrase
     local_rephrase = models.CharField(blank=True, max_length=75) # Local rephrase
     reph_type = models.IntegerField(blank=True, null=True, choices=REPHRASE_CHOICES) # What kind of answer is this
     local_merge = models.CharField(blank=True, max_length=255) # Local rephrase merged with the hyp

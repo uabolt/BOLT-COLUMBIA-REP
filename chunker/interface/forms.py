@@ -30,8 +30,8 @@ class POSAnnotationForm(ModelForm):
 		help_texts = {
 			'legible': _('Can you understand the meaning of the sentence?'),
 			'guess' : _('Try to guess the words that fit into the ____ place if possible'),
-			'question' : _('Try to provide a targeted question to retrieve the missing words if possible'),
-			'POS': _('Select the part of speech you believe that the ____ word is (i.e. Noun)'),
+			'question' : _('What would you ask the speaker (or author) of the sentence in order to identify what the missing words are?  Please type your question here.'),
+			'POS': _('Select the part of speech you believe that the ____ word is (e.g. Noun)'),
 		}
 		
 class RephAnnotationForm(ModelForm):
@@ -62,7 +62,7 @@ class RephAnnotationForm(ModelForm):
 			'hardness': _('How hard do you think the missing word or words are to rephrase'),
 			'local_rephrase': _('Try to provide a rephrase ONLY of the text within brakets. If rephrasing is too difficult, try to describe or define what the missing text means'),
 			'local_merge' : _('Try to merge your rephrased text into the original sentence, making minimal changes to the original sentence'),
-			'reph_type' : _('Specify your rephrase type'),
+			'reph_type' : _("Did you provide a 'rephrase' (rewriting the red text in different words) or a 'definition' (a description of what the words are, but not something you could insert with the rest of the sentence)?"),
 			'global_rephrase' : _('Please provide an alternate rephrasing of the original sentence'),
 			
 		}
