@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-12 00:27+0000\n"
-"PO-Revision-Date: 2014-06-12 02:20-0700\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-17 16:10+0000\n"
+"PO-Revision-Date: 2014-06-18 11:33-0700\n"
+"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -19,19 +19,19 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 1.6.5\n"
 
-#: interface/forms.py:18
-msgid "Yes"
-msgstr "نعم"
-
-#: interface/forms.py:18
+#: interface/forms.py:18 interface/models.py:43
 msgid "No"
 msgstr "كلا"
+
+#: interface/forms.py:18 interface/models.py:44
+msgid "Yes"
+msgstr "نعم"
 
 #: interface/forms.py:24
 msgid "Legible"
 msgstr "مقروء/ واضح المعنى"
 
-#: interface/forms.py:25 interface/views.py:47 interface/views.py:56
+#: interface/forms.py:25 interface/views.py:48 interface/views.py:58
 msgid "Guess"
 msgstr "خمن/ إحزر"
 
@@ -53,14 +53,15 @@ msgstr "حاول أن تخمن الكلمات التي من قد تملآ الف
 
 #: interface/forms.py:33
 msgid ""
-"Try to provide a targeted question to retrieve the missing words if possible"
+"What would you ask the speaker (or author) of the sentence in order to "
+"identify what the missing words are?  Please type your question here."
 msgstr ""
-"حاول أن تفكر بالسؤال الموجه لهذه الجملة لغرض الحصول على الكلمات المفقودة إن "
-"أمكن ذلك"
+"ماذا تود أن تسأل كاتب الجملة لغرض التعرف على الكلمة المفقودة فيها؟ الرجاء "
+"كتابة السؤال هنا."
 
 #: interface/forms.py:34
-msgid "Select the part of speech you believe that the ____ word is (i.e. Noun)"
-msgstr "حاول أن تختار قسم الكلام المفقود في الفراغ (صفة..إسم وهكذا)"
+msgid "Select the part of speech you believe that the ____ word is (e.g. Noun)"
+msgstr "حاول أن تختار قسم الكلام المفقود في الفراغ..صفة..إسم وهكذا"
 
 #: interface/forms.py:54
 msgid "Hardness"
@@ -102,8 +103,13 @@ msgstr ""
 "حاول أن تدمج الكلمة الجديدة الى النص الأصلي مع إضافة التعديلات الضرورية فقط"
 
 #: interface/forms.py:65
-msgid "Specify your rephrase type"
-msgstr "حاول أن تحدد نوع صياغة الجملة. جملة كاملة مثلا أو مجرد تعريف"
+msgid ""
+"Did you provide a 'rephrase' (rewriting the red text in different words) or "
+"a 'definition' (a description of what the words are, but not something you "
+"could insert with the rest of the sentence)?"
+msgstr ""
+"هل قمت بإعادة صياغة للجملة (إعادة كتابة الكلمة باللون الأحمر بطريقة أخرى) أو "
+"تعريف الكلمة (وصف لمعنى الكلمة عن طريق الشرح والذي لايمكن إدخاله الى الجملة)."
 
 #: interface/forms.py:66
 msgid "Please provide an alternate rephrasing of the original sentence"
@@ -145,101 +151,85 @@ msgstr "صفة, مقارنة"
 msgid "Adjective, superlative"
 msgstr "صفة, صيغة التفضيل"
 
-#: interface/models.py:20
+#: interface/models.py:19
 msgid "Modal"
 msgstr "شكلي"
 
-#: interface/models.py:21
+#: interface/models.py:20
 msgid "Noun, singular or mass"
 msgstr "إسم, مفرد أو جمع"
 
-#: interface/models.py:22
+#: interface/models.py:21
 msgid "Noun, plural"
 msgstr "إسم, جمع"
 
-#: interface/models.py:23
+#: interface/models.py:22
 msgid "Proper noun, singular"
 msgstr "إسم صحيح, مفرد"
 
-#: interface/models.py:24
+#: interface/models.py:23
 msgid "Proper noun, plural"
 msgstr "إسم صحيح, جملة"
 
-#: interface/models.py:27
+#: interface/models.py:24
 msgid "Personal pronoun"
 msgstr "ضمير شخصي"
 
-#: interface/models.py:28
+#: interface/models.py:25
 msgid "Possessive pronoun"
 msgstr "ضمير تملكي"
 
-#: interface/models.py:29
+#: interface/models.py:26
 msgid "Adverb"
 msgstr "ظرف"
 
-#: interface/models.py:30
+#: interface/models.py:27
 msgid "Adverb, comparative"
 msgstr "طرف, مقارن"
 
-#: interface/models.py:31
+#: interface/models.py:28
 msgid "Adverb, superlative"
 msgstr "ظرف, صيغة التفضيل"
 
-#: interface/models.py:32
+#: interface/models.py:29
 msgid "Particle"
 msgstr "حرف, أداة"
 
-#: interface/models.py:33
+#: interface/models.py:30
 msgid "Symbol"
 msgstr "رمز"
 
-#: interface/models.py:34
+#: interface/models.py:31
 msgid "to"
 msgstr "إلى, على, حتى"
 
-#: interface/models.py:35
+#: interface/models.py:32
 msgid "Interjection"
 msgstr "صيغة تعجب"
 
-#: interface/models.py:36
+#: interface/models.py:33
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
-#: interface/models.py:37
+#: interface/models.py:34
 msgid "Verb, past tense"
 msgstr "فعل ماضي"
 
-#: interface/models.py:38
+#: interface/models.py:35
 msgid "Verb, gerund or present participle"
 msgstr "فعل مضارع"
 
-#: interface/models.py:39
+#: interface/models.py:36
 msgid "Verb, past participle"
 msgstr "فعل بصيغة التصريف الثالث"
 
-#: interface/models.py:40
+#: interface/models.py:37
 msgid "Verb, non-3rd person singular present"
 msgstr "فعل غير مبني للمجهول بصيغة المفرد"
 
-#: interface/models.py:41
+#: interface/models.py:38
 msgid "Verb, 3rd person singular present"
 msgstr "فعل مبني للمجهول بصيغة المفرد"
-
-#: interface/models.py:42
-msgid "Wh-determiner"
-msgstr "Different in Arabic! Not needed."
-
-#: interface/models.py:43
-msgid "Wh-pronoun"
-msgstr "Different in Arabic! Not needed."
-
-#: interface/models.py:44
-msgid "Possessive wh-pronoun"
-msgstr "Different in Arabic! Not needed."
-
-#: interface/models.py:45
-msgid "Wh-adverb"
-msgstr "Different in Arabic! Not neeed."
 
 #: interface/models.py:74
 msgid "Very easy"
@@ -269,15 +259,15 @@ msgstr "إعادة صياغة"
 msgid "Definition"
 msgstr "تعريف"
 
-#: interface/views.py:34
+#: interface/views.py:35
 msgid "POS Annotation saved correctly."
 msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:79
+#: interface/views.py:81
 msgid "Rephrase Annotation saved correctly."
 msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:99 interface/views.py:108
+#: interface/views.py:104 interface/views.py:114
 msgid "Reprhase"
 msgstr "أعد صياغة"
 
@@ -285,7 +275,11 @@ msgstr "أعد صياغة"
 msgid "Thank you for participating"
 msgstr "شكرا جزيلا على المشاركة في هذا البرنامج"
 
-#: interface/templates/form_using_template.html:23
+#: interface/templates/finish.html:8
+msgid "Start again"
+msgstr "أبدأ مرة أخرى"
+
+#: interface/templates/form_using_template.html:46
 msgid "Submit"
 msgstr "أرسل المعلومات "
 
@@ -303,7 +297,7 @@ msgid ""
 "submitted your answers to both pages, you will then be presented with a new "
 "sentence.</p>\n"
 "<p>You can stop at any time, although we ask that you complete the two pages "
-"of the current system before stopping.</p>\n"
+"of the current sentence before stopping.</p>\n"
 "<p>Also, you can return to this same web site to continue doing more later "
 "-- the task will pick up where you left off.</p>\n"
 "<p>Your answers to these questions will help us build a better language "
@@ -312,21 +306,44 @@ msgid ""
 "speakers, the better our computer system will get!</p>\n"
 "<p>Thank you for your help, we really appreciate it!</p> "
 msgstr ""
-"أهلا وسهلا بكم معنا\vبرنامج إختبار نظام الترجمة مابين اللغة الأنكليزية "
-"والعربي باللهجة العراقية\vفي الصفحات القادمة سنقوم بعرض بعض الجمل الغير "
-"متكاملة لإستقطاع بعضا من كلماتها. لكل جملة, ستظهر لك صفحتان: في الصفحة "
-"الأولى, سيتم سؤالك عن الكلمات المفقودة. بعد أن تقوم بإرسال أجوبتك كاملة, "
-"ستذهب الى صفحة أخرى حيث ستظهر فيها الجمل مع الكلمات المفقودة بالإضافة الى "
-"عدة أسئلة. عندما تقوم بإرسال الأجوبة عن نفس الجملة في الصفحتين, ستذهب الى "
-"جملة أخرى مع نفس الخطوات السابقةيمكنك التوقف في أي وقت ولكننا نتمنى أن تقوم "
-"بالأجابة عن كافة الأسئلة في الصفحتين للجملة الواحدة على الأقل قبل أن تغادر"
-"\vيمكنك الرجوع للموقع ذاته لإكمال ماكنت تفعله في أي وقت. ستبدأ حينها من آخر "
-"محطة كنت فيها\vأجوبتك حول هذه الجمل ستساعدنا على إنشاء نظام ترجمة من اللغة "
-"الأنكليزية الى العربية العراقية بصورة أفضل \vرجاءا: حاول أن تجيب على قدر "
-"أكبر من الأسئلة مع جمل مختلفة..كلما جمعنا معلومات أكثر من أشخاص يتكلمون "
-"اللغة العراقية كلما ساعدنا ذلك على تحسين نظام الترجمة\vشكرا جزيلا لك على "
-"المساعدة..جهودك ستساعدنا في إعداد نظام ترجمة آلي بصورة ممتازة بإذن الله "
+"<center><h3>أهلا وسهلا بكم معنا في برنامج إختبار نظام الترجمة مابين اللغة "
+"الأنكليزية والعربية </h3></center>باللهجة العراقية<br/><p>في الصفحات القادمة "
+"سنقوم بعرض بعض الجمل الغير متكاملة لإستقطاع بعضا من كلماتها. لكل جملة, ستظهر "
+"لك </p>صفحتان: في الصفحة الأولى, سيتم سؤالك عن الكلمات المفقودة. بعد أن تقوم "
+"بإرسال أجوبتك كاملة, ستذهب الى صفحة أخرى حيث ستظهر فيها الجمل مع الكلمات "
+"المفقودة بالإضافة الى عدة أسئلة. عندما تقوم بإرسال الأجوبة عن نفس <p>الجملة "
+"في الصفحتين, ستذهب الى جملة أخرى مع نفس الخطوات السابقة. يمكنك التوقف عن "
+"الإجابة في أي وقت تشاء </p>ولكننا نتمنى أن تقوم بالأجابة عن كافة الأسئلة في "
+"الصفحتين للجملة الواحدة على الأقل قبل أن تغادر. يمكنك أيضا <p>الرجوع للموقع "
+"ذاته لإكمال ماكنت تفعله في أي وقت. ستبدأ حينها من آخر محطة كنت فيها. أجوبتك "
+"حول هذه الجمل </p>ستساعدنا على إنشاء نظام ترجمة  من اللغة الأنكليزية الى "
+"العربية العراقية بصورة أفضل <p>رجاءا: حاول أن تجيب على قدر أكبر من الأسئلة "
+"مع جمل مختلفة..كلما جمعنا معلومات أكثر من أشخاص يتكلمون اللغة العراقية كلما "
+"ساعدنا ذلك على تحسين نظام الترجمة. شكرا جزيلا لك على المساعدة..جهودك "
+"ستساعدنا في إعداد نظام ترجمة آلي بصورة ممتازة بإذن الله.</p>"
 
 #: interface/templates/instructions.html:15
 msgid "Start"
 msgstr "إبدأ"
+
+#~ msgid ""
+#~ "Try to provide a targeted question to retrieve the missing words if "
+#~ "possible"
+#~ msgstr ""
+#~ "حاول أن تفكر بالسؤال الموجه لهذه الجملة لغرض الحصول على الكلمات المفقودة "
+#~ "إن أمكن ذلك"
+
+#~ msgid "Specify your rephrase type"
+#~ msgstr "حاول أن تحدد نوع صياغة الجملة. جملة كاملة مثلا أو مجرد تعريف"
+
+#~ msgid "Wh-determiner"
+#~ msgstr "Different in Arabic! Not needed."
+
+#~ msgid "Wh-pronoun"
+#~ msgstr "Different in Arabic! Not needed."
+
+#~ msgid "Possessive wh-pronoun"
+#~ msgstr "Different in Arabic! Not needed."
+
+#~ msgid "Wh-adverb"
+#~ msgstr "Different in Arabic! Not neeed."
