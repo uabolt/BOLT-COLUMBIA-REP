@@ -2,6 +2,7 @@
 {% load i18n %}
 
 {% block content %}
+<div {% if lang == 'arabic' %} style="direction:rtl"i {% endif %}>
 {% blocktrans %}   <center>
     	<h3>Welcome to the UA BOLT "clarification and rephrase" language task.</h3></center>
 <br />
@@ -15,3 +16,4 @@
 <center>	<a href="{% url "pos_annotation" %}" style="font-size:2em">{% trans "Start" %}</a>
     </center>
 {% endblock %}
+</div>

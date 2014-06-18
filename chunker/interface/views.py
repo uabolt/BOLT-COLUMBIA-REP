@@ -12,6 +12,9 @@ import pdb
 
 # Create your views here.
 
+def instructions(request):
+    return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',}))
+
 def pos_annotation(request):
 
     # If the user already commited this answer, redirect it to the following page   
