@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
+from os.path import basename, splitext
+from interface.models import DatasetAssignment as DSA
 import glob, random, os, shutil, re, pdb
 
 pattern = re.compile(r'^/admin/?')
@@ -23,8 +25,23 @@ class AssignDataset:
                 if len(files) == 0:
                     return HttpResponseRedirect(reverse('finish'))
             
-                # Generate a random index
-                ix = random.randint(0, len(files)-1)
+                pdb.set_trace()
+                l = 1
+                while l != 0:
+                    # Generate a random index
+                    ix = random.randint(0, len(files)-1)
+
+                    # Here we check if this dataset has been previously assigned to the same session_id
+                    dsname = basename(files[ix]).split('.')[0]
+
+                    qs = DSA.objects.filter(session_id = request.session.session_key).filter(file_prefix = dsname)
+                    
+                    l = len(qs)
+
+                obj = DSA(session_id = request.session.session_key, file_prefix= dsname)
+                obj.save()
+
+
             
                 # Read the contents
                 with open(files[ix], 'r') as f:
