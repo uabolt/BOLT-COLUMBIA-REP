@@ -57,6 +57,7 @@ WSGI_APPLICATION = 'chunker.wsgi.application'
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = "/var/www/w3/uabolt/chunker/static/"
 
 # Locale directories paths
 LOCALE_PATHS = ( "%s/locale/" % BASE_DIR,)
