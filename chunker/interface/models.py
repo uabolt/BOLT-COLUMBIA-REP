@@ -100,4 +100,13 @@ class RephAnnotation(models.Model):
     global_rephrase = models.CharField(blank=True, max_length=255) # Rephrased sentences
     
     def __unicode__(self):
-        return '%s - %s' % (self.segmented, self.date)
+        return u'%s - %s' % (self.segmented, self.date)
+
+class DatasetAssignment(models.Model):
+
+    session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
+    file_prefix = models.CharField(blank=False, max_length=10) # Here goes the file prefix to ensure the same dataset doesn't appear to the same user session
+    date = models.DateField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'%s - %s' % (self.session_id, self.file_prefix)
