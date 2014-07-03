@@ -25,7 +25,6 @@ class AssignDataset:
                 if len(files) == 0:
                     return HttpResponseRedirect(reverse('finish'))
             
-                pdb.set_trace()
                 l = 1
                 while l != 0:
                     # Generate a random index
