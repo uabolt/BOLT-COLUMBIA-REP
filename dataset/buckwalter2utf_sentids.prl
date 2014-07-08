@@ -1,0 +1,88 @@
+#!/usr/bin/env perl 
+
+$arch = `arch`;
+if ($arch =~/i686/) 
+{use utf8;}
+
+
+$filetext = ""; 
+
+while(<>) {
+    $filetext = $_;
+    $filetext =~ s/^.*? //;
+    $id = $&; $id =~ s/ //g;
+
+  $filetext =~ s/\@reject\@/\+\+\+/g;
+  $filetext =~ s/\,/،/g; #,
+#  $filetext =~ s/%/٪/g;   #% don't comment this out since it's marking noise words.
+#  $filetext =~ s/\?/؟/g; #? question mark 
+# changed from , to '
+  $filetext =~ s/\'/ء/g; #hamza on the line  
+  $filetext =~ s/\|/آ/g; #madda  
+  $filetext =~ s/\>/أ/g; #hamza on alif
+  $filetext =~ s/\&/ؤ/g; #hamza on waaw  
+  $filetext =~ s/\</إ/g; #hamza under alif
+  $filetext =~ s/\}/ئ/g; #hamza on yaa
+  $filetext =~ s/A/ا/g; #bare alif
+  $filetext =~ s/b/ب/g; 
+  $filetext =~ s/p/ة/g; 
+  $filetext =~ s/t/ت/g; 
+  $filetext =~ s/v/ث/g; 
+		   $filetext =~ s/j/ج/g; 
+		   $filetext =~ s/H/ح/g; 
+		   $filetext =~ s/x/خ/g; 
+		   $filetext =~ s/d/د/g; 
+		   $filetext =~ s/\*/ذ/g; 
+		   $filetext =~ s/r/ر/g; 
+		   $filetext =~ s/z/ز/g; 
+		   $filetext =~ s/s/س/g; 
+		   $filetext =~ s/\$/ش/g; 
+		   $filetext =~ s/S/ص/g; 
+		   $filetext =~ s/D/ض/g; 
+		   $filetext =~ s/T/ط/g; 
+		   $filetext =~ s/Z/ظ/g; 
+		   $filetext =~ s/E/ع/g; 
+		   $filetext =~ s/g/غ/g; 
+		   $filetext =~ s/f/ف/g; 
+		   $filetext =~ s/q/ق/g; 
+		   $filetext =~ s/k/ك/g; 
+		   $filetext =~ s/l/ل/g; 
+		   $filetext =~ s/m/م/g; 
+		   $filetext =~ s/n/ن/g; 
+		   $filetext =~ s/h/ه/g; 
+		   $filetext =~ s/w/و/g; 
+		   $filetext =~ s/y/ي/g; 
+		   $filetext =~ s/Y/ى/g; 
+		   $filetext =~ s/F/ً/g; 
+		   $filetext =~ s/N/ٌ/g; 
+		   $filetext =~ s/K/ٍ/g; 
+		   $filetext =~ s/a/َ/g; 
+		   $filetext =~ s/u/ُ/g; 
+		   $filetext =~ s/i/ِ/g; 
+		   $filetext =~ s/\~/ّ/g; 
+		   $filetext =~ s/o/ْ/g; 
+		   # digits
+#		   $filetext =~ s/0/٠/g;
+#		   $filetext =~ s/1/١/g;
+#		   $filetext =~ s/2/٢/g;
+#		   $filetext =~ s/3/٣/g;
+#		   $filetext =~ s/4/٤/g;
+#		   $filetext =~ s/5/٥/g;
+#		   $filetext =~ s/6/٦/g;
+#		   $filetext =~ s/7/٧/g;
+#		   $filetext =~ s/8/٨/g;
+#		   $filetext =~ s/9/٩/g;
+		   # other things
+#		   $filetext =~ s/ـ/ /g;
+#		   $filetext =~ s/≪/ /g;
+#		   $filetext =~ s/≫/ /g;
+                   $filetext =~ s/\+\+\+/\@reject\@/g;
+
+   # Remove extra spaces.
+    $filetext =~ s/\s+/ /g;
+    $filetext =~ s/\s+$//;
+    $filetext =~ s/^\s+//;
+
+    print $id," ",$filetext,"\n"
+		 } 
+
