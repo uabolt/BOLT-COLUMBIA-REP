@@ -9,6 +9,7 @@ out_prefix = 'ds_'
 
 segmaxlen = 3
 ds_len = 10
+num_copies = 3
 
 # First, build the stop words dictionary
 sw = []
@@ -71,12 +72,14 @@ with open(inputf, 'r') as f:
                 except:
                     pass
 
-                outf = open('%s%i.ds' % (out_prefix, (ix+1)/ds_len), 'w')
+                outfs = [open('%s%i_%i.ds' % (out_prefix, (ix+1)/ds_len, file_num), 'w') for file_num in range(num_copies)]
 
-            outf.write(outline)
+            for i in range(num_copies):
+                outfs[i].write(outline)
             ix += 1
 
 
 #Close the last open file
-outf.close()
+for i in range(num_copies):
+    outfs[i].close()
     
