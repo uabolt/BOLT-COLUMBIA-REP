@@ -23,6 +23,7 @@ with open(inputf, 'r') as f:
     ix = 0
 
     for line in f:
+        line = line[:-1]
         id, sentence = line.split(None, 1)
 
         #tokenize the sentence and proceed to error segment generation
@@ -50,6 +51,7 @@ with open(inputf, 'r') as f:
             outs, errs = pipe.communicate(input=line)
 
             id, sentence = outs.split(None, 1)
+            sentence = sentence[:-1]
             words = sentence.split()
             # Generate the actual data set lines
             ref = sentence

@@ -32,7 +32,6 @@ class AssignDataset:
 
                     # Here we check if this dataset has been previously assigned to the same session_id
                     dsname = basename(files[ix]).split('.')[0]
-
                     qs = DSA.objects.filter(session_id = request.session.session_key).filter(file_prefix = dsname)
                     
                     l = len(qs)
@@ -44,12 +43,13 @@ class AssignDataset:
             
                 # Read the contents
                 with open(files[ix], 'r') as f:
+                    import pdb
+                    pdb.set_trace()
                     fields = ('id', 'ref', 'chunked', 'segmented', 'control')
                     sentences = []
                     # Each line has format "id \t ref \t chunked \t segmented \t control(boolean field)
                     for line in f:
                         sentences.append(dict(zip(fields, line.split('\t'))))
-                    
                 request.session['dataset'] = sentences
                 request.session['ds_file'] = files[ix].split('/')[-1] # Last token, which is the actual file name
             
