@@ -43,8 +43,6 @@ class AssignDataset:
             
                 # Read the contents
                 with open(files[ix], 'r') as f:
-                    import pdb
-                    pdb.set_trace()
                     fields = ('id', 'ref', 'chunked', 'segmented', 'control')
                     sentences = []
                     # Each line has format "id \t ref \t chunked \t segmented \t control(boolean field)

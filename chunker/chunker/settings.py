@@ -63,3 +63,5 @@ STATIC_ROOT = "/var/www/w3/uabolt/chunker/static/"
 LOCALE_PATHS = ( "%s/locale/" % BASE_DIR,)
 
 ADMIN_LANGUAGE_CODE = "en_US"
+
+SESSION_SAVE_EVERY_REQUEST = True
