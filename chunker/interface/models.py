@@ -6,38 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 class POSAnnotation(models.Model):
     '''Class that represents an annotation for the replica of Columbia's experiment in IA'''
 
-    POS_TAGS = (
-        ('C', _('Coordinating conjunction')),
-        ('D', _('Cardinal number')),
-        ('DT', _('Determiner')),
-        ('EX', _('Existential there')),
-        ('FW', _('Foreign word')),
-        ('IN', _('Preposition or subordinating conjunction')),
-        ('JJ', _('Adjective')),
-        ('JJR', _('Adjective, comparative')),
-        ('JJS', _('Adjective, superlative')),
-        ('MD', _('Modal')),
-        ('NN', _('Noun, singular or mass')),
-        ('NNS', _('Noun, plural')),
-        ('NNP', _('Proper noun, singular')),
-        ('NNPS', _('Proper noun, plural')),
-        ('PRP', _('Personal pronoun')),
-        ('PRP$', _('Possessive pronoun')),
-        ('RB', _('Adverb')),
-        ('RBR', _('Adverb, comparative')),
-        ('RBS', _('Adverb, superlative')),
-        ('RP', _('Particle')),
-        ('SYM', _('Symbol')),
-        ('TO', _('to')),
-        ('UH', _('Interjection')),
-        ('VB', _('Verb, base form')),
-        ('VBD', _('Verb, past tense')),
-        ('VBG', _('Verb, gerund or present participle')),
-        ('VBN', _('Verb, past participle')),
-        ('VBP', _('Verb, non-3rd person singular present')),
-        ('VBZ', _('Verb, 3rd person singular present')),
-    )
-
     LEGIBLENESS_CHOICES = (
         (2, "---------"),
         (0, _("No")),
@@ -57,7 +25,6 @@ class POSAnnotation(models.Model):
     # Columbia experiment's fields
     legible = models.IntegerField(default=2, choices=LEGIBLENESS_CHOICES)
     guess = models.CharField(blank=True, max_length=50) # The guessed word, or blank if can't be guessed
-    POS = models.CharField(blank=True, choices=POS_TAGS, max_length=7) # Part of speech tag of the guessed word
     question = models.CharField(blank=True, max_length=300) # Targeted question/definition to obtain the missing word
 
     
@@ -101,6 +68,45 @@ class RephAnnotation(models.Model):
     
     def __unicode__(self):
         return u'%s - %s' % (self.segmented, self.date)
+        
+class POSTag(models.Model):
+	POS_TAGS = (
+        ('C', _('Coordinating conjunction')),
+        ('D', _('Cardinal number')),
+        #('DT', _('Determiner')),
+        #('EX', _('Existential there')),
+        ('FW', _('Foreign word')),
+        #('IN', _('Preposition or subordinating conjunction')),
+        ('JJ', _('Adjective')),
+        #('JJR', _('Adjective, comparative')),
+        #('JJS', _('Adjective, superlative')),
+        ('MD', _('Modal')),
+        ('NN', _('Noun, singular or mass')),
+        #('NNS', _('Noun, plural')),
+        ('NNP', _('Proper noun, singular')),
+        #('NNPS', _('Proper noun, plural')),
+        ('PRP', _('Personal pronoun')),
+        #('PRP$', _('Possessive pronoun')),
+        ('RB', _('Adverb')),
+        #('RBR', _('Adverb, comparative')),
+        #('RBS', _('Adverb, superlative')),
+        #('RP', _('Particle')),
+        ('SYM', _('Symbol')),
+        #('TO', _('to')),
+        #('UH', _('Interjection')),
+        ('VB', _('Verb, base form')),
+        #('VBD', _('Verb, past tense')),
+        #('VBG', _('Verb, gerund or present participle')),
+        #('VBN', _('Verb, past participle')),
+        #('VBP', _('Verb, non-3rd person singular present')),
+        #('VBZ', _('Verb, 3rd person singular present')),
+    )
+    
+    annotation = models.ForeignKey(POSAnnotation)
+    POS = models.CharField(blank=True, choices=POS_TAGS, max_length=7) # Part of speech tag of the guessed word
+
+    
+    
 
 class DatasetAssignment(models.Model):
 
