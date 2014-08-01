@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% load bootstrap_toolkit %}
+{% load i18n %}
+{% block extra_head %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            pos = {
+                {% for id, tag in pos_tags %}
+                    "{{id}}":"{{tag}}",   
+                {% endfor %}
+            }
+            
+            // Here we add the code that dynamically creates more POS controls
+            $("#btnAdd").click(function(){
+                // Increment the number of POS tags
+                pval = $("#num_pos").val();
+                nval = parseInt(pval)+1;
+                $("#num_pos").val(nval)
+                
+                
+                container = $("#additional");
+                select = $('<select name="POS_'+nval+'" id="POS_'+nval+'" style="margin-right:1em;"></select>');
+                
+                for(var key in pos){
+                    select.append('<option value="' + key + '">' + pos[key] + '</option>');
+                }
+                
+                container.append(select)
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <h1 {% if lang == "arabic"%} style="text-align:right" {% endif %}>{{ title }}</h1>
+    
+    <p>&nbsp;</p>
+    
+    <h2 id="hyp" style="width=100%; text-align:center; {% if lang == "arabic" %}direction:rtl;{% endif %}">{{ hyp }}</h2>
+    
+    <p>&nbsp;</p>
+        
+    <form class="form-{{ layout }}" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+	        {% include "bootstrap_toolkit/field.html" %}
+        {% endfor %}
+        
+<div class="control-group" >
+    
+        <div style="padding-left:180px; margin-bottom:5px;">
+            <p class="help-block">{% trans "Select the part of speech you believe that each of the ____ words is (e.g. Noun). Click on the + symbol to select more tags" %}</p>
+
+        </div>
+        
+            <label class="control-label" for="POS">{% trans "Part of speech" %}</label>
+        
+        <div class="controls">
+        
+            <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
+            
+            <select name="POS_1" id="POS" style="margin-right:1em;">
+            {% for id, tag in pos_tags %}
+                <option value="{{id}}">{{tag}}</option>
+            {% endfor %}
+            <select>
+            
+            
+            
+            <span id="additional"></span>
+            
+            <a id="btnAdd" style="font-size:xx-large;">+</a>
+            
+            
+            <br />
+            <br />
+        </div>
+</div>
+        
+        
+        
+        <br />
+
+        {% if lang == "arabic" %}
+            <div style="width;100%; text-align:right">
+        {% endif %}
+
+        <input type="submit" value="{% trans "Submit" %}" class="btn btn-primary">
+
+        {% if lang == "arabic" %}
+            </div>
+        {% endif %}
+
+
+    </form>
+
+{% endblock %}

@@ -70,7 +70,9 @@ class RephAnnotation(models.Model):
         return u'%s - %s' % (self.segmented, self.date)
         
 class POSTag(models.Model):
-	POS_TAGS = (
+    
+    POS_TAGS = (
+        ('', '-----'),
         ('C', _('Coordinating conjunction')),
         ('D', _('Cardinal number')),
         #('DT', _('Determiner')),
@@ -104,6 +106,9 @@ class POSTag(models.Model):
     
     annotation = models.ForeignKey(POSAnnotation)
     POS = models.CharField(blank=True, choices=POS_TAGS, max_length=7) # Part of speech tag of the guessed word
+    
+    def __unicode__(self):
+        return u'%s - %s' % (self.annotation, self.POS)
 
     
     

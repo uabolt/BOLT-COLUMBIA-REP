@@ -39,13 +39,6 @@
 	        {% include "bootstrap_toolkit/field.html" %}
         {% endfor %}
         
-        {% trans "Part of speech" %}<select name="POS_1" >
-            {% for id, tag in pos_tags %}
-                <option value="{{id}}">{{tag}}</option>
-            {% endfor %}
-        <select>
-        
-        <br />
 
         {% if lang == "arabic" %}
             <div style="width;100%; text-align:right">

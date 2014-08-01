@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from interface.forms import POSAnnotationForm, RephAnnotationForm
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
+from models import POSTag
 import pdb
 
 
@@ -32,33 +33,48 @@ def pos_annotation(request):
     
     if request.method == 'POST':
         
-        form = POSAnnotationForm(request.POST)
-        if form.is_valid():
-            form.save()
+        form_annotation = POSAnnotationForm(request.POST)
+        
+        
+        if form_annotation.is_valid():
+			    
+            form_annotation.save()
             messages.success(request, _('POS Annotation saved correctly.'))
+            
+            # Number of POS tags
+            num_pos = int(request.POST['num_pos']) if 'num_pos' in request.POST else 1
+        
+            pos_tags = [] # List to hold the POS tags
+       
+            for i in range(1, num_pos+1):
+                tag = POSTag()
+                tag.POS = request.POST['POS_%s' % i]
+                tag.annotation = form_annotation.instance
+                tag.save()
             
             # Mark the session not to allow another commit of the answers
             request.session['committed'] = True
             return HttpResponseRedirect(reverse('reph_annotation'))
         else:
-            for error in form.errors:
-                messages.error(request, "%s: %s"%(error, form.errors[error]))
+            for error in form_annotation.errors:
+                messages.error(request, "%s: %s"%(error, form_annotation.errors[error]))
                 
             return render_to_response('form_using_template.html', RequestContext(request, {
-        'form': form,
+        'form': form_annotation,
         'layout': layout,
         'hyp':hyp,
         'title': _('Guess'),
     }))
         
-    form = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
+    form_annotation = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
 
-    return render_to_response('form_using_template.html', RequestContext(request, {
-        'form': form,
+    return render_to_response('form_pos.html', RequestContext(request, {
+        'form': form_annotation,
         'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',  
         'layout': layout,
         'hyp':hyp,
         'title': _('Guess'),
+        'pos_tags': POSTag.POS_TAGS,
     }))
     
     
@@ -109,7 +125,7 @@ def reph_annotation(request):
         
     form = RephAnnotationForm(initial={'segmented':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
 
-    return render_to_response('form_using_template.html', RequestContext(request, {
+    return render_to_response('form_reph.html', RequestContext(request, {
         'form': form,
         'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',  
         'layout': layout,
