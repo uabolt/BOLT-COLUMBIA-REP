@@ -59,15 +59,21 @@
         
             <label class="control-label" for="POS">{% trans "Part of speech" %}</label>
         
-        <div class="controls">
+        <div class="controls" style="{% if lang == "arabic" %}direction:rtl;{% endif %}">
         
+            {% if lang != "arabic" %}
             <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
+            {% endif %}
             
-            <select name="POS_1" id="POS" style="margin-right:1em;">
+            <select name="POS_1" id="POS" style="margin-right:1em; {% if lang == "arabic" %}direction:rtl; float:right{% endif %}">
             {% for id, tag in pos_tags %}
                 <option value="{{id}}">{{tag}}</option>
             {% endfor %}
             <select>
+            
+            {% if lang == "arabic" %}
+            <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
+            {% endif %}
             
             
             
