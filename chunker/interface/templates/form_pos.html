@@ -57,29 +57,23 @@
 
         </div>
         
-            <label class="control-label" for="POS">{% trans "Part of speech" %}</label>
         
         <div class="controls" style="{% if lang == "arabic" %}direction:rtl;{% endif %}">
             <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
-            {% if lang != "arabic" %}
-            <select name="POS_1" id="POS" style="margin-right:1em; {% if lang == "arabic" %}direction:rtl; float:right{% endif %}">
-            {% endif %}
+
+            <label class="control-label"  for="POS">{% trans "Part of speech" %}</label>
             
+            
+            
+            <select name="POS_1" id="POS" style="margin-right:1em; ">
             {% for id, tag in pos_tags %}
                 <option value="{{id}}">{{tag}}</option>
             {% endfor %}
             <select>
             
-            {% if lang == "arabic" %}
-            <select name="POS_1" id="POS" style="margin-right:1em; {% if lang == "arabic" %}direction:rtl; float:right{% endif %}">
-            {% endif %}
-            
-            
-            
             <span id="additional"></span>
             
             <a id="btnAdd" style="font-size:xx-large;margin-right:1em;">+</a>
-            
             
             <br />
             <br />
