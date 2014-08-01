@@ -72,14 +72,14 @@
             <select>
             
             {% if lang == "arabic" %}
-            <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
+            <input type="hidden" name="num_pos" id="num_pos" value="1" {% if lang == "arabic" %}style=float:right;{% endif %}></input>
             {% endif %}
             
             
             
             <span id="additional"></span>
             
-            <a id="btnAdd" style="font-size:xx-large;">+</a>
+            <a id="btnAdd" style="font-size:xx-large;margin-right:1em;">+</a>
             
             
             <br />
