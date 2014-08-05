@@ -52,16 +52,27 @@
         
 <div class="control-group" >
     
-        <div style="padding-left:180px; margin-bottom:5px;">
+        {% if lang == "arabic" %}
+            <div style="padding-right:180px; margin-bottom:5px; text-align:right;">
+        {% else %}
+            <div style="padding-left:180px; margin-bottom:5px;">
+        {% endif %}
+        
             <p class="help-block">{% trans "Select the part of speech you believe that each of the ____ words is (e.g. Noun). Click on the + symbol to select more tags" %}</p>
 
         </div>
+        
+        {% if lang == "arabic" %}
+            <label class="control-label" style="float:right; text-align:left;"  for="POS">{% trans "Part of speech" %}</label>
+        {% else %}
+            <label class="control-label"  for="POS">{% trans "Part of speech" %}</label>
+        {% endif %}
         
         
         <div class="controls" style="{% if lang == "arabic" %}direction:rtl;{% endif %}">
             <input type="hidden" name="num_pos" id="num_pos" value="1"></input>
 
-            <label class="control-label"  for="POS">{% trans "Part of speech" %}</label>
+            
             
             
             
@@ -73,7 +84,7 @@
             
             <span id="additional"></span>
             
-            <a id="btnAdd" style="font-size:xx-large;margin-right:1em;">+</a>
+            <a id="btnAdd" style="font-size:xx-large;margin-right:10px;padding-top:5px">+</a>
             
             <br />
             <br />
