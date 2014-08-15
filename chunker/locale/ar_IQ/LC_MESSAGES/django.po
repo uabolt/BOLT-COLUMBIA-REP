@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-17 16:10+0000\n"
-"PO-Revision-Date: 2014-06-18 11:33-0700\n"
-"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
+"POT-Creation-Date: 2014-08-15 18:50+0000\n"
+"PO-Revision-Date: 2014-08-15 11:51-0700\n"
+"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 
-#: interface/forms.py:18 interface/models.py:43
+#: interface/forms.py:18 interface/models.py:11
 msgid "No"
 msgstr "كلا"
 
-#: interface/forms.py:18 interface/models.py:44
+#: interface/forms.py:18 interface/models.py:12
 msgid "Yes"
 msgstr "نعم"
 
@@ -31,7 +31,7 @@ msgstr "نعم"
 msgid "Legible"
 msgstr "مقروء/ واضح المعنى"
 
-#: interface/forms.py:25 interface/views.py:48 interface/views.py:58
+#: interface/forms.py:25 interface/views.py:66 interface/views.py:76
 msgid "Guess"
 msgstr "خمن/ إحزر"
 
@@ -39,7 +39,9 @@ msgstr "خمن/ إحزر"
 msgid "Question"
 msgstr "سؤال"
 
-#: interface/forms.py:27
+#: interface/forms.py:27 interface/templates/form_pos.html:66
+#: interface/templates/form_pos.html:68
+#: interface/templates/form_using_template.html:42
 msgid "Part of speech"
 msgstr "جزء من الكلام"
 
@@ -115,159 +117,87 @@ msgstr ""
 msgid "Please provide an alternate rephrasing of the original sentence"
 msgstr "رجاءا..حاول أن تضيف جملة أو كلمة بديلة للنص الأصلي لو أمكن ذلك"
 
-#: interface/models.py:10
-msgid "Coordinating conjunction"
-msgstr "أداة ربط بالتزامن"
-
-#: interface/models.py:11
-msgid "Cardinal number"
-msgstr "العدد الأصلي"
-
-#: interface/models.py:12
-msgid "Determiner"
-msgstr "الأضافة"
-
-#: interface/models.py:13
-msgid "Existential there"
-msgstr "هناك الظاهرة"
-
-#: interface/models.py:14
-msgid "Foreign word"
-msgstr "كلمة أجنبية"
-
-#: interface/models.py:15
-msgid "Preposition or subordinating conjunction"
-msgstr "حرف جر أو أداة ربط"
-
-#: interface/models.py:16
-msgid "Adjective"
-msgstr "صفة"
-
-#: interface/models.py:17
-msgid "Adjective, comparative"
-msgstr "صفة, مقارنة"
-
-#: interface/models.py:18
-msgid "Adjective, superlative"
-msgstr "صفة, صيغة التفضيل"
-
-#: interface/models.py:19
-msgid "Modal"
-msgstr "شكلي"
-
-#: interface/models.py:20
-msgid "Noun, singular or mass"
-msgstr "إسم, مفرد أو جمع"
-
-#: interface/models.py:21
-msgid "Noun, plural"
-msgstr "إسم, جمع"
-
-#: interface/models.py:22
-msgid "Proper noun, singular"
-msgstr "إسم صحيح, مفرد"
-
-#: interface/models.py:23
-msgid "Proper noun, plural"
-msgstr "إسم صحيح, جملة"
-
-#: interface/models.py:24
-msgid "Personal pronoun"
-msgstr "ضمير شخصي"
-
-#: interface/models.py:25
-msgid "Possessive pronoun"
-msgstr "ضمير تملكي"
-
-#: interface/models.py:26
-msgid "Adverb"
-msgstr "ظرف"
-
-#: interface/models.py:27
-msgid "Adverb, comparative"
-msgstr "طرف, مقارن"
-
-#: interface/models.py:28
-msgid "Adverb, superlative"
-msgstr "ظرف, صيغة التفضيل"
-
-#: interface/models.py:29
-msgid "Particle"
-msgstr "حرف, أداة"
-
-#: interface/models.py:30
-msgid "Symbol"
-msgstr "رمز"
-
-#: interface/models.py:31
-msgid "to"
-msgstr "إلى, على, حتى"
-
-#: interface/models.py:32
-msgid "Interjection"
-msgstr "صيغة تعجب"
-
-#: interface/models.py:33
-msgid "Verb, base form"
-msgstr "فعل رئيسي"
-
-#: interface/models.py:34
-msgid "Verb, past tense"
-msgstr "فعل ماضي"
-
-#: interface/models.py:35
-msgid "Verb, gerund or present participle"
-msgstr "فعل مضارع"
-
-#: interface/models.py:36
-msgid "Verb, past participle"
-msgstr "فعل بصيغة التصريف الثالث"
-
-#: interface/models.py:37
-msgid "Verb, non-3rd person singular present"
-msgstr "فعل غير مبني للمجهول بصيغة المفرد"
-
-#: interface/models.py:38
-msgid "Verb, 3rd person singular present"
-msgstr "فعل مبني للمجهول بصيغة المفرد"
-
-#: interface/models.py:74
+#: interface/models.py:41
 msgid "Very easy"
 msgstr "سهل جدا"
 
-#: interface/models.py:75
+#: interface/models.py:42
 msgid "Easy"
 msgstr "سهل"
 
-#: interface/models.py:76
+#: interface/models.py:43
 msgid "More or less"
 msgstr "أكثر أو أقل"
 
-#: interface/models.py:77
+#: interface/models.py:44
 msgid "Hard"
 msgstr "صعب"
 
-#: interface/models.py:78
+#: interface/models.py:45
 msgid "Very hard"
 msgstr "صعب جدا"
 
-#: interface/models.py:82
+#: interface/models.py:49
 msgid "Rephrase"
 msgstr "إعادة صياغة"
 
-#: interface/models.py:83
+#: interface/models.py:50
 msgid "Definition"
 msgstr "تعريف"
 
-#: interface/views.py:35
+#: interface/models.py:76
+msgid "Coordinating conjunction"
+msgstr "أداة ربط بالتزامن"
+
+#: interface/models.py:77
+msgid "Cardinal number"
+msgstr "العدد الأصلي"
+
+#: interface/models.py:80
+msgid "Foreign word"
+msgstr "كلمة أجنبية"
+
+#: interface/models.py:82
+msgid "Adjective"
+msgstr "صفة"
+
+#: interface/models.py:85
+msgid "Modal"
+msgstr "شكلي"
+
+#: interface/models.py:86
+msgid "Noun, singular or mass"
+msgstr "إسم, مفرد أو جمع"
+
+#: interface/models.py:88
+msgid "Proper noun, singular"
+msgstr "إسم صحيح, مفرد"
+
+#: interface/models.py:90
+msgid "Personal pronoun"
+msgstr "ضمير شخصي"
+
+#: interface/models.py:92
+msgid "Adverb"
+msgstr "ظرف"
+
+#: interface/models.py:96
+msgid "Symbol"
+msgstr "رمز"
+
+#: interface/models.py:99
+msgid "Verb, base form"
+msgstr "فعل رئيسي"
+
+#: interface/views.py:42
 msgid "POS Annotation saved correctly."
 msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:81
+#: interface/views.py:100
 msgid "Rephrase Annotation saved correctly."
 msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:104 interface/views.py:114
+#: interface/views.py:123 interface/views.py:133
 msgid "Reprhase"
 msgstr "أعد صياغة"
 
@@ -279,11 +209,20 @@ msgstr "شكرا جزيلا على المشاركة في هذا البرنامج
 msgid "Start again"
 msgstr "أبدأ مرة أخرى"
 
-#: interface/templates/form_using_template.html:46
+#: interface/templates/form_pos.html:61
+msgid ""
+"Select the part of speech you believe that each of the ____ words is (e.g. "
+"Noun). Click on the + symbol to select more tags"
+msgstr ""
+"إختر جزء الكلام الذي قد تجده مناسبا في مكان الفراغ __________ أضغط على رمز "
+"الـ+ لإختيار أكثر من جزء للكلام إذا كانت الجملة تدعو الى ذلك"
+
+#: interface/templates/form_pos.html:102 interface/templates/form_reph.html:47
+#: interface/templates/form_using_template.html:54
 msgid "Submit"
 msgstr "أرسل المعلومات "
 
-#: interface/templates/instructions.html:5
+#: interface/templates/instructions.html:6
 msgid ""
 "   <center>\n"
 "    \t<h3>Welcome to the UA BOLT \"clarification and rephrase\" language "
@@ -322,9 +261,63 @@ msgstr ""
 "ساعدنا ذلك على تحسين نظام الترجمة. شكرا جزيلا لك على المساعدة..جهودك "
 "ستساعدنا في إعداد نظام ترجمة آلي بصورة ممتازة بإذن الله.</p>"
 
-#: interface/templates/instructions.html:15
+#: interface/templates/instructions.html:16
 msgid "Start"
 msgstr "إبدأ"
+
+#~ msgid "Determiner"
+#~ msgstr "الأضافة"
+
+#~ msgid "Existential there"
+#~ msgstr "هناك الظاهرة"
+
+#~ msgid "Preposition or subordinating conjunction"
+#~ msgstr "حرف جر أو أداة ربط"
+
+#~ msgid "Adjective, comparative"
+#~ msgstr "صفة, مقارنة"
+
+#~ msgid "Adjective, superlative"
+#~ msgstr "صفة, صيغة التفضيل"
+
+#~ msgid "Noun, plural"
+#~ msgstr "إسم, جمع"
+
+#~ msgid "Proper noun, plural"
+#~ msgstr "إسم صحيح, جملة"
+
+#~ msgid "Possessive pronoun"
+#~ msgstr "ضمير تملكي"
+
+#~ msgid "Adverb, comparative"
+#~ msgstr "طرف, مقارن"
+
+#~ msgid "Adverb, superlative"
+#~ msgstr "ظرف, صيغة التفضيل"
+
+#~ msgid "Particle"
+#~ msgstr "حرف, أداة"
+
+#~ msgid "to"
+#~ msgstr "إلى, على, حتى"
+
+#~ msgid "Interjection"
+#~ msgstr "صيغة تعجب"
+
+#~ msgid "Verb, past tense"
+#~ msgstr "فعل ماضي"
+
+#~ msgid "Verb, gerund or present participle"
+#~ msgstr "فعل مضارع"
+
+#~ msgid "Verb, past participle"
+#~ msgstr "فعل بصيغة التصريف الثالث"
+
+#~ msgid "Verb, non-3rd person singular present"
+#~ msgstr "فعل غير مبني للمجهول بصيغة المفرد"
+
+#~ msgid "Verb, 3rd person singular present"
+#~ msgstr "فعل مبني للمجهول بصيغة المفرد"
 
 #~ msgid ""
 #~ "Try to provide a targeted question to retrieve the missing words if "
