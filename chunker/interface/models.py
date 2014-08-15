@@ -78,7 +78,7 @@ class POSTag(models.Model):
         #('DT', _('Determiner')),
         #('EX', _('Existential there')),
         ('FW', _('Foreign word')),
-        #('IN', _('Preposition or subordinating conjunction')),
+        ('IN', _('Preposition or subordinating conjunction')),
         ('JJ', _('Adjective')),
         #('JJR', _('Adjective, comparative')),
         #('JJS', _('Adjective, superlative')),
