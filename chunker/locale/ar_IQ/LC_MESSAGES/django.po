@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-07 19:12+0000\n"
-"PO-Revision-Date: 2014-09-07 12:12-0700\n"
+"PO-Revision-Date: 2014-09-07 12:24-0700\n"
 "Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
@@ -226,11 +226,12 @@ msgid "Start again"
 msgstr "أبدأ مرة أخرى"
 
 #: interface/templates/form_pos.html:61
-#, fuzzy
 msgid ""
 "Select the part of speech you believe that each of the ____ words is (e.g. "
 "Noun). Click on the + symbol to select more tags"
-msgstr "حاول أن تختار قسم الكلام المفقود في الفراغ..صفة..إسم وهكذا"
+msgstr ""
+"إختر جزء الكلام الذي قد تجده مناسبا في مكان الفراغ __________ أضغط على رمز "
+"الـ+ لإختيار أكثر من جزء للكلام إذا كانت الجملة تدعو الى ذلك"
 
 #: interface/templates/form_pos.html:102 interface/templates/form_reph.html:47
 #: interface/templates/form_using_template.html:54
