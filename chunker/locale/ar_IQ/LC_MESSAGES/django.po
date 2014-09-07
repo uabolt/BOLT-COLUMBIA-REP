@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-15 18:50+0000\n"
-"PO-Revision-Date: 2014-08-15 11:51-0700\n"
-"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
+"POT-Creation-Date: 2014-09-07 19:12+0000\n"
+"PO-Revision-Date: 2014-09-07 12:24-0700\n"
+"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: interface/forms.py:18 interface/models.py:11
 msgid "No"
@@ -157,6 +157,10 @@ msgstr "العدد الأصلي"
 msgid "Foreign word"
 msgstr "كلمة أجنبية"
 
+#: interface/models.py:81
+msgid "Preposition or subordinating conjunction"
+msgstr "حرف جر أو أداة ربط"
+
 #: interface/models.py:82
 msgid "Adjective"
 msgstr "صفة"
@@ -177,15 +181,27 @@ msgstr "إسم صحيح, مفرد"
 msgid "Personal pronoun"
 msgstr "ضمير شخصي"
 
+#: interface/models.py:91
+msgid "Pronoun"
+msgstr "ضمير"
+
 #: interface/models.py:92
+msgid "7 Key Questions"
+msgstr "أداة سؤال"
+
+#: interface/models.py:93
+msgid "Comparative/ Superlative"
+msgstr "مقارنة / مفاضلة"
+
+#: interface/models.py:95
 msgid "Adverb"
 msgstr "ظرف"
 
-#: interface/models.py:96
+#: interface/models.py:99
 msgid "Symbol"
 msgstr "رمز"
 
-#: interface/models.py:99
+#: interface/models.py:102
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
@@ -271,14 +287,8 @@ msgstr "إبدأ"
 #~ msgid "Existential there"
 #~ msgstr "هناك الظاهرة"
 
-#~ msgid "Preposition or subordinating conjunction"
-#~ msgstr "حرف جر أو أداة ربط"
-
 #~ msgid "Adjective, comparative"
 #~ msgstr "صفة, مقارنة"
-
-#~ msgid "Adjective, superlative"
-#~ msgstr "صفة, صيغة التفضيل"
 
 #~ msgid "Noun, plural"
 #~ msgstr "إسم, جمع"
@@ -330,9 +340,6 @@ msgstr "إبدأ"
 #~ msgstr "حاول أن تحدد نوع صياغة الجملة. جملة كاملة مثلا أو مجرد تعريف"
 
 #~ msgid "Wh-determiner"
-#~ msgstr "Different in Arabic! Not needed."
-
-#~ msgid "Wh-pronoun"
 #~ msgstr "Different in Arabic! Not needed."
 
 #~ msgid "Possessive wh-pronoun"
