@@ -32,7 +32,7 @@ class AssignDataset:
 
                     # Here we check if this dataset has been previously assigned to the same session_id
                     dsname = basename(files[ix]).split('.')[0]
-                    qs = DSA.objects.filter(session_id = request.session.session_key).filter(file_prefix = dsname)
+                    qs = DSA.objects.filter(session_id = request.session.session_key).filter(file_prefix__startswith = dsname[:-2])
                     
                     l = len(qs)
 
