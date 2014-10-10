@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-07 19:12+0000\n"
-"PO-Revision-Date: 2014-09-07 12:24-0700\n"
+"POT-Creation-Date: 2014-10-10 20:14+0000\n"
+"PO-Revision-Date: 2014-10-10 13:16-0700\n"
 "Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar_IQ\n"
@@ -278,6 +278,16 @@ msgstr ""
 "ستساعدنا في إعداد نظام ترجمة آلي بصورة ممتازة بإذن الله.</p>"
 
 #: interface/templates/instructions.html:16
+msgid ""
+"This experiment relies on your best guess. The next page will tell you the "
+"right words and how hard was it to make the guess. Keep in mind that once "
+"you proceed to the second screen, you can’t go back to the first."
+msgstr ""
+"هذه التجربة تعتمد على التخمين بصورة كبيرة فلا داعي للقلق عن مدى صحة الإجابة "
+"ودقتها..الصفحة التالية ستسألك عن مدى صعوبة التخمين يجب الملاحظة أنه حالما "
+"تنتقل الى الصفحة التالي..لايمكنك الرجوع الى الصفحة السابقة"
+
+#: interface/templates/instructions.html:18
 msgid "Start"
 msgstr "إبدأ"
 
