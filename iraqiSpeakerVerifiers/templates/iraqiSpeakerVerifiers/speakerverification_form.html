@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ block.super }} :: speaker verification{% endblock %}
+
+{% block content %}
+<center><h1>UA BOLT Iraqi Arabic Speaker Verification</h1></center>
+
+<form role="form" action="" method="post">{% csrf_token %}
+
+   {{ form.as_p }} 
+
+   <input type="submit" value="Submit" />
+
+</form>
+{% endblock %}
