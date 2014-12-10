@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-21 01:17-0700\n"
+"POT-Creation-Date: 2014-10-28 14:47-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,26 +23,33 @@ msgstr ""
 msgid "baghdad is divided into two major halves. What are they?"
 msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
-#: models.py:9 models.py:11
+#: models.py:9
 msgid ""
 "what are the common nicknames for the following Iraqi Names (Nickname starts "
 "with Abu): Ali,Hussein and Mohammed?"
 msgstr ""
 "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
 
-#: models.py:13
+#: models.py:11
 msgid "What's the two favorite games in almost all Iraqi coffee shops?"
-msgstr ""
-"ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
+msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
 
-#: models.py:15
+#: models.py:13
 msgid "What's the meaning of the word \"Hashash\" in Iraqi slang?"
 msgstr "مامعنى كلمة حشاش باللهجة العراقية العامة؟"
 
-#: models.py:17
+#: models.py:15
 msgid "What's the most popular type of bread in Iraq?"
 msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
 
-#: models.py:19
+#: models.py:17
 msgid "What's the most popular sport in Iraq?"
 msgstr "ماهي أكثر رياضة معروفة في العراق؟"
+
+#: templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
+msgid "speaker verification"
+msgstr "المتحدث التحقق"
+
+#: templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
+msgid "UA BOLT Iraqi Arabic Speaker Verification"
+msgstr "التأكيد العربية رئيس العراقي"
