@@ -33,5 +33,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = "/var/www/w3/uabolt/chunker/static/"
+
+
 # Dataset files directory
 DATASET_DIR = "%s/../dataset/" % BASE_DIR

@@ -51,13 +51,8 @@ ROOT_URLCONF = 'chunker.urls'
 
 WSGI_APPLICATION = 'chunker.wsgi.application'
 
+STATIC_ROOT='static/'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
-
-STATIC_ROOT = "/var/www/w3/uabolt/chunker/static/"
 
 # Locale directories paths
 LOCALE_PATHS = ( "%s/locale/" % BASE_DIR,)

@@ -2,11 +2,11 @@ import os
 from chunker.settings import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'uabolt.sista.arizona.edu']
+ALLOWED_HOSTS = ['localhost', 'b4.sista.arizona.edu']
 
 
 # Database
@@ -31,9 +31,8 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://w3.sista.arizona.edu/mt_uabolt/static/'
 
-STATIC_ROOT = "/var/www/w3/uabolt/chunker/static/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
