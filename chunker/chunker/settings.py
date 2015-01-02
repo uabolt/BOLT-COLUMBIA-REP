@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'interface',
+    'iraqiSpeakerVerifiers',
     'bootstrap_toolkit_bolt',
 )
 
