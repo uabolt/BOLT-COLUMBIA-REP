@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 from interface.forms import POSAnnotationForm, RephAnnotationForm
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-from models import POSTag
+from models import POSTag, POSAnnotation
 import pdb
 
 
@@ -20,53 +20,63 @@ def pos_annotation(request):
 
     # If the user already commited this answer, redirect it to the following page   
     if 'committed' in request.session:
-        return HttpResponseRedirect(reverse('reph_annotation'))
+#        return HttpResponseRedirect(reverse('reph_annotation'))
+        return HttpResponseRedirect(reverse('pos_annotation'))
 
     layout = 'horizontal'
 
-    dataset = request.session['dataset']
-    sample = dataset[-1]
-    ref = sample['ref']
-    hyp = sample['chunked']
-    ref_id = sample['id']
-    sample_file = request.session['ds_file']
+#    dataset = request.session['dataset']
+#    sample = dataset[-1]
+#    ref = sample['ref']
+#    hyp = sample['chunked']
+#    ref_id = sample['id']
+#    sample_file = request.session['ds_file']
+    sample = POSAnnotation.objects.filter(reannotated = False)[0]
+    ref = sample.masked
+    hyp = sample.reference # I know this is flipped!!
+    ref_id = sample.ref_id
+    sample_file = sample.sample_file
     
     if request.method == 'POST':
-        
-        form_annotation = POSAnnotationForm(request.POST)
-        
-        
-        if form_annotation.is_valid():
-			    
-            form_annotation.save()
-            messages.success(request, _('POS Annotation saved correctly.'))
-            
-            # Number of POS tags
-            num_pos = int(request.POST['num_pos']) if 'num_pos' in request.POST else 1
-        
-            pos_tags = [] # List to hold the POS tags
-       
-            for i in range(1, num_pos+1):
-                tag = POSTag()
-                tag.POS = request.POST['POS_%s' % i]
-                tag.annotation = form_annotation.instance
-                tag.save()
-            
-            # Mark the session not to allow another commit of the answers
-            request.session['committed'] = True
-            return HttpResponseRedirect(reverse('reph_annotation'))
-        else:
-            for error in form_annotation.errors:
-                messages.error(request, "%s: %s"%(error, form_annotation.errors[error]))
-                
-            return render_to_response('form_using_template.html', RequestContext(request, {
-        'form': form_annotation,
-        'layout': layout,
-        'hyp':hyp,
-        'title': _('Guess'),
-    }))
-        
-    form_annotation = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
+        sample.reannotated = True
+        sample.continue_process = request.POST['continue_process'] == 'True'
+        sample.save()
+        return HttpResponseRedirect(reverse('pos_annotation'))
+#        initial_data = dict(request.POST)
+#        initial_data['reannotated'] = True
+#        form_annotation = POSAnnotationForm(initial_data)
+#        
+#        
+#        if form_annotation.is_valid():
+#			    
+#            form_annotation.save()
+#            messages.success(request, _('POS Annotation saved correctly.'))
+#            
+#            # Number of POS tags
+#            num_pos = int(request.POST['num_pos']) if 'num_pos' in request.POST else 1
+#        
+#            pos_tags = [] # List to hold the POS tags
+#       
+#            for i in range(1, num_pos+1):
+#                tag = POSTag()
+#                tag.POS = request.POST['POS_%s' % i]
+#                tag.annotation = form_annotation.instance
+#                #tag.save() THIS WILL BE IGNORED BECAUSE WE WON'T CORRECT IT
+#            
+#            # Mark the session not to allow another commit of the answers
+#            request.session['committed'] = True
+#            return HttpResponseRedirect(reverse('pos_annotation'))
+#        else:
+#            for error in form_annotation.errors:
+#                messages.error(request, "%s: %s"%(error, form_annotation.errors[error]))
+#                
+#            return render_to_response('form_using_template.html', RequestContext(request, {
+#        'form': form_annotation,
+#        'layout': layout,
+#        'hyp':hyp,
+#        'title': _('Guess'),
+    #}))
+    form_annotation = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file, 'legible':sample.legible, 'guess':sample.guess, 'question':sample.question, 'continue_process':sample.continue_process})
 
     return render_to_response('form_pos.html', RequestContext(request, {
         'form': form_annotation,
