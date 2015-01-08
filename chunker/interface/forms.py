@@ -25,6 +25,7 @@ class POSAnnotationForm(ModelForm):
 			'guess' : _('Guess'),
 			'question' : _('Question'),
 			'POS': _('Part of speech'),
+            'continue_process': _('Continue the process'),
 		}
 		
 		help_texts = {
@@ -32,6 +33,7 @@ class POSAnnotationForm(ModelForm):
 			'guess' : _('Try to guess the words that fit into the ____ place if possible'),
 			'question' : _('What would you ask the speaker (or author) of the sentence in order to identify what the missing words are?  Please type your question here.'),
 			'POS': _('Select the part of speech you believe that the ____ word is (e.g. Noun)'),
+            'continue_process':_('Would you stop and ask a question'),
 		}
 		
 class RephAnnotationForm(ModelForm):

@@ -26,6 +26,7 @@ class POSAnnotation(models.Model):
     legible = models.IntegerField(default=2, choices=LEGIBLENESS_CHOICES)
     guess = models.CharField(blank=True, max_length=50) # The guessed word, or blank if can't be guessed
     question = models.CharField(blank=True, max_length=300) # Targeted question/definition to obtain the missing word
+    continue_process = models.BooleanField(default=False)
 
     
 
