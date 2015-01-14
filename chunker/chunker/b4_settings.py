@@ -6,7 +6,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'uabolt.sista.arizona.edu']
+ALLOWED_HOSTS = ['localhost', 'b4.sista.arizona.edu']
 
 
 # Database
