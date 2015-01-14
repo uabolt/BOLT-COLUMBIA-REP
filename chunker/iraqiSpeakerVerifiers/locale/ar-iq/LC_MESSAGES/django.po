@@ -19,8 +19,8 @@ msgstr ""
 
 #: models.py:7
 msgid "baghdad is divided into two major halves. What are they?"
-msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟foo"
+msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
 #: models.py:10
-msgid "what are the common nicknames for the following Iraqi Names (Nickname starts with Abu): Ali,Hussein and Mohammed?"
+msgid "What are the common nicknames for the following Iraqi Names (Nickname starts with Abu): Ali,Hussein and Mohammed?"
 msgstr "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
