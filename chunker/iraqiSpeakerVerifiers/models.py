@@ -20,5 +20,5 @@ class SpeakerVerification(models.Model):
     answer6 = models.CharField(verbose_name = _("What's the most popular sport in Iraq?"), max_length=200)
 
     def get_absolute_url(self):
-        return reverse('verification')
+        return reverse('verification_done')
 
