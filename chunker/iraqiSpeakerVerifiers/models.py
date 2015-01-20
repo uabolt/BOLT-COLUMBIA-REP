@@ -7,6 +7,8 @@ import uuid
 class SpeakerVerification(models.Model):
     user_code = models.CharField(max_length=32, default=lambda:uuid.uuid4().hex)
 
+    is_passing = models.BooleanField(default=False)
+
     answer1 = models.CharField(max_length=200, verbose_name = _('Baghdad is divided into two major halves. What are they?'))
 
     answer2 = models.CharField(verbose_name = _("what are the common nicknames for the following Iraqi Names (Nickname starts with Abu): Ali,Hussein and Mohammed?"), max_length=200)

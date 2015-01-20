@@ -1,7 +1,7 @@
 from django import forms
 
 class validationForm(forms.Form):
-    question1 = forms.CharField(label='fooBar!')
+    question1 = forms.CharField()
     question2 = forms.CharField()
     question3 = forms.CharField()
     question4 = forms.CharField()
