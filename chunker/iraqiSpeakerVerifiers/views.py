@@ -32,6 +32,7 @@ class SpeakerVerificationCreate(CreateView):
     model = SpeakerVerification
     fields = ['answer1', 'answer2', 'answer3','answer4','answer5','answer6']
 
+
     def form_valid(self, form):
         ''' 
         Have valid input, now check whether answers are right.
@@ -60,11 +61,16 @@ class SpeakerVerificationUpdate(UpdateView):
 
 def is_correct_answer(form):
     '''
+    Check the submitted answers for the presence of all of a set of checkwords.
+
+    :return: True if the proportion correct is greater than 0.85
+    :rtype: bool
     '''
     # NOTE: answer5 ommitted
     given_answers = \
         form.instance.answer1, form.instance.answer2, form.instance.answer3, \
         form.instance.answer4, form.instance.answer6
+
 
     # in ascending order, with number 5 missing
     correct_answers_checkwords = ( \
