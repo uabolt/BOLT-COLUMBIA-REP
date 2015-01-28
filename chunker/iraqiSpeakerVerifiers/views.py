@@ -30,7 +30,7 @@ from django.http import HttpResponseRedirect
 
 class SpeakerVerificationCreate(CreateView):
     model = SpeakerVerification
-    fields = ['answer1', 'answer2', 'answer3','answer4','answer5','answer6']
+    fields = ['answer1', 'answer2', 'answer3','answer4','answer5','answer6', 'answer7']
 
 
     def form_valid(self, form):
@@ -73,6 +73,7 @@ def is_correct_answer(form):
 
 
     # in ascending order, with number 5 missing
+    #TODO fix replaced hashash q with "see nothing but food." added q7
     correct_answers_checkwords = ( \
         [u'الكرخ', u'الرصافة'], \
         [u'أبو حسين', u'أبو علي', u'أبو جاسم'], \

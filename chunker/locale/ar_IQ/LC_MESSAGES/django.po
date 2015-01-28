@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 22:08-0700\n"
+"POT-Creation-Date: 2015-01-28 05:45+0000\n"
 "PO-Revision-Date: 2014-10-10 13:16-0700\n"
 "Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -291,31 +291,38 @@ msgstr ""
 msgid "Start"
 msgstr "إبدأ"
 
-#: iraqiSpeakerVerifiers/models.py:10
+#: iraqiSpeakerVerifiers/models.py:13
 msgid "Baghdad is divided into two major halves. What are they?"
 msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
-#: iraqiSpeakerVerifiers/models.py:12
+#: iraqiSpeakerVerifiers/models.py:16
 msgid ""
 "what are the common nicknames for the following Iraqi Names (Nickname starts "
 "with Abu): Ali,Hussein and Mohammed?"
-msgstr "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
+msgstr ""
+"ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
 
-#: iraqiSpeakerVerifiers/models.py:14
+#: iraqiSpeakerVerifiers/models.py:19
 msgid "What's the two favorite games in almost all Iraqi coffee shops?"
 msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
 
-#: iraqiSpeakerVerifiers/models.py:16
-msgid "What's the meaning of the word \"Hashash\" in Iraqi slang?"
-msgstr "مامعنى كلمة حشاش باللهجة العراقية العامة؟"
+#: iraqiSpeakerVerifiers/models.py:22
+msgid ""
+"Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
+"but food"
+msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
 
-#: iraqiSpeakerVerifiers/models.py:18
+#: iraqiSpeakerVerifiers/models.py:25
 msgid "What's the most popular type of bread in Iraq?"
 msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
 
-#: iraqiSpeakerVerifiers/models.py:20
+#: iraqiSpeakerVerifiers/models.py:27
 msgid "What's the most popular sport in Iraq?"
 msgstr "ماهي أكثر رياضة معروفة في العراق؟"
+
+#: iraqiSpeakerVerifiers/models.py:29
+msgid "Complete the following well-known Iraqi proverb: Those who don't know how to dance always say the floor is _______."
+msgstr "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
 msgid "speaker verification"
@@ -324,6 +331,29 @@ msgstr "المتحدث التحقق"
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
 msgid "UA BOLT Iraqi Arabic Speaker Verification"
 msgstr "التأكيد العربية رئيس العراقي"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
+#, fuzzy
+msgid "speaker verification: failure"
+msgstr "المتحدث التحقق"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:15
+#, fuzzy
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
+msgstr "التأكيد العربية رئيس العراقي"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:4
+#, fuzzy
+msgid "speaker verification: success"
+msgstr "المتحدث التحقق"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:8
+#, fuzzy
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
+msgstr "التأكيد العربية رئيس العراقي"
+
+#~ msgid "What's the meaning of the word \"Hashash\" in Iraqi slang?"
+#~ msgstr "مامعنى كلمة حشاش باللهجة العراقية العامة؟"
 
 #~ msgid "Determiner"
 #~ msgstr "الأضافة"
