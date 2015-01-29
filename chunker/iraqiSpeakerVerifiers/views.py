@@ -67,22 +67,26 @@ def is_correct_answer(form):
     :rtype: bool
     '''
     # NOTE: answer5 ommitted
-    given_answers = \
+    given_answers = (
         form.instance.answer1, form.instance.answer2, form.instance.answer3, \
-        form.instance.answer4, form.instance.answer6
+        form.instance.answer4, form.instance.answer5, form.instance.answer6, \
+        form.instance.answer7
+    )
 
 
     # in ascending order, with number 5 missing
-    #TODO fix replaced hashash q with "see nothing but food." added q7
-    correct_answers_checkwords = ( \
-        [u'الكرخ', u'الرصافة'], \
-        [u'أبو حسين', u'أبو علي', u'أبو جاسم'], \
-        [u'الدومنة', u'الطاولي'], \
-        [u'العيون', u'عوجة'], \
-        [u'صمون', u'حجري'], \
-        [u'كرة', u'القدم'] \
+    correct_answers_checkwords = (
+        [u'الكرخ', u'الرصافة'],
+        [u'أبو حسين', u'أبو علي', u'أبو جاسم'],
+        [u'الدومنة', u'الطاولي'],
+        [u'العيون'],
+        # [u'العيون', 'عوجة'],
+        [u'صمون', u'حجري'],
+        [u'كرة', u'القدم'],
+        [u'عوجة']
     )
 
+    assert(len(correct_answers_checkwords) == len(given_answers))
 
     # Count correct answers.
     numCorrect = 0

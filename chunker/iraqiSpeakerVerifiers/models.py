@@ -6,7 +6,7 @@ import uuid
 
 
 class SpeakerVerification(models.Model):
-    user_code = models.CharField(max_length=32, default=lambda:uuid.uuid4().hex)
+    user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
 
     is_passing = models.BooleanField(default=False)
 
@@ -33,5 +33,5 @@ class SpeakerVerification(models.Model):
         return reverse('verification_done')
 
     def __str__(self):
-        return "user code: " +self.user_code
+        return "user code: " + self.user_code
 
