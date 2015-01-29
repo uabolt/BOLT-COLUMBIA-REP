@@ -21,7 +21,7 @@ class POSAnnotation(models.Model):
     control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
     date = models.DateField(auto_now_add=True)
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
-    user_code = models.CharField(blank=True, max_length=255)
+    user_code = models.CharField(blank=False, editable=False, max_length=255)
 
     # Columbia experiment's fields
     legible = models.IntegerField(default=2, choices=LEGIBLENESS_CHOICES)
@@ -59,7 +59,7 @@ class RephAnnotation(models.Model):
     control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
     date = models.DateField(auto_now_add=True)
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
-    user_code = models.CharField(blank=False, max_length=255)
+    user_code = models.CharField(blank=False, editable=False, max_length=255)
 
 	# Rephrase fields
     hardness = models.IntegerField(default=1, choices=EASINESS_CHOICES) # How hard is it to rephrase

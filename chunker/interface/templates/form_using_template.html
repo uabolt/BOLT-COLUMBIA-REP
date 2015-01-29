@@ -36,7 +36,9 @@
         {% csrf_token %}
 
         {% for field in form %}
-	        {% include "bootstrap_toolkit/field.html" %}
+            {%  if not field == 'user_code' %}
+                {% include "bootstrap_toolkit/field.html" %}
+            {% endif %}
         {% endfor %}
         
         {% trans "Part of speech" %}<select name="POS_1" >
