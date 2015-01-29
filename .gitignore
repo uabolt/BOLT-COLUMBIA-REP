@@ -59,3 +59,8 @@ chunker/db.sqlite3
 
 .DS_Store
 *.swp
+
+dataset/processed/
+dataset/*.ds
+
+*.mo

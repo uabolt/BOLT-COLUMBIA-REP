@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-10 20:14+0000\n"
-"PO-Revision-Date: 2014-10-10 13:16-0700\n"
-"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2015-01-29 22:30+0000\n"
+"PO-Revision-Date: 2015-01-29 15:32-0700\n"
+"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.4\n"
+"Language-Team: \n"
 
 #: interface/forms.py:18 interface/models.py:11
 msgid "No"
@@ -45,15 +45,19 @@ msgstr "سؤال"
 msgid "Part of speech"
 msgstr "جزء من الكلام"
 
-#: interface/forms.py:31
+#: interface/forms.py:28
+msgid "Continue the process"
+msgstr "أكمل أو إسأل؟"
+
+#: interface/forms.py:32
 msgid "Can you understand the meaning of the sentence?"
 msgstr "هل بإمكانك أن تفهم معنى الجملة؟"
 
-#: interface/forms.py:32
+#: interface/forms.py:33
 msgid "Try to guess the words that fit into the ____ place if possible"
 msgstr "حاول أن تخمن الكلمات التي من قد تملآ الفراغ إذا أمكن ذلك"
 
-#: interface/forms.py:33
+#: interface/forms.py:34
 msgid ""
 "What would you ask the speaker (or author) of the sentence in order to "
 "identify what the missing words are?  Please type your question here."
@@ -61,35 +65,39 @@ msgstr ""
 "ماذا تود أن تسأل كاتب الجملة لغرض التعرف على الكلمة المفقودة فيها؟ الرجاء "
 "كتابة السؤال هنا."
 
-#: interface/forms.py:34
+#: interface/forms.py:35
 msgid "Select the part of speech you believe that the ____ word is (e.g. Noun)"
 msgstr "حاول أن تختار قسم الكلام المفقود في الفراغ..صفة..إسم وهكذا"
 
-#: interface/forms.py:54
+#: interface/forms.py:36
+msgid "Would you stop and ask a question"
+msgstr "هل تود بأن توقف المحادثة لتوجيه سؤال إلةى المستخدم؟"
+
+#: interface/forms.py:56
 msgid "Hardness"
 msgstr "صعوبة"
 
-#: interface/forms.py:55
+#: interface/forms.py:57
 msgid "Local rephrease"
 msgstr "إعادة صياغة باللهجة العراقية"
 
-#: interface/forms.py:56
+#: interface/forms.py:58
 msgid "Rephrase type"
 msgstr "نوع إعادة الصياغة"
 
-#: interface/forms.py:57
+#: interface/forms.py:59
 msgid "Merged sentence"
 msgstr "جملة مدمجة"
 
-#: interface/forms.py:58
+#: interface/forms.py:60
 msgid "Rephrase the complete sentence"
 msgstr "أعد صياغة الجملة كاملة"
 
-#: interface/forms.py:62
+#: interface/forms.py:64
 msgid "How hard do you think the missing word or words are to rephrase"
 msgstr "مامدى صعوبة تخمين أو إعادة صياغة الكلمات المفقودة"
 
-#: interface/forms.py:63
+#: interface/forms.py:65
 msgid ""
 "Try to provide a rephrase ONLY of the text within brakets. If rephrasing is "
 "too difficult, try to describe or define what the missing text means"
@@ -97,14 +105,14 @@ msgstr ""
 "حاول أن تعيد صياغة النص الفقط في مابين الأقواس فقط. إذا تعذر ذلك فحاول أن "
 "تصف أو تعرف النص المفقود ولو عن طريق الشرح الموجز"
 
-#: interface/forms.py:64
+#: interface/forms.py:66
 msgid ""
 "Try to merge your rephrased text into the original sentence, making minimal "
 "changes to the original sentence"
 msgstr ""
 "حاول أن تدمج الكلمة الجديدة الى النص الأصلي مع إضافة التعديلات الضرورية فقط"
 
-#: interface/forms.py:65
+#: interface/forms.py:67
 msgid ""
 "Did you provide a 'rephrase' (rewriting the red text in different words) or "
 "a 'definition' (a description of what the words are, but not something you "
@@ -113,95 +121,95 @@ msgstr ""
 "هل قمت بإعادة صياغة للجملة (إعادة كتابة الكلمة باللون الأحمر بطريقة أخرى) أو "
 "تعريف الكلمة (وصف لمعنى الكلمة عن طريق الشرح والذي لايمكن إدخاله الى الجملة)."
 
-#: interface/forms.py:66
+#: interface/forms.py:68
 msgid "Please provide an alternate rephrasing of the original sentence"
 msgstr "رجاءا..حاول أن تضيف جملة أو كلمة بديلة للنص الأصلي لو أمكن ذلك"
 
-#: interface/models.py:41
+#: interface/models.py:42
 msgid "Very easy"
 msgstr "سهل جدا"
 
-#: interface/models.py:42
+#: interface/models.py:43
 msgid "Easy"
 msgstr "سهل"
 
-#: interface/models.py:43
+#: interface/models.py:44
 msgid "More or less"
 msgstr "أكثر أو أقل"
 
-#: interface/models.py:44
+#: interface/models.py:45
 msgid "Hard"
 msgstr "صعب"
 
-#: interface/models.py:45
+#: interface/models.py:46
 msgid "Very hard"
 msgstr "صعب جدا"
 
-#: interface/models.py:49
+#: interface/models.py:50
 msgid "Rephrase"
 msgstr "إعادة صياغة"
 
-#: interface/models.py:50
+#: interface/models.py:51
 msgid "Definition"
 msgstr "تعريف"
 
-#: interface/models.py:76
+#: interface/models.py:77
 msgid "Coordinating conjunction"
 msgstr "أداة ربط بالتزامن"
 
-#: interface/models.py:77
+#: interface/models.py:78
 msgid "Cardinal number"
 msgstr "العدد الأصلي"
 
-#: interface/models.py:80
+#: interface/models.py:81
 msgid "Foreign word"
 msgstr "كلمة أجنبية"
 
-#: interface/models.py:81
+#: interface/models.py:82
 msgid "Preposition or subordinating conjunction"
 msgstr "حرف جر أو أداة ربط"
 
-#: interface/models.py:82
+#: interface/models.py:83
 msgid "Adjective"
 msgstr "صفة"
 
-#: interface/models.py:85
+#: interface/models.py:86
 msgid "Modal"
 msgstr "شكلي"
 
-#: interface/models.py:86
+#: interface/models.py:87
 msgid "Noun, singular or mass"
 msgstr "إسم, مفرد أو جمع"
 
-#: interface/models.py:88
+#: interface/models.py:89
 msgid "Proper noun, singular"
 msgstr "إسم صحيح, مفرد"
 
-#: interface/models.py:90
+#: interface/models.py:91
 msgid "Personal pronoun"
 msgstr "ضمير شخصي"
 
-#: interface/models.py:91
+#: interface/models.py:92
 msgid "Pronoun"
 msgstr "ضمير"
 
-#: interface/models.py:92
+#: interface/models.py:93
 msgid "7 Key Questions"
 msgstr "أداة سؤال"
 
-#: interface/models.py:93
+#: interface/models.py:94
 msgid "Comparative/ Superlative"
 msgstr "مقارنة / مفاضلة"
 
-#: interface/models.py:95
+#: interface/models.py:96
 msgid "Adverb"
 msgstr "ظرف"
 
-#: interface/models.py:99
+#: interface/models.py:100
 msgid "Symbol"
 msgstr "رمز"
 
-#: interface/models.py:102
+#: interface/models.py:103
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
