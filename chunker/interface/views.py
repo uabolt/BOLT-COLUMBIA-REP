@@ -8,6 +8,7 @@ from interface.forms import POSAnnotationForm, RephAnnotationForm
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from models import POSTag
+from iraqiSpeakerVerifiers.models import SpeakerVerification
 import pdb
 
 
@@ -30,14 +31,14 @@ def pos_annotation(request):
     hyp = sample['chunked']
     ref_id = sample['id']
     sample_file = request.session['ds_file']
-    
+    user_code = request.session['user_code']
+
     if request.method == 'POST':
         
         form_annotation = POSAnnotationForm(request.POST)
-        
-        
+
         if form_annotation.is_valid():
-			    
+
             form_annotation.save()
             messages.success(request, _('POS Annotation saved correctly.'))
             
@@ -66,7 +67,9 @@ def pos_annotation(request):
         'title': _('Guess'),
     }))
         
-    form_annotation = POSAnnotationForm(initial={'masked':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
+    form_annotation = POSAnnotationForm(initial={'masked': ref, 'reference': hyp,
+                                                 'session_id': request.session.session_key, 'user_code': user_code,
+                                                 'ref_id': ref_id, 'sample_file': sample_file})
 
     return render_to_response('form_pos.html', RequestContext(request, {
         'form': form_annotation,
@@ -91,7 +94,9 @@ def reph_annotation(request):
     hyp = sample['segmented']
     ref_id = sample['id']
     sample_file = request.session['ds_file']
-    
+    user_code = request.session['user_code']
+
+
     if request.method == 'POST':
         
         form = RephAnnotationForm(request.POST)
@@ -123,7 +128,8 @@ def reph_annotation(request):
         'title': _('Reprhase')
     }))
         
-    form = RephAnnotationForm(initial={'segmented':ref, 'reference':hyp, 'session_id':request.session.session_key, 'ref_id':ref_id, 'sample_file':sample_file})
+    form = RephAnnotationForm(initial={'segmented': ref, 'reference': hyp, 'session_id': request.session.session_key,
+                                       'user_code': user_code, 'ref_id': ref_id, 'sample_file': sample_file})
 
     return render_to_response('form_reph.html', RequestContext(request, {
         'form': form,

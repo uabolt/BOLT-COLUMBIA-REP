@@ -10,22 +10,13 @@ View for Iraqi Arabic fluency test form.
 
 """
 
-
-from django.conf import settings
-from django.conf.urls import url
-from django.views.generic.base import TemplateView
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView, UpdateView, ModelFormMixin
 from django.template import RequestContext
 
-from iraqiSpeakerVerifiers.forms import validationForm
 from iraqiSpeakerVerifiers.models import SpeakerVerification
 
 from django.shortcuts import render 
-from django.http import HttpResponseRedirect
-
-
 
 
 class SpeakerVerificationCreate(CreateView):
@@ -47,6 +38,9 @@ class SpeakerVerificationCreate(CreateView):
         else:
             form.instance.is_passing = False # for clarity. Default is False
             test_result = test_failed
+
+        # pass user_code in the session, so that rephrase experiment can use it
+        self.request.session['user_code'] = form.instance.user_code
 
         ModelFormMixin.success_url = reverse(test_result,
                 kwargs={'user_code':form.instance.user_code})
