@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block title %}
+
+{{ block.super }}:: {% trans "speaker verification: failure" %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<center><h1>
+      {% trans "UA BOLT Iraqi Arabic Speaker Verification: Failed" %}
+</h1></center>
+
+<h1 >{{ title }}</h1>
+<div style="padding-top:2em">
+   <p> Sorry, it looks like you did not pass.
+       <!-- If you think this must be a mistake, and would like a hand-review of your submission, your code is
+   {{ user_code }}: please email us.   -->
+</p>
+</div>
+
+{% endblock %}

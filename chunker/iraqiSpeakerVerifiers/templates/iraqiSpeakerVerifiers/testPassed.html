@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+{{ block.super }}:: {% trans "speaker verification: success" %}
+{% endblock %}
+
+{% block content %}
+<center><h1>{% trans "UA BOLT Iraqi Arabic Speaker Verification: Success" %}</h1></center>
+
+   <h1 >{{ title }}</h1>
+   <div style="padding-top:2em">
+      <p> Congratulations, you've passed. Please note your code, which is 
+      {{ user_code }}. Please <a href="{% url 'instructions' %}"> click here </a> 
+      to continue to the task.</p>
+   </div>
+{% endblock %}
