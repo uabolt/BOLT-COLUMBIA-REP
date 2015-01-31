@@ -10,7 +10,6 @@ class DataItem(models.Model):
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
     control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
-    number_of_annotations = models.IntegerField(default=0)
 
     def __unicode__(self):
         return u'%s\t%s' % (self.ref_id, self.reference)
@@ -19,9 +18,10 @@ class AnnotationRecord(models.Model):
     ''' This model will store an annotation done by user with session key 'annotator' to the data item 'item' '''
     item = models.ForeignKey(DataItem, blank=False)
     annotator = models.CharField(blank=False, max_length=32)
+    number_of_annotations = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return u'%s\t%s' % (self.item.ref_id, self.annotator)
+        return u'%s\t%s\t%i' % (self.item.ref_id, self.annotator, self.number_of_annotations)
 #########################
 
 class POSAnnotation(models.Model):
