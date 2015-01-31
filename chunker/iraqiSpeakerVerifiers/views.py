@@ -60,7 +60,6 @@ def is_correct_answer(form):
     :return: True if the proportion correct is greater than 0.85
     :rtype: bool
     '''
-    # NOTE: answer5 ommitted
     given_answers = (
         form.instance.answer1, form.instance.answer2, form.instance.answer3, \
         form.instance.answer4, form.instance.answer5, form.instance.answer6, \

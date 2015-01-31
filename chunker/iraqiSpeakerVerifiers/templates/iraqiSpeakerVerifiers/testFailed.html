@@ -16,11 +16,15 @@
 </h1></center>
 
 <h1 >{{ title }}</h1>
-<div style="padding-top:2em">
-   <p> Sorry, it looks like you did not pass.
-       <!-- If you think this must be a mistake, and would like a hand-review of your submission, your code is
-   {{ user_code }}: please email us.   -->
-</p>
+<div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
+    <p>
+        {% trans "Sorry, you did not pass our pre-test, so you cannot continue to the task. Thank you for your time." %}
+    </p>
+</div>
+<div>
+    <p>
+        Sorry, you did not pass our pre-test, so you cannot continue to the task. Thank you for your time.
+    </p>
 </div>
 
 {% endblock %}
