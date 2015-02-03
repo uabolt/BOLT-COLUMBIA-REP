@@ -42,6 +42,9 @@ class SpeakerVerificationCreate(CreateView):
         # pass user_code in the session, so that rephrase experiment can use it
         self.request.session['user_code'] = form.instance.user_code
 
+        # set a flag so we know when a new task is initiated in this session
+        self.request.session['finish_screen_seen'] = False
+
         ModelFormMixin.success_url = reverse(test_result,
                 kwargs={'user_code':form.instance.user_code})
 
@@ -101,8 +104,6 @@ def test_passed(request, user_code):
         'user_code': user_code,
         })
 
-    import pdb
-    pdb.set_trace()
     return render(request, 'iraqiSpeakerVerifiers/testPassed.html', context)
 
 
