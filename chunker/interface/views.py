@@ -24,6 +24,8 @@ def pos_annotation(request):
     if 'committed' in request.session:
         return HttpResponseRedirect(reverse('reph_annotation'))
 
+    user_code = request.session['user_code']
+
     layout = 'horizontal'
 
     item = DataItem.objects.get(pk = request.session['item'])
@@ -78,6 +80,8 @@ def reph_annotation(request):
     if not 'committed' in request.session:
         return HttpResponseRedirect(reverse('pos_annotation'))
 
+    user_code = request.session['user_code']
+
     layout = 'horizontal'
 
     item = DataItem.objects.get(pk = request.session['item'])
@@ -127,3 +131,8 @@ def finish_screen(request):
     request.session['finish_screen_seen'] = True
 
     return render_to_response('finish.html', RequestContext(request, {'user_code': request.session['user_code']}))
+
+def amt_landing(request):
+    ''' Shows the screen that lands whenever a user is done with all the data '''
+
+    return render_to_response('landing.html')

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-03 22:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: iraqiSpeakerVerifiers/models.py:13
+msgid "Baghdad is divided into two major halves. What are they?"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:16
+msgid ""
+"what are the common nicknames for the following Iraqi Names (Nickname starts "
+"with Abu): Ali,Hussein and Mohammed?"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:19
+msgid "What's the two favorite games in almost all Iraqi coffee shops?"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:22
+msgid ""
+"Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
+"but food"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:25
+msgid "What's the most popular type of bread in Iraq?"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:27
+msgid "What's the most popular sport in Iraq?"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:29
+msgid ""
+"Complete the following well-known Iraqi proverb: Those who don't know how to "
+"dance always say the floor is _______."
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
+msgid "speaker verification"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
+msgid "UA BOLT Iraqi Arabic Speaker Verification"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
+msgid "speaker verification: failure"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:15
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:21
+msgid ""
+"Sorry, you did not pass our pre-test, so you cannot continue to the task. "
+"Thank you for your time."
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:4
+msgid "speaker verification: success"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:8
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:13
+msgid "Congratulations, you've passed."
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:14
+msgid "Click here"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:15
+msgid "to continue to the task."
+msgstr ""

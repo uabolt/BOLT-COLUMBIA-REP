@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-02 23:39+0000\n"
-"PO-Revision-Date: 2015-01-29 15:32-0700\n"
-"Last-Translator: David Sidi <dsidi@email.arizona.edu>\n"
+"POT-Creation-Date: 2015-02-03 22:30+0000\n"
+"PO-Revision-Date: 2015-02-03 15:33-0700\n"
+"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 1.7.4\n"
 
-#: interface/forms.py:18 interface/models.py:11
+#: interface/forms.py:18 interface/models.py:32
 msgid "No"
 msgstr "كلا"
 
-#: interface/forms.py:18 interface/models.py:12
+#: interface/forms.py:18 interface/models.py:33
 msgid "Yes"
 msgstr "نعم"
 
@@ -31,7 +31,7 @@ msgstr "نعم"
 msgid "Legible"
 msgstr "مقروء/ واضح المعنى"
 
-#: interface/forms.py:25 interface/views.py:67 interface/views.py:79
+#: interface/forms.py:25 interface/views.py:62 interface/views.py:72
 msgid "Guess"
 msgstr "خمن/ إحزر"
 
@@ -125,111 +125,99 @@ msgstr ""
 msgid "Please provide an alternate rephrasing of the original sentence"
 msgstr "رجاءا..حاول أن تضيف جملة أو كلمة بديلة للنص الأصلي لو أمكن ذلك"
 
-#: interface/models.py:43
+#: interface/models.py:61
 msgid "Very easy"
 msgstr "سهل جدا"
 
-#: interface/models.py:44
+#: interface/models.py:62
 msgid "Easy"
 msgstr "سهل"
 
-#: interface/models.py:45
+#: interface/models.py:63
 msgid "More or less"
 msgstr "أكثر أو أقل"
 
-#: interface/models.py:46
+#: interface/models.py:64
 msgid "Hard"
 msgstr "صعب"
 
-#: interface/models.py:47
+#: interface/models.py:65
 msgid "Very hard"
 msgstr "صعب جدا"
 
-#: interface/models.py:51
+#: interface/models.py:69
 msgid "Rephrase"
 msgstr "إعادة صياغة"
 
-#: interface/models.py:52
+#: interface/models.py:70
 msgid "Definition"
 msgstr "تعريف"
 
-#: interface/models.py:79
+#: interface/models.py:96
 msgid "Coordinating conjunction"
 msgstr "أداة ربط بالتزامن"
 
-#: interface/models.py:80
+#: interface/models.py:97
 msgid "Cardinal number"
 msgstr "العدد الأصلي"
 
-#: interface/models.py:83
+#: interface/models.py:100
 msgid "Foreign word"
 msgstr "كلمة أجنبية"
 
-#: interface/models.py:84
+#: interface/models.py:101
 msgid "Preposition or subordinating conjunction"
 msgstr "حرف جر أو أداة ربط"
 
-#: interface/models.py:85
+#: interface/models.py:102
 msgid "Adjective"
 msgstr "صفة"
 
-#: interface/models.py:88
+#: interface/models.py:105
 msgid "Modal"
 msgstr "شكلي"
 
-#: interface/models.py:89
+#: interface/models.py:106
 msgid "Noun, singular or mass"
 msgstr "إسم, مفرد أو جمع"
 
-#: interface/models.py:91
+#: interface/models.py:108
 msgid "Proper noun, singular"
 msgstr "إسم صحيح, مفرد"
 
-#: interface/models.py:93
+#: interface/models.py:110
 msgid "Personal pronoun"
 msgstr "ضمير شخصي"
 
-#: interface/models.py:94
+#: interface/models.py:111
 msgid "Pronoun"
 msgstr "ضمير"
 
-#: interface/models.py:95
+#: interface/models.py:112
 msgid "7 Key Questions"
 msgstr "أداة سؤال"
 
-#: interface/models.py:96
+#: interface/models.py:113
 msgid "Comparative/ Superlative"
 msgstr "مقارنة / مفاضلة"
 
-#: interface/models.py:98
+#: interface/models.py:115
 msgid "Adverb"
 msgstr "ظرف"
 
-#: interface/models.py:102
+#: interface/models.py:119
 msgid "Symbol"
 msgstr "رمز"
 
-#: interface/models.py:105
+#: interface/models.py:122
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
-#: interface/views.py:43
-msgid "POS Annotation saved correctly."
-msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
-
-#: interface/views.py:105
-msgid "Rephrase Annotation saved correctly."
-msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
-
-#: interface/views.py:128 interface/views.py:139
-msgid "Reprhase"
-msgstr "أعد صياغة"
-
-#: interface/templates/finish.html:6
+#: interface/templates/finish.html:6 interface/templates/landing.html:6
 msgid "Task Complete. Thank you for participating."
 msgstr "إنتهى الواجب. شكرا جزيلا لمشاركتكم معنا"
 
-#: interface/templates/finish.html:9
+#: interface/templates/finish.html:9 interface/templates/landing.html:9
 #, python-format
 msgid ""
 "\n"
@@ -244,31 +232,15 @@ msgstr ""
 "ببرنامج أمازون ميكانيكال ترك. سنقوم بتزويدكم بالمبلغ المخصص لإكمالكم "
 "هذاالواجب بإستخدام الرقم الخاص به بعد مراجعة الواجب المرسل من طرفكم."
 
-#: interface/templates/finish.html:17
-msgid ""
-"\n"
-"            The task is now complete. Pending a review of your submissions "
-"(to verify that you have not\n"
-"            left too many answers blank, for example), we will provide "
-"payment through Amazon Mechanical Turk. You can\n"
-"            continue with another task now by clicking\n"
-"        "
-msgstr ""
-"\n"
-"واجبك الآن مكتمل. هذا الواجب بحاجة الى مراجعة من قبل القائمين على البرنامج "
-"فقط للتأكد من أنك لم تترك الكثير من الفراغات أو الأسئلة الغير مجاب عنها على "
-"سبيل المثال. سنقوم بالدفع لكم عن طريق برنامج أمازون ميكانيكال ترك.  يمكنك "
-"الآن البدأ بواجب آخر عن طريق النقر"
-
-#: interface/templates/finish.html:23
+#: interface/templates/finish.html:14 interface/templates/landing.html:14
 msgid "You can continue with another task now by clicking"
 msgstr "  يمكنك الآن البدأ بواجب آخر عن طريق النقر"
 
-#: interface/templates/finish.html:24
+#: interface/templates/finish.html:15 interface/templates/landing.html:15
 msgid "here"
 msgstr "هنا"
 
-#: interface/templates/finish.html:26
+#: interface/templates/finish.html:17 interface/templates/landing.html:17
 msgid ""
 "Each task you complete will result in payment of $3 to your Amazon "
 "Mechanical Turk account."
@@ -342,88 +314,99 @@ msgstr ""
 msgid "Start"
 msgstr "إبدأ"
 
-#: iraqiSpeakerVerifiers/models.py:13
-msgid "Baghdad is divided into two major halves. What are they?"
-msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
+#: interface/views.py:38
+msgid "POS Annotation saved correctly."
+msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
-#: iraqiSpeakerVerifiers/models.py:16
-msgid ""
-"what are the common nicknames for the following Iraqi Names (Nickname starts "
-"with Abu): Ali,Hussein and Mohammed?"
-msgstr ""
-"ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
+#: interface/views.py:90
+msgid "Rephrase Annotation saved correctly."
+msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
-#: iraqiSpeakerVerifiers/models.py:19
-msgid "What's the two favorite games in almost all Iraqi coffee shops?"
-msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
+#: interface/views.py:113 interface/views.py:123
+msgid "Reprhase"
+msgstr "أعد صياغة"
 
-#: iraqiSpeakerVerifiers/models.py:22
-msgid ""
-"Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
-"but food"
-msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
+#~ msgid ""
+#~ "\n"
+#~ "            The task is now complete. Pending a review of your "
+#~ "submissions (to verify that you have not\n"
+#~ "            left too many answers blank, for example), we will provide "
+#~ "payment through Amazon Mechanical Turk. You can\n"
+#~ "            continue with another task now by clicking\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "واجبك الآن مكتمل. هذا الواجب بحاجة الى مراجعة من قبل القائمين على "
+#~ "البرنامج فقط للتأكد من أنك لم تترك الكثير من الفراغات أو الأسئلة الغير "
+#~ "مجاب عنها على سبيل المثال. سنقوم بالدفع لكم عن طريق برنامج أمازون "
+#~ "ميكانيكال ترك.  يمكنك الآن البدأ بواجب آخر عن طريق النقر"
 
-#: iraqiSpeakerVerifiers/models.py:25
-msgid "What's the most popular type of bread in Iraq?"
-msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
+#~ msgid "Baghdad is divided into two major halves. What are they?"
+#~ msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
-#: iraqiSpeakerVerifiers/models.py:27
-msgid "What's the most popular sport in Iraq?"
-msgstr "ماهي أكثر رياضة معروفة في العراق؟"
+#~ msgid ""
+#~ "what are the common nicknames for the following Iraqi Names (Nickname "
+#~ "starts with Abu): Ali,Hussein and Mohammed?"
+#~ msgstr ""
+#~ "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و "
+#~ "محمد؟"
 
-#: iraqiSpeakerVerifiers/models.py:29
-msgid ""
-"Complete the following well-known Iraqi proverb: Those who don't know how to "
-"dance always say the floor is _______."
-msgstr ""
-"أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
+#~ msgid "What's the two favorite games in almost all Iraqi coffee shops?"
+#~ msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
-msgid "speaker verification"
-msgstr "المتحدث التحقق"
+#~ msgid ""
+#~ "Complete the following well-known Iraqi proverb: When hungry ___ see "
+#~ "nothing but food"
+#~ msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
-msgid "UA BOLT Iraqi Arabic Speaker Verification"
-msgstr "التأكيد العربية رئيس العراقي"
+#~ msgid "What's the most popular type of bread in Iraq?"
+#~ msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
+#~ msgid "What's the most popular sport in Iraq?"
+#~ msgstr "ماهي أكثر رياضة معروفة في العراق؟"
+
+#~ msgid ""
+#~ "Complete the following well-known Iraqi proverb: Those who don't know how "
+#~ "to dance always say the floor is _______."
+#~ msgstr ""
+#~ "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
+
+#~ msgid "speaker verification"
+#~ msgstr "المتحدث التحقق"
+
+#~ msgid "UA BOLT Iraqi Arabic Speaker Verification"
+#~ msgstr "التأكيد العربية رئيس العراقي"
+
 #, fuzzy
-msgid "speaker verification: failure"
-msgstr "المتحدث التحقق"
+#~ msgid "speaker verification: failure"
+#~ msgstr "المتحدث التحقق"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:15
 #, fuzzy
-msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
-msgstr "التأكيد العربية رئيس العراقي"
+#~ msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
+#~ msgstr "التأكيد العربية رئيس العراقي"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:21
-msgid ""
-"Sorry, you did not pass our pre-test, so you cannot continue to the task. "
-"Thank you for your time."
-msgstr ""
-"عذرا, لم تتمكن من إجتياز الإختبار المعد مسبقا, لذلك لايمكنك الإكمال الى "
-"الخطوة التالية. شكرا جزيلا على وقتك معنا"
+#~ msgid ""
+#~ "Sorry, you did not pass our pre-test, so you cannot continue to the task. "
+#~ "Thank you for your time."
+#~ msgstr ""
+#~ "عذرا, لم تتمكن من إجتياز الإختبار المعد مسبقا, لذلك لايمكنك الإكمال الى "
+#~ "الخطوة التالية. شكرا جزيلا على وقتك معنا"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:4
 #, fuzzy
-msgid "speaker verification: success"
-msgstr "المتحدث التحقق"
+#~ msgid "speaker verification: success"
+#~ msgstr "المتحدث التحقق"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:8
-msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
-msgstr "التأكيد العربية رئيس العراقي"
+#~ msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
+#~ msgstr "التأكيد العربية رئيس العراقي"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:13
-msgid "Congratulations, you've passed."
-msgstr "تهانينا, لقد إجتزت الأختبار بنجاح."
+#~ msgid "Congratulations, you've passed."
+#~ msgstr "تهانينا, لقد إجتزت الأختبار بنجاح."
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:14
-msgid "Click here"
-msgstr "إضغط  هنا"
+#~ msgid "Click here"
+#~ msgstr "إضغط  هنا"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:15
-msgid "to continue to the task."
-msgstr "لكي تكمل ماهو مطلوب."
+#~ msgid "to continue to the task."
+#~ msgstr "لكي تكمل ماهو مطلوب."
 
 #~ msgid "Start again"
 #~ msgstr "أبدأ مرة أخرى"

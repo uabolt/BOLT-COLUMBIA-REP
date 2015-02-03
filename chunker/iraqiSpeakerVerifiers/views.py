@@ -16,7 +16,7 @@ from django.template import RequestContext
 
 from iraqiSpeakerVerifiers.models import SpeakerVerification
 
-from django.shortcuts import render 
+from django.shortcuts import render
 
 
 class SpeakerVerificationCreate(CreateView):
@@ -25,7 +25,7 @@ class SpeakerVerificationCreate(CreateView):
 
 
     def form_valid(self, form):
-        ''' 
+        '''
         Have valid input, now check whether answers are right.
 
         If the submission succeeds, we take the user to a page with a token
@@ -34,7 +34,7 @@ class SpeakerVerificationCreate(CreateView):
         if is_correct_answer(form):
             form.instance.is_passing = True
             test_result = test_passed
-                    
+
         else:
             form.instance.is_passing = False # for clarity. Default is False
             test_result = test_failed
@@ -87,7 +87,7 @@ def is_correct_answer(form):
             zip(given_answers, correct_answers_checkwords):
 
         #  An answer is right if it has all the checkwords in it
-        if all(map(lambda checkword: checkword in given_answer, 
+        if all(map(lambda checkword: checkword in given_answer,
                 correct_answer_checkwords)):
 
             numCorrect += 1
@@ -101,6 +101,8 @@ def test_passed(request, user_code):
         'user_code': user_code,
         })
 
+    import pdb
+    pdb.set_trace()
     return render(request, 'iraqiSpeakerVerifiers/testPassed.html', context)
 
 
@@ -110,4 +112,3 @@ def test_failed(request, user_code):
         })
 
     return render(request, 'iraqiSpeakerVerifiers/testFailed.html', context)
-
