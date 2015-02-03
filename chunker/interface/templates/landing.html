@@ -3,10 +3,14 @@
 
 {% block content %}
     <div align="center">
-    <h1 style="margin-top:2em">{% trans "Maximum of 18 tasks completed." %}</h1>
+    <h1 style="margin-top:2em">{% trans "Maximum of 18 tasks completed." %}<br />Maximum of 18 tasks completed.</h1>
     <div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
     <p>
+
         {% blocktrans %}You have completed the maximum number of 18 tasks.  There are no further tasks to complete.  Thank you for your great participation!{% endblocktrans %}
+        <br />
+        You have completed the maximum number of 18 tasks.  There are no further tasks to complete.  Thank you for your great participation!
+
     </p>
     </div>
     </div>
