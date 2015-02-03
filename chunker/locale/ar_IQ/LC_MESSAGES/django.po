@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-03 22:30+0000\n"
-"PO-Revision-Date: 2015-02-03 15:33-0700\n"
+"POT-Creation-Date: 2015-02-03 23:39+0000\n"
+"PO-Revision-Date: 2015-02-03 16:39-0700\n"
 "Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
@@ -31,7 +31,7 @@ msgstr "نعم"
 msgid "Legible"
 msgstr "مقروء/ واضح المعنى"
 
-#: interface/forms.py:25 interface/views.py:62 interface/views.py:72
+#: interface/forms.py:25 interface/views.py:64 interface/views.py:74
 msgid "Guess"
 msgstr "خمن/ إحزر"
 
@@ -213,11 +213,23 @@ msgstr "رمز"
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
-#: interface/templates/finish.html:6 interface/templates/landing.html:6
+#: interface/views.py:40
+msgid "POS Annotation saved correctly."
+msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
+
+#: interface/views.py:94
+msgid "Rephrase Annotation saved correctly."
+msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
+
+#: interface/views.py:117 interface/views.py:127
+msgid "Reprhase"
+msgstr "أعد صياغة"
+
+#: interface/templates/finish.html:6
 msgid "Task Complete. Thank you for participating."
 msgstr "إنتهى الواجب. شكرا جزيلا لمشاركتكم معنا"
 
-#: interface/templates/finish.html:9 interface/templates/landing.html:9
+#: interface/templates/finish.html:9
 #, python-format
 msgid ""
 "\n"
@@ -232,15 +244,15 @@ msgstr ""
 "ببرنامج أمازون ميكانيكال ترك. سنقوم بتزويدكم بالمبلغ المخصص لإكمالكم "
 "هذاالواجب بإستخدام الرقم الخاص به بعد مراجعة الواجب المرسل من طرفكم."
 
-#: interface/templates/finish.html:14 interface/templates/landing.html:14
+#: interface/templates/finish.html:14
 msgid "You can continue with another task now by clicking"
 msgstr "  يمكنك الآن البدأ بواجب آخر عن طريق النقر"
 
-#: interface/templates/finish.html:15 interface/templates/landing.html:15
+#: interface/templates/finish.html:15
 msgid "here"
 msgstr "هنا"
 
-#: interface/templates/finish.html:17 interface/templates/landing.html:17
+#: interface/templates/finish.html:17
 msgid ""
 "Each task you complete will result in payment of $3 to your Amazon "
 "Mechanical Turk account."
@@ -314,17 +326,100 @@ msgstr ""
 msgid "Start"
 msgstr "إبدأ"
 
-#: interface/views.py:38
-msgid "POS Annotation saved correctly."
-msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
+#: interface/templates/landing.html:6
+msgid "Maximum of 18 tasks completed."
+msgstr "الحد الأقصى للواجبات \"18\" قد إنتهى‪.‬ "
 
-#: interface/views.py:90
-msgid "Rephrase Annotation saved correctly."
-msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
+#: interface/templates/landing.html:9
+msgid ""
+"You have completed the maximum number of 18 tasks.  There are no further "
+"tasks to complete.  Thank you for your great participation!"
+msgstr ""
+"لقد قمت من الإنتهاء للحد الأقصى من الواجبات والبالغ 18 واجب. لايوجد أي "
+"واجبات أخرى بعد ذلك. شكرا جزيلا لمشاركتك العظيمة معنا."
 
-#: interface/views.py:113 interface/views.py:123
-msgid "Reprhase"
-msgstr "أعد صياغة"
+#: iraqiSpeakerVerifiers/models.py:13
+msgid "Baghdad is divided into two major halves. What are they?"
+msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
+
+#: iraqiSpeakerVerifiers/models.py:16
+msgid ""
+"what are the common nicknames for the following Iraqi Names (Nickname starts "
+"with Abu): Ali,Hussein and Mohammed?"
+msgstr ""
+"ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
+
+#: iraqiSpeakerVerifiers/models.py:19
+msgid "What's the two favorite games in almost all Iraqi coffee shops?"
+msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
+
+#: iraqiSpeakerVerifiers/models.py:22
+msgid ""
+"Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
+"but food"
+msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
+
+#: iraqiSpeakerVerifiers/models.py:25
+msgid "What's the most popular type of bread in Iraq?"
+msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
+
+#: iraqiSpeakerVerifiers/models.py:27
+msgid "What's the most popular sport in Iraq?"
+msgstr "ماهي أكثر رياضة معروفة في العراق؟"
+
+#: iraqiSpeakerVerifiers/models.py:29
+msgid ""
+"Complete the following well-known Iraqi proverb: Those who don't know how to "
+"dance always say the floor is _______."
+msgstr ""
+"أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
+msgid "speaker verification"
+msgstr "المتحدث التحقق"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
+msgid "UA BOLT Iraqi Arabic Speaker Verification"
+msgstr "التأكيد العربية رئيس العراقي"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
+#, fuzzy
+msgid "speaker verification: failure"
+msgstr "المتحدث التحقق"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:15
+#, fuzzy
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
+msgstr "التأكيد العربية رئيس العراقي"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:21
+msgid ""
+"Sorry, you did not pass our pre-test, so you cannot continue to the task. "
+"Thank you for your time."
+msgstr ""
+"عذرا, لم تتمكن من إجتياز الإختبار المعد مسبقا, لذلك لايمكنك الإكمال الى "
+"الخطوة التالية. شكرا جزيلا على وقتك معنا"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:4
+#, fuzzy
+msgid "speaker verification: success"
+msgstr "المتحدث التحقق"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:8
+msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
+msgstr "التأكيد العربية رئيس العراقي"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:13
+msgid "Congratulations, you've passed."
+msgstr "تهانينا, لقد إجتزت الأختبار بنجاح."
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:14
+msgid "Click here"
+msgstr "إضغط  هنا"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:15
+msgid "to continue to the task."
+msgstr "لكي تكمل ماهو مطلوب."
 
 #~ msgid ""
 #~ "\n"
@@ -340,73 +435,6 @@ msgstr "أعد صياغة"
 #~ "البرنامج فقط للتأكد من أنك لم تترك الكثير من الفراغات أو الأسئلة الغير "
 #~ "مجاب عنها على سبيل المثال. سنقوم بالدفع لكم عن طريق برنامج أمازون "
 #~ "ميكانيكال ترك.  يمكنك الآن البدأ بواجب آخر عن طريق النقر"
-
-#~ msgid "Baghdad is divided into two major halves. What are they?"
-#~ msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
-
-#~ msgid ""
-#~ "what are the common nicknames for the following Iraqi Names (Nickname "
-#~ "starts with Abu): Ali,Hussein and Mohammed?"
-#~ msgstr ""
-#~ "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و "
-#~ "محمد؟"
-
-#~ msgid "What's the two favorite games in almost all Iraqi coffee shops?"
-#~ msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
-
-#~ msgid ""
-#~ "Complete the following well-known Iraqi proverb: When hungry ___ see "
-#~ "nothing but food"
-#~ msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
-
-#~ msgid "What's the most popular type of bread in Iraq?"
-#~ msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
-
-#~ msgid "What's the most popular sport in Iraq?"
-#~ msgstr "ماهي أكثر رياضة معروفة في العراق؟"
-
-#~ msgid ""
-#~ "Complete the following well-known Iraqi proverb: Those who don't know how "
-#~ "to dance always say the floor is _______."
-#~ msgstr ""
-#~ "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
-
-#~ msgid "speaker verification"
-#~ msgstr "المتحدث التحقق"
-
-#~ msgid "UA BOLT Iraqi Arabic Speaker Verification"
-#~ msgstr "التأكيد العربية رئيس العراقي"
-
-#, fuzzy
-#~ msgid "speaker verification: failure"
-#~ msgstr "المتحدث التحقق"
-
-#, fuzzy
-#~ msgid "UA BOLT Iraqi Arabic Speaker Verification: Failed"
-#~ msgstr "التأكيد العربية رئيس العراقي"
-
-#~ msgid ""
-#~ "Sorry, you did not pass our pre-test, so you cannot continue to the task. "
-#~ "Thank you for your time."
-#~ msgstr ""
-#~ "عذرا, لم تتمكن من إجتياز الإختبار المعد مسبقا, لذلك لايمكنك الإكمال الى "
-#~ "الخطوة التالية. شكرا جزيلا على وقتك معنا"
-
-#, fuzzy
-#~ msgid "speaker verification: success"
-#~ msgstr "المتحدث التحقق"
-
-#~ msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
-#~ msgstr "التأكيد العربية رئيس العراقي"
-
-#~ msgid "Congratulations, you've passed."
-#~ msgstr "تهانينا, لقد إجتزت الأختبار بنجاح."
-
-#~ msgid "Click here"
-#~ msgstr "إضغط  هنا"
-
-#~ msgid "to continue to the task."
-#~ msgstr "لكي تكمل ماهو مطلوب."
 
 #~ msgid "Start again"
 #~ msgstr "أبدأ مرة أخرى"

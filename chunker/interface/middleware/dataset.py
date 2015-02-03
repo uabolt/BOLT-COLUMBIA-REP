@@ -14,6 +14,11 @@ class AssignDataset:
         ''' Assigns a dataset to the session if it doesn't exist yet. This middleware should go after the session middleware'''
 
         if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
+
+            # Check wether we are done with all annotations to show the landing page
+            if AnnotationRecord.objects.filter(annotator = request.session.session_key).count() == DataItem.objects.count():
+                return HttpResponseRedirect(reverse('landing'))
+
             # Time for a new sentence!
             if not 'item' in request.session:
                 # Get the "user_id"
@@ -21,6 +26,8 @@ class AssignDataset:
 
                 # Is the task complete?
                 if remaining_sentences_in_task(user_id) == chunker.settings.TASK_SIZE:
+
+
                     if not 'finish_screen_seen' in request.session:
                         return HttpResponseRedirect(reverse('finish'))
 
