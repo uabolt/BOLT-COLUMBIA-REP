@@ -11,7 +11,6 @@ class DataItem(models.Model):
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
     control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
-    number_of_annotations = models.IntegerField(default=0) #TODO: Delete this field
 
     def __unicode__(self):
         return u'%s\t%s' % (self.ref_id, self.reference)
