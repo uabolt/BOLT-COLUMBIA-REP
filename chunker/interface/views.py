@@ -126,4 +126,4 @@ def reph_annotation(request):
 def finish_screen(request):
     request.session['finish_screen_seen'] = True
 
-    return render_to_response('finish.html', RequestContext={'user_code': request.session['user_code']})
+    return render_to_response('finish.html', RequestContext(request, {'user_code': request.session['user_code']}))
