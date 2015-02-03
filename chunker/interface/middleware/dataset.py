@@ -13,52 +13,27 @@ class AssignDataset:
     def process_request(self, request):
         ''' Assigns a dataset to the session if it doesn't exist yet. This middleware should go after the session middleware'''
 
-        #if not pattern.match(request.path) and not reverse('finish') in request.path and not reverse('instructions') in request.path:
         if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
-            path = settings.DATASET_DIR
+            # Time for a new sentence!
+            if not 'item' in request.session:
+                # Get the "user_id"
+                user_id = request.session.session_key
 
-            # Dataset should be a non empty sequence on the
-            if not 'dataset' in request.session or len(request.session['dataset']) == 0:
+                # Is the task complete?
+                if remaining_sentences_in_task(user_id) == chunker.settings.TASK_SIZE:
+                    if not 'finish_screen_seen' in request.session:
+                        return HttpResponseRedirect(reverse('finish'))
 
-                # Retrieve the dataset files
-                files = glob.glob(os.path.join(path, "*.ds"))
+                try:
+                    item = assign_sentence(user_id)
+                    request.session['item'] = item.id
 
-                if len(files) == 0:
+                    # Necessary to don't get stuck in the finish screen
+                    if 'finish_screen_seen' in request.session:
+                        del request.session['finish_screen_seen']
+
+                except e as DatasetExhaustedException:
                     return HttpResponseRedirect(reverse('finish'))
-
-                l = 1
-                while l != 0:
-                    # Generate a random index
-                    ix = random.randint(0, len(files)-1)
-
-                    # Here we check if this dataset has been previously assigned to the same session_id
-                    dsname = basename(files[ix]).split('.')[0]
-                    qs = DSA.objects.filter(session_id = request.session.session_key).filter(file_prefix__startswith = dsname[:-2])
-
-                    l = len(qs)
-
-                obj = DSA(session_id = request.session.session_key, file_prefix= dsname)
-                obj.save()
-
-
-
-                # Read the contents
-                with open(files[ix], 'r') as f:
-                    fields = ('id', 'ref', 'chunked', 'segmented', 'control')
-                    sentences = []
-                    # Each line has format "id \t ref \t chunked \t segmented \t control(boolean field)
-                    for line in f:
-                        sentences.append(dict(zip(fields, line.split('\t'))))
-                request.session['dataset'] = sentences
-                request.session['ds_file'] = files[ix].split('/')[-1] # Last token, which is the actual file name
-
-                # Move the file to the processed files folder
-                path = os.path.join(path, 'processed')
-                if not os.path.exists(path):
-                    os.makedirs(path)
-
-                shutil.move(files[ix], path)
-
 
         return None
 
@@ -75,8 +50,6 @@ def assign_sentence(user_id):
         current user.
     '''
 
-    # import pdb
-    # pdb.set_trace()
     # Get the items orderdered by number of annotations and by sequence number (pk)
     items = DataItem.objects.annotate(num_annotations = Count('annotationrecord')).exclude(num_annotations__gte = chunker.settings.MAX_ANNOTATIONS).order_by('num_annotations').order_by('pk')
 
@@ -101,9 +74,6 @@ def assign_sentence(user_id):
 
     return ret
 
-
-
-
 def remaining_sentences_in_task(user_id):
     '''
         Returns the number of remaining elements needed to complete a task.
@@ -111,7 +81,7 @@ def remaining_sentences_in_task(user_id):
         Its value should be within 0 and chunker.settings.TASK_SIZE
     '''
 
-    return chunker.settings.TASK_SIZE - AnnotationRecord.objects.filter(annotator = user_id).count()
+    return chunker.settings.TASK_SIZE - (AnnotationRecord.objects.filter(annotator = user_id).count() % chunker.settings.TASK_SIZE)
 
 class DatasetExhaustedException(Exception):
     ''' Exception raised if the dataset has been exhausted

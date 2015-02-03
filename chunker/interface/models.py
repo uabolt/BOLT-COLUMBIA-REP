@@ -36,7 +36,6 @@ class POSAnnotation(models.Model):
 
     # Control fields
     ref_id = models.CharField(blank=False, max_length=50) # Sentence ID
-    sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
     control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
@@ -74,7 +73,6 @@ class RephAnnotation(models.Model):
 
 	# Control fields
     ref_id = models.CharField(blank=False, max_length=50) # Sentence ID
-    sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
     control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
