@@ -9,13 +9,17 @@ from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from interface.middleware.dataset import *
 from models import POSTag
+from uuid import uuid4
 from iraqiSpeakerVerifiers.models import SpeakerVerification
-import pdb
 
 
 # Create your views here.
 
 def instructions(request):
+    # generate new task id for each task during the session
+    if request.session['finish_screen_seen']:
+        request.session['user_code'] = uuid4().hex
+
     return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',}))
 
 def pos_annotation(request):

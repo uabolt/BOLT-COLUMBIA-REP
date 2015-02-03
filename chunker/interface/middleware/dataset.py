@@ -32,7 +32,7 @@ class AssignDataset:
                     if 'finish_screen_seen' in request.session:
                         del request.session['finish_screen_seen']
 
-                except e as DatasetExhaustedException:
+                except DatasetExhaustedException as e:
                     return HttpResponseRedirect(reverse('finish'))
 
         return None
