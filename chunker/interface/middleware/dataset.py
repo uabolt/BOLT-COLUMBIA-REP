@@ -75,7 +75,34 @@ def assign_sentence(user_id):
         current user.
     '''
 
-    raise NotImplementedError('This is not implemented yet')
+    # import pdb
+    # pdb.set_trace()
+    # Get the items orderdered by number of annotations and by sequence number (pk)
+    items = DataItem.objects.annotate(num_annotations = Count('annotationrecord')).exclude(num_annotations__gte = chunker.settings.MAX_ANNOTATIONS).order_by('num_annotations').order_by('pk')
+
+    # First, return the first DataItem with no annotations
+    non_annotated = items.filter(num_annotations = 0)
+
+    if non_annotated.count() > 0:
+        ret = non_annotated[0]
+    else:
+        # Now, get the first item not annotated by the current user
+        items = items.exclude(annotationrecord__annotator = user_id)
+
+        if items.count() == 0:
+            raise DatasetExhaustedException()
+        else:
+            ret = items[0]
+
+    r = AnnotationRecord()
+    r.item = ret
+    r.annotator = user_id
+    r.save()
+
+    return ret
+
+
+
 
 def remaining_sentences_in_task(user_id):
     '''

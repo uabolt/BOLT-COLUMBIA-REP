@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Count
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
@@ -9,7 +10,8 @@ class DataItem(models.Model):
     reference = models.CharField(blank=False, max_length=255) # The ref
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
-    control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
+    control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
+    number_of_annotations = models.IntegerField(default=0) #TODO: Delete this field
 
     def __unicode__(self):
         return u'%s\t%s' % (self.ref_id, self.reference)
@@ -18,7 +20,6 @@ class AnnotationRecord(models.Model):
     ''' This model will store an annotation done by user with session key 'annotator' to the data item 'item' '''
     item = models.ForeignKey(DataItem, blank=False)
     annotator = models.CharField(blank=False, max_length=32)
-    number_of_annotations = models.IntegerField(default=0)
 
     def __unicode__(self):
         return u'%s\t%s\t%i' % (self.item.ref_id, self.annotator, self.number_of_annotations)
@@ -39,7 +40,7 @@ class POSAnnotation(models.Model):
     sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     masked = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
-    control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
+    control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
     date = models.DateField(auto_now_add=True)
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
 
@@ -77,7 +78,7 @@ class RephAnnotation(models.Model):
     sample_file = models.CharField(blank=False, max_length=255) # File from which this sample forms part
     segmented = models.CharField(blank=False, max_length=255) # Ref without some chunks
     reference = models.CharField(blank=False, max_length=255) # The ref
-    control_annotation = models.BooleanField(blank=False) # If this is true, then this annotation is used for control purposes
+    control_annotation = models.BooleanField(blank=False, default=False) # If this is true, then this annotation is used for control purposes
     date = models.DateField(auto_now_add=True)
     session_id = models.CharField(blank=False, max_length=80) # Here goes the session ID
 

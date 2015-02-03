@@ -5,13 +5,15 @@ from interface.models import DataItem, AnnotationRecord
 
 # Create your tests here.
 class DataSetAssignmentTests(TestCase):
-    fixtures = ['dataset_test']
+    fixtures = ['dataset_test.json']
 
     user1 = 'u1'
     user2 = 'u2'
+    user3 = 'u3'
+    user4 = 'u4'
 
     @classmethod
-    def setUpClass(self):
+    def setUp(self):
         ''' Setup code for the test case '''
 
         # Set the maximum number of annotations to 2
@@ -19,9 +21,9 @@ class DataSetAssignmentTests(TestCase):
         chunker.settings.TASK_SIZE = 3 # This is for convenience as well
 
         # Populate some assignments
-        self.i1 = DataItem.objects.get(ref_id='evalTranstac-0702-fieldStructured1-120')
-        self.i2 = DataItem.objects.get(ref_id='evalTranstac-0702-fieldStructured1-128')
-        self.i3 = DataItem.objects.get(ref_id='evalTranstac-0702-fieldStructured1-130')
+        self.i1 = DataItem.objects.get(pk=1)
+        self.i2 = DataItem.objects.get(pk=2)
+        self.i3 = DataItem.objects.get(pk=3)
 
         r1, r2 = AnnotationRecord(), AnnotationRecord()
 
@@ -51,27 +53,30 @@ class DataSetAssignmentTests(TestCase):
     def test_number_of_records(self):
         ''' Checks if the AnnotationRecord instances is updated properly '''
 
+        assign_sentence(self.user1)
+
         self.assertEqual(AnnotationRecord.objects.count(), 3)
 
-    def test_respect_limits(self):
-        ''' Checks that the system doesn't allow more annotations '''
+    def test_exhaust_dataset(self):
+        ''' Checks that the system doesn't allow a user to annotate any sentence more than once '''
 
         # Make some fake records
-        for i in range(2):
-            r = AnnotationRecord()
-            r.item = self.i1
-            r.annotator = self.user1
-            r.save()
-
-            r = AnnotationRecord()
-            r.item = self.i2
-            r.annotator = self.user1
-            r.save()
-
-            r = AnnotationRecord()
-            r.item = self.i3
-            r.annotator = self.user1
-            r.save()
+        assign_sentence(self.user2)
+        assign_sentence(self.user2)
 
         # Now, there should be an exception
         self.assertRaises(DatasetExhaustedException, assign_sentence, self.user2)
+
+        # But should allow another user to annotate something
+        self.assertIsInstance(assign_sentence(self.user1), DataItem)
+
+    def test_enforce_max_annotations(self):
+        ''' Checks that MAX_ANNOTATIONS is enforced '''
+
+        chunker.settings.MAX_ANNOTATIONS = 1
+
+        assign_sentence(self.user3) # This annotates all sentences once
+
+        # This should rise the exception because all sentences have been annotated
+        # and the max number of annotations was 1
+        self.assertRaises(DatasetExhaustedException, assign_sentence, self.user4)
