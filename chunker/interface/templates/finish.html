@@ -3,15 +3,18 @@
 
 {% block content %}
     <div align="center">
-    <h1 style="margin-top:2em">Thank you for participating.</h1>
+    <h1 style="margin-top:2em">{% trans "Task Complete. Thank you for participating." %}</h1>
     <div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
     <p>
         {% blocktrans %}
-        The task is now complete. Pending a review of your submissions (to verify that you have not
-        left too many answers blank, for example), we will provide payment through Amazon Mechanical Turk. You can
-        continue with another task now by clicking
+            Please copy your task completion ID, {{ user_code }}, to the form on Amazon Mechanical Turk. After we review
+            your submission for completeness, we will provide payment using this task completion ID.
         {% endblocktrans %}
+
+        {%  trans "You can continue with another task now by clicking" %}
         <a href="{% url "instructions" %}">{% trans "here" %}</a>.
+
+        {%  trans "Each task you complete will result in payment of $3 to your Amazon Mechanical Turk account." %}
     </p>
     </div>
     <!-- in case we want to show English and IA simultaneously

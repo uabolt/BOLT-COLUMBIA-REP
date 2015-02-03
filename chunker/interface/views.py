@@ -79,7 +79,10 @@ def pos_annotation(request):
         'title': _('Guess'),
         'pos_tags': POSTag.POS_TAGS,
     }))
-    
+
+def finish(request):
+    return render_to_response('finish.html', RequestContext(request, {'user_code': request.session['user_code']}))
+
     
 def reph_annotation(request):
 

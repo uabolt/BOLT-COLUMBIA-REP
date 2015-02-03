@@ -7,15 +7,14 @@
 {% block content %}
 <center><h1>{% trans "UA BOLT Iraqi Arabic Speaker Verification: Success" %}</h1></center>
 
-   <h1 >{{ title }}</h1>
-   <div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
-   {%  blocktrans %}
-      <p> Congratulations, you've passed. Please note your code, which is
-      {{ user_code }}. Please
-  {%  endblocktrans %}
-       <a href="{% url 'instructions' %}">{% trans "click here" %}</a>
-       {% trans "to continue to the task." %}</p>
-    </div>
+<h1 >{{ title }}</h1>
+<div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
+<p>
+    {%  trans "Congratulations, you've passed." %}
+   <a href="{% url 'instructions' %}">{% trans "Click here" %}</a>
+   {% trans "to continue to the task." %}
+</p>
+</div>
     <!--  in case we ever want to display English and IA simultaneously
     <div>
         <p> Congratulations, you've passed. Please note your code, which is

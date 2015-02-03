@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-31 18:56+0000\n"
+"POT-Creation-Date: 2015-02-02 23:39+0000\n"
 "PO-Revision-Date: 2015-01-29 15:32-0700\n"
-"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
+"Last-Translator: David Sidi <dsidi@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -225,14 +225,33 @@ msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 msgid "Reprhase"
 msgstr "أعد صياغة"
 
+#: interface/templates/finish.html:6
+msgid "Task Complete. Thank you for participating."
+msgstr "إنتهى الواجب. شكرا جزيلا لمشاركتكم معنا"
+
 #: interface/templates/finish.html:9
+#, python-format
 msgid ""
 "\n"
-"        The task is now complete. Pending a review of your submissions (to "
-"verify that you have not\n"
-"        left too many answers blank, for example), we will provide payment "
-"through Amazon Mechanical Turk. You can\n"
-"        continue with another task now by clicking\n"
+"            Please copy your task completion ID, %(user_code)s, to the form "
+"on Amazon Mechanical Turk. After we review\n"
+"            your submission for completeness, we will provide payment using "
+"this task completion ID.\n"
+"        "
+msgstr ""
+"\n"
+"رجاءا.إكتب الرقم الخاص بإكمال الواجب هنا%(user_code)sلى الإستمارة الخاصة "
+"ببرنامج أمازون ميكانيكال ترك. سنقوم بتزويدكم بالمبلغ المخصص لإكمالكم "
+"هذاالواجب بإستخدام الرقم الخاص به بعد مراجعة الواجب المرسل من طرفكم."
+
+#: interface/templates/finish.html:17
+msgid ""
+"\n"
+"            The task is now complete. Pending a review of your submissions "
+"(to verify that you have not\n"
+"            left too many answers blank, for example), we will provide "
+"payment through Amazon Mechanical Turk. You can\n"
+"            continue with another task now by clicking\n"
 "        "
 msgstr ""
 "\n"
@@ -241,9 +260,21 @@ msgstr ""
 "سبيل المثال. سنقوم بالدفع لكم عن طريق برنامج أمازون ميكانيكال ترك.  يمكنك "
 "الآن البدأ بواجب آخر عن طريق النقر"
 
-#: interface/templates/finish.html:14
+#: interface/templates/finish.html:23
+msgid "You can continue with another task now by clicking"
+msgstr "  يمكنك الآن البدأ بواجب آخر عن طريق النقر"
+
+#: interface/templates/finish.html:24
 msgid "here"
 msgstr "هنا"
+
+#: interface/templates/finish.html:26
+msgid ""
+"Each task you complete will result in payment of $3 to your Amazon "
+"Mechanical Turk account."
+msgstr ""
+"ستحصل على مبلغ 3 دولار في حسابك الخاص في أمازون ميكانيكال ترك  لكل واجب  "
+"تقوم من الإنتهاء منه. "
 
 #: interface/templates/form_pos.html:61
 msgid ""
@@ -379,33 +410,20 @@ msgid "speaker verification: success"
 msgstr "المتحدث التحقق"
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:8
-#, fuzzy
 msgid "UA BOLT Iraqi Arabic Speaker Verification: Success"
 msgstr "التأكيد العربية رئيس العراقي"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:12
-#, python-format
-msgid ""
-"\n"
-"      <p> Congratulations, you've passed. Please note your code, which is\n"
-"      %(user_code)s. Please\n"
-"  "
-msgstr ""
-"\n"
-"تهانينا, لقد إجتزت الأختبار بنجاح. رجاءا إحفظ رقم النجاح الخاص بك "
-"\n"
-"%(user_code)s. الآن,"
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:13
+msgid "Congratulations, you've passed."
+msgstr "تهانينا, لقد إجتزت الأختبار بنجاح."
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:16
-msgid "click here"
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:14
+msgid "Click here"
 msgstr "إضغط  هنا"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:17
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testPassed.html:15
 msgid "to continue to the task."
 msgstr "لكي تكمل ماهو مطلوب."
-
-#~ msgid "Thank you for participating."
-#~ msgstr "شكرا جزيلا على المشاركة في هذا البرنامج"
 
 #~ msgid "Start again"
 #~ msgstr "أبدأ مرة أخرى"
