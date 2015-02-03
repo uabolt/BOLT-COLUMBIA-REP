@@ -68,4 +68,5 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 FIXTURE_DIRS = ( '%s/fixtures/' % BASE_DIR,)
 
-MAX_ANNOTATIONS = 3
+MAX_ANNOTATIONS = 3 # Max number of annotations per item
+TASK_SIZE = 10 # Number of annotations that complete a task

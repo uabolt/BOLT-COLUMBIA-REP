@@ -43,6 +43,15 @@ class DataSetAssignmentTests(TestCase):
 
         self.assertEqual(remaining_sentences_in_task(self.user1), chunker.settings.TASK_SIZE - num) # Because in here the task size is 3
 
+        # Veryfy it doesn't give a number below zero or above chunker.settings.TASK_SIZE
+
+        chunker.settings.TASK_SIZE = 1 #Constraint this to check we don't get any more annotations
+
+        assign_sentence(self.user1) # Try to add another sentence
+
+        self.assertTrue(remaining_sentences_in_task(self.user1) >= 0, "The remaning number of sentences should be equal or above zero")
+        self.assertTrue(remaining_sentences_in_task(self.user1) <= chunker.settings.TASK_SIZE, "The remaining number of sentences should be equal or less than the TASK_SIZE")
+
     def test_get_remaining_element(self):
         ''' This test checks that the comprenhensive feature is enforced '''
 
