@@ -19,8 +19,8 @@ DATABASES = {
 #    },
 
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'uabolt_original',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'uabolt',
         'USER': 'enoriega',
         'PASSWORD': 'w7PxNoAojIWsDA',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
@@ -40,6 +40,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# Dataset files directory
-DATASET_DIR = "%s/../dataset/" % BASE_DIR

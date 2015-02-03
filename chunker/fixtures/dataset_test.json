@@ -1,0 +1,35 @@
+[
+  {
+    "pk": 1,
+    "model": "interface.dataitem",
+    "fields": {
+      "reference": "لا بس ممكن اشتغل",
+      "segmented": " [لا بس ممكن] اشتغل",
+      "masked": " _____  _____  _____ اشتغل",
+      "control_annotation": true,
+      "ref_id": "evalTranstac-0702-fieldStructured1-120"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "interface.dataitem",
+    "fields": {
+      "reference": "إي جاهز آني يمتى ما تريدوني",
+      "segmented": "إي جاهز آني [يمتى ما] تريدوني",
+      "masked": "إي جاهز آني _____  _____ تريدوني",
+      "control_annotation": true,
+      "ref_id": "evalTranstac-0702-fieldStructured1-128"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "interface.dataitem",
+    "fields": {
+      "reference": "خاف اشتغل ويا الأمريكان وخاف يقولون علي خائن",
+      "segmented": "خاف اشتغل ويا الأمريكان وخاف [يقولون علي خائن] ",
+      "masked": "خاف اشتغل ويا الأمريكان وخاف _____  _____  _____ ",
+      "control_annotation": true,
+      "ref_id": "evalTranstac-0702-fieldStructured1-130"
+    }
+  }
+]
