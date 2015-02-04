@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     url(r'answer1/(?P<pk>\d+)/$', SpeakerVerificationUpdate.as_view(), name='answer1_update'),
     url(r'^iraqiSpeakerVerifiers/done/$', TemplateView.as_view(template_name='instructions.html'),
         name='verification_done'),
-    url(r'^iraqiSpeakerVerifiers/(?P<user_code>[0-9a-fA-F]+)/success/$', test_passed, name='test_passed'),
-    url(r'^iraqiSpeakerVerifiers/(?P<user_code>[0-9a-fA-F]+)/failure/$', test_failed, name='test_failed'),
+    url(r'^iraqiSpeakerVerifiers/success/$', test_passed, name='test_passed'),
+    url(r'^iraqiSpeakerVerifiers/failure/$', test_failed, name='test_failed'),
 )
