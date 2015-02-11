@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-    {{ block.super }}:: {% trans "speaker verification" %}
+    {{ block.super }}:: "speaker verification"
 {% endblock %}
 
 {% block content %}
-    <center><h1>{% trans "UA BOLT Iraqi Arabic Speaker Verification" %}</h1></center>
+    <center><h1>UA BOLT Iraqi Arabic Speaker Verification</h1></center>
 
     <form role="form" action="" method="post">{% csrf_token %}
 
