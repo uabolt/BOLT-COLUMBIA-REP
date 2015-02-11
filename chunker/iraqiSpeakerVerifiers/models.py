@@ -2,12 +2,11 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
+from django.core.exceptions import ValidationError
 import uuid
 
 
 class SpeakerVerification(models.Model):
-    user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
-
     is_passing = models.BooleanField(default=False)
 
     answer1 = models.CharField(max_length=200, verbose_name = _('Baghdad is divided into two major halves. What are '
@@ -35,3 +34,17 @@ class SpeakerVerification(models.Model):
     def __str__(self):
         return "user code: " + self.user_code
 
+
+class ConsentVerification(models.Model):
+    user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
+    age_check = models.BooleanField(verbose_name='By checking this box, I attest that I am over the age of 18 years old')
+    data_use_check = \
+        models.BooleanField(verbose_name="By checking this box, I agree that my responses during the task can be "
+                                         "used as part of this research project.")
+
+    def clean(self):
+        if not (self.age_check and self.data_use_check):
+            raise ValidationError('All fields are required to participate.')
+
+    def get_absolute_url(self):
+        return reverse('answer1_add')

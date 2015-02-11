@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    {{ block.super }}:: {% trans "speaker verification" %}
+{% endblock %}
+
+{% block content %}
+    <center><h1>{% trans "UA BOLT Iraqi Arabic Speaker Verification" %}</h1></center>
+
+    <form role="form" action="" method="post">{% csrf_token %}
+
+        <h1 >{{ title }}</h1>
+        <br />
+            <p>
+            Please read the following statements and check the boxes if you agree.
+            Both boxes must be checked to proceed.
+            </p>
+            <br />
+            {{ form.as_p }}
+            <input type="submit" value="Submit" />
+
+
+    </form>
+{% endblock %}

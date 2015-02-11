@@ -15,6 +15,7 @@ from django.views.generic.edit import CreateView, UpdateView, ModelFormMixin
 from django.template import RequestContext
 
 from iraqiSpeakerVerifiers.models import SpeakerVerification
+from iraqiSpeakerVerifiers.models import ConsentVerification
 
 from django.shortcuts import render
 
@@ -38,8 +39,6 @@ class SpeakerVerificationCreate(CreateView):
             form.instance.is_passing = False  # for clarity. Default is False
             test_result = test_failed
 
-        # pass user_code in the session, so that rephrase experiment can use it
-        self.request.session['user_code'] = form.instance.user_code
 
         # set a flag so we know when a new task is initiated in this session
         self.request.session['finish_screen_seen'] = False
@@ -93,6 +92,17 @@ def is_correct_answer(form):
             num_correct += 1
 
     return num_correct / (len(given_answers) * 1.) > 0.85
+
+class ConsentVerificationCreate(CreateView):
+    model = ConsentVerification
+    fields = ['age_check', 'data_use_check']
+
+    def form_valid(self, form):
+        # pass user_code in the session, so that rephrase experiment can use it
+        self.request.session['user_code'] = form.instance.user_code
+
+        return super(ConsentVerificationCreate, self).form_valid(form)
+
 
 
 def test_passed(request):
