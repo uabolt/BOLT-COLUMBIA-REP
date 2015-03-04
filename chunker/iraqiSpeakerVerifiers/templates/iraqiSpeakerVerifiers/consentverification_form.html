@@ -1,24 +1,53 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-    {{ block.super }}:: "speaker verification"
+    {{ block.super }}:: UA BOLT Study Consent Verification
 {% endblock %}
 
 {% block content %}
-    <center><h1>UA BOLT Study Consent Verification</h1></center>
+    <center><h1>{% trans "A BOLT Study Consent Verification" %}</h1></center>
 
     <form role="form" action="" method="post">{% csrf_token %}
 
         <h1 >{{ title }}</h1>
         <br />
-            <p>
-            Please read the following statements and check the boxes if you agree.
-            Both boxes must be checked to proceed.
-            </p>
+        <div {% if LANGUAGE_BIDI %} style="direction:rtl;text-align:right" {% endif %}>
+        <p>{% blocktrans %}
+                This study involves research on developing a system for
+                automated translation between Iraqi Arabic and English.
+
+        {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                The purpose of this study is to collect data from Iraqi Arabic
+                speakers in response to simple questions about a set of Iraqi
+                Arabic sentences.  The answers to these questions will be used
+                to improve the automatic translation system.
+        {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                The task involves filling out a series of simple web forms for
+                an accompanying set of 10 sentences; each web form contains 5
+                questions, and there are 2 forms for each question (for a total
+                of 20 forms to complete the task).
+        {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                It is estimated that the task takes about 10-15 minutes to
+                complete.
+        {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                Once the task is complete, you will be provided with a code to
+                submit to your Amazon Mechanical Turk account to indicate you
+                complete the task. Pending review of your responses, you
+                will be credited $3.00 (US currency) to your Amazon
+                Mechanical Turk account.  You have the option to repeat the
+                task up to 18 times.
+        {% endblocktrans %}</p>
+        <p>{% blocktrans %}
+                Please read the following statements and check the boxes if you
+                agree. Both boxes must be checked to proceed.
+        {% endblocktrans %}</p>
             <br />
             {{ form.as_p }}
             <input type="submit" value="Submit" />
-
-
+        </div>
     </form>
 {% endblock %}

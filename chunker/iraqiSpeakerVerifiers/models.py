@@ -37,10 +37,10 @@ class SpeakerVerification(models.Model):
 
 class ConsentVerification(models.Model):
     user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
-    age_check = models.BooleanField(verbose_name='By checking this box, I attest that I am over the age of 18 years old')
+    age_check = models.BooleanField(verbose_name=_('By checking this box, I attest that I am over the age of 18 years old'))
     data_use_check = \
-        models.BooleanField(verbose_name="By checking this box, I agree that my responses during the task can be "
-                                         "used as part of this research project.")
+        models.BooleanField(verbose_name=_("By checking this box, I agree that my responses during the task can be "
+                                           "used as part of this research project."))
 
     def clean(self):
         if not (self.age_check and self.data_use_check):

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-03 23:39+0000\n"
+"POT-Creation-Date: 2015-02-18 18:36+0000\n"
 "PO-Revision-Date: 2015-02-03 16:39-0700\n"
 "Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
@@ -31,7 +31,7 @@ msgstr "نعم"
 msgid "Legible"
 msgstr "مقروء/ واضح المعنى"
 
-#: interface/forms.py:25 interface/views.py:64 interface/views.py:74
+#: interface/forms.py:25 interface/views.py:68 interface/views.py:78
 msgid "Guess"
 msgstr "خمن/ إحزر"
 
@@ -213,15 +213,15 @@ msgstr "رمز"
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
-#: interface/views.py:40
+#: interface/views.py:44
 msgid "POS Annotation saved correctly."
 msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:94
+#: interface/views.py:98
 msgid "Rephrase Annotation saved correctly."
 msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:117 interface/views.py:127
+#: interface/views.py:121 interface/views.py:131
 msgid "Reprhase"
 msgstr "أعد صياغة"
 
@@ -330,7 +330,7 @@ msgstr "إبدأ"
 msgid "Maximum of 18 tasks completed."
 msgstr "الحد الأقصى للواجبات \"18\" قد إنتهى‪.‬ "
 
-#: interface/templates/landing.html:9
+#: interface/templates/landing.html:10
 msgid ""
 "You have completed the maximum number of 18 tasks.  There are no further "
 "tasks to complete.  Thank you for your great participation!"
@@ -338,41 +338,151 @@ msgstr ""
 "لقد قمت من الإنتهاء للحد الأقصى من الواجبات والبالغ 18 واجب. لايوجد أي "
 "واجبات أخرى بعد ذلك. شكرا جزيلا لمشاركتك العظيمة معنا."
 
-#: iraqiSpeakerVerifiers/models.py:13
+#: iraqiSpeakerVerifiers/models.py:12
 msgid "Baghdad is divided into two major halves. What are they?"
 msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
-#: iraqiSpeakerVerifiers/models.py:16
+#: iraqiSpeakerVerifiers/models.py:15
 msgid ""
 "what are the common nicknames for the following Iraqi Names (Nickname starts "
 "with Abu): Ali,Hussein and Mohammed?"
 msgstr ""
 "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
 
-#: iraqiSpeakerVerifiers/models.py:19
+#: iraqiSpeakerVerifiers/models.py:18
 msgid "What's the two favorite games in almost all Iraqi coffee shops?"
 msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
 
-#: iraqiSpeakerVerifiers/models.py:22
+#: iraqiSpeakerVerifiers/models.py:21
 msgid ""
 "Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
 "but food"
 msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
 
-#: iraqiSpeakerVerifiers/models.py:25
+#: iraqiSpeakerVerifiers/models.py:24
 msgid "What's the most popular type of bread in Iraq?"
 msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
 
-#: iraqiSpeakerVerifiers/models.py:27
+#: iraqiSpeakerVerifiers/models.py:26
 msgid "What's the most popular sport in Iraq?"
 msgstr "ماهي أكثر رياضة معروفة في العراق؟"
 
-#: iraqiSpeakerVerifiers/models.py:29
+#: iraqiSpeakerVerifiers/models.py:28
 msgid ""
 "Complete the following well-known Iraqi proverb: Those who don't know how to "
 "dance always say the floor is _______."
 msgstr ""
 "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
+
+#: iraqiSpeakerVerifiers/models.py:40
+msgid "By checking this box, I attest that I am over the age of 18 years old"
+msgstr "بعد وضع علامة صح على هذا الصندوق. أنا أتعهد بأني أبلغ من العمر 18 سنة أو أكبر."
+
+#: iraqiSpeakerVerifiers/models.py:42
+msgid ""
+"By checking this box, I agree that my responses during the task can be used "
+"as part of this research project."
+msgstr "بعد وضع علامة صح على هذا الصندوق. أنا أوافق على إستخدام إجاباتي لغرض البحث الخاص ببرنامج الترجمة."
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:8
+msgid "A BOLT Study Consent Verification"
+msgstr "إستمارة موافقة"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:14
+msgid ""
+"\n"
+"                This study involves research on developing a system for\n"
+"                automated translation between Iraqi Arabic and English.\n"
+"\n"
+"        "
+msgstr ""
+"\n"
+"هذه الدراسة تتضمن بحث في تطوير يرنامج آلي للترجمة بين اللغة الأنكليزية "
+"والعربية العراقية\n"
+"        "
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:19
+msgid ""
+"\n"
+"                The purpose of this study is to collect data from Iraqi "
+"Arabic\n"
+"                speakers in response to simple questions about a set of "
+"Iraqi\n"
+"                Arabic sentences.  The answers to these questions will be "
+"used\n"
+"                to improve the automatic translation system.\n"
+"        "
+msgstr ""
+"\n"
+"الغرض من هذه الدراسة هو لجمع المعلومات من متحدثين باللغة العربية/ اللهجة "
+"العراقية تحديدا وذلك من خلال الرد على أسئلة سهلة حول مجموعة من الجمل العربية "
+"باللهجة العراقية. الأجوبة لهذه الأسئلة ستسخدم لتطوير برنامج الترجمة الآلي.\n"
+"        "
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:25
+msgid ""
+"\n"
+"                The task involves filling out a series of simple web forms "
+"for\n"
+"                an accompanying set of 10 sentences; each web form contains "
+"5\n"
+"                questions, and there are 2 forms for each question (for a "
+"total\n"
+"                of 20 forms to complete the task).\n"
+"        "
+msgstr ""
+"\n"
+"الواجب سيتضمن تعبئة عدد من الإستمارات الألكترونية (عن طريق الأنترنت) لمجموعة "
+"متكونة من عشر جمل.كل إستمارة ألكترونية ستحتوي على خمسة أسئلة. هناك "
+"إستمارتين  لكل سؤال (المجموع الكلي سيكون عشرون إستمارة لتكملة الواجب)\n"
+"        "
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:31
+msgid ""
+"\n"
+"                It is estimated that the task takes about 10-15 minutes to\n"
+"                complete.\n"
+"        "
+msgstr ""
+"\n"
+"الوقت المقدر لإنهاء الواجب هو 10 أو 15 دقيقة.\n"
+"        "
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:35
+msgid ""
+"\n"
+"                Once the task is complete, you will be provided with a code "
+"to\n"
+"                submit to your Amazon Mechanical Turk account to indicate "
+"you\n"
+"                complete the task. Pending review of your responses, you\n"
+"                will be credited $3.00 (US currency) to your Amazon\n"
+"                Mechanical Turk account.  You have the option to repeat the\n"
+"                task up to 18 times.\n"
+"        "
+msgstr ""
+"\n"
+"حالما يتم الإنتهاء من الواجب..سيتم تزويدك برقم خاص لكي تقدمه الى حسابك الخاص "
+"في أمازون ميكانيكال ترك والذي سيثبت بأنك قد إنتهيت من الواجب. سيكون هناك "
+"مراجعة للأجوبة المقدمة من حضراتكم, بعدها ستحصلون على مبلغ 3 دولارات أمريكي "
+"لكل واجب تضاف الى حساب الأمازون ميكانيكال ترك. لديك الخيار لإعادة المهمة لحد "
+"الوصول إلى 18 محاولة (مجموع 18 واجب).\n"
+"        "
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:43
+msgid ""
+"\n"
+"                Please read the following statements and check the boxes if "
+"you\n"
+"                agree. Both boxes must be checked to proceed.\n"
+"        "
+msgstr ""
+"\n"
+"رجاءا..إقرأ الجمل التالية وضع علامة صح على الصندوق المرفق مع الجملة في حال "
+"الموافقة يجب وضع علامة صح على كلا الصندوقين لغرض المشاركة"
+"يجب أن تقوم بوضع علامة صح على الصندوقين قبل الوصول الى المرحلة القادمة."
+"\n"
+"        "
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
 msgid "speaker verification"
