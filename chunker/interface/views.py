@@ -17,7 +17,7 @@ from iraqiSpeakerVerifiers.models import SpeakerVerification
 
 def instructions(request):
     # generate new task id for each task during the session
-    if 'finis_screen_seen' in request.session and request.session['finish_screen_seen']:
+    if 'finish_screen_seen' in request.session and request.session['finish_screen_seen']:
         request.session['user_code'] = uuid4().hex
 
     return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',}))
