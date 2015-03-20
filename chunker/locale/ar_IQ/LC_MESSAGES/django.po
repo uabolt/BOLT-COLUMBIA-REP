@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-18 18:36+0000\n"
-"PO-Revision-Date: 2015-02-03 16:39-0700\n"
-"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
+"PO-Revision-Date: 2015-03-20 10:13-0700\n"
+"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: interface/forms.py:18 interface/models.py:32
 msgid "No"
@@ -376,13 +376,17 @@ msgstr ""
 
 #: iraqiSpeakerVerifiers/models.py:40
 msgid "By checking this box, I attest that I am over the age of 18 years old"
-msgstr "بعد وضع علامة صح على هذا الصندوق. أنا أتعهد بأني أبلغ من العمر 18 سنة أو أكبر."
+msgstr ""
+"بعد وضع علامة صح على هذا الصندوق. أنا أتعهد بأني أبلغ من العمر 18 سنة أو "
+"أكبر."
 
 #: iraqiSpeakerVerifiers/models.py:42
 msgid ""
 "By checking this box, I agree that my responses during the task can be used "
 "as part of this research project."
-msgstr "بعد وضع علامة صح على هذا الصندوق. أنا أوافق على إستخدام إجاباتي لغرض البحث الخاص ببرنامج الترجمة."
+msgstr ""
+"بعد وضع علامة صح على هذا الصندوق. أنا أوافق على إستخدام إجاباتي لغرض البحث "
+"الخاص ببرنامج الترجمة."
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:8
 msgid "A BOLT Study Consent Verification"
@@ -479,9 +483,8 @@ msgid ""
 msgstr ""
 "\n"
 "رجاءا..إقرأ الجمل التالية وضع علامة صح على الصندوق المرفق مع الجملة في حال "
-"الموافقة يجب وضع علامة صح على كلا الصندوقين لغرض المشاركة"
-"يجب أن تقوم بوضع علامة صح على الصندوقين قبل الوصول الى المرحلة القادمة."
-"\n"
+"الموافقة يجب وضع علامة صح على كلا الصندوقين لغرض المشاركةيجب أن تقوم بوضع "
+"علامة صح على الصندوقين قبل الوصول الى المرحلة القادمة.\n"
 "        "
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
@@ -491,8 +494,8 @@ msgstr "المتحدث التحقق"
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
 msgid "Test for Native Iraqi Arabic Speakers"
 msgstr "إختبار لمعرفة المتحدثين باللهجة العراقية العربية"
-# msgstr "التأكيد العربية رئيس العراقي"
 
+# msgstr "التأكيد العربية رئيس العراقي"
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
 #, fuzzy
 msgid "speaker verification: failure"
