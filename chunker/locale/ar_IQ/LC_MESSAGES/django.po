@@ -489,8 +489,9 @@ msgid "speaker verification"
 msgstr "المتحدث التحقق"
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
-msgid "UA BOLT Iraqi Arabic Speaker Verification"
-msgstr "التأكيد العربية رئيس العراقي"
+msgid "Test for Native Iraqi Arabic Speakers"
+msgstr "إختبار لمعرفة المتحدثين باللهجة العراقية العربية"
+# msgstr "التأكيد العربية رئيس العراقي"
 
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7
 #, fuzzy
