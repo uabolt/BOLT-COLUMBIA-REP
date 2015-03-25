@@ -18,6 +18,7 @@ from iraqiSpeakerVerifiers.models import SpeakerVerification
 from iraqiSpeakerVerifiers.models import ConsentVerification
 
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 
 class SpeakerVerificationCreate(CreateView):
@@ -45,7 +46,11 @@ class SpeakerVerificationCreate(CreateView):
 
         ModelFormMixin.success_url = reverse(test_result)
 
-        return super(SpeakerVerificationCreate, self).form_valid(form)
+        # super(SpeakerVerificationCreate, self).form_valid(form)
+        if form.is_valid():
+            return HttpResponseRedirect(reverse(test_result))
+        else:
+            return HttpResponseRedirect(reverse(test_failed))
 
 
 class SpeakerVerificationUpdate(UpdateView):
