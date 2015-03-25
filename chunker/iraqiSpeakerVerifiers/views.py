@@ -91,7 +91,7 @@ def is_correct_answer(form):
 
             num_correct += 1
 
-    return num_correct / (len(given_answers) * 1.) > 0.85
+    return num_correct / (len(given_answers) * 1.) > 0.50
 
 class ConsentVerificationCreate(CreateView):
     model = ConsentVerification
