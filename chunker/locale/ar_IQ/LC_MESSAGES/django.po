@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-18 18:36+0000\n"
-"PO-Revision-Date: 2015-03-20 10:13-0700\n"
-"Last-Translator: Enrique Noriega <enrique@aguijon.com.mx>\n"
+"POT-Creation-Date: 2015-03-26 18:55+0000\n"
+"PO-Revision-Date: 2015-03-26 11:55-0700\n"
+"Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.4\n"
 
 #: interface/forms.py:18 interface/models.py:32
 msgid "No"
@@ -392,7 +392,7 @@ msgstr ""
 msgid "A BOLT Study Consent Verification"
 msgstr "إستمارة موافقة"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:14
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:15
 msgid ""
 "\n"
 "                This study involves research on developing a system for\n"
@@ -405,7 +405,7 @@ msgstr ""
 "والعربية العراقية\n"
 "        "
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:19
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:20
 msgid ""
 "\n"
 "                The purpose of this study is to collect data from Iraqi "
@@ -423,7 +423,7 @@ msgstr ""
 "باللهجة العراقية. الأجوبة لهذه الأسئلة ستسخدم لتطوير برنامج الترجمة الآلي.\n"
 "        "
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:25
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:26
 msgid ""
 "\n"
 "                The task involves filling out a series of simple web forms "
@@ -441,7 +441,7 @@ msgstr ""
 "إستمارتين  لكل سؤال (المجموع الكلي سيكون عشرون إستمارة لتكملة الواجب)\n"
 "        "
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:31
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:32
 msgid ""
 "\n"
 "                It is estimated that the task takes about 10-15 minutes to\n"
@@ -452,7 +452,7 @@ msgstr ""
 "الوقت المقدر لإنهاء الواجب هو 10 أو 15 دقيقة.\n"
 "        "
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:35
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:36
 msgid ""
 "\n"
 "                Once the task is complete, you will be provided with a code "
@@ -473,7 +473,7 @@ msgstr ""
 "الوصول إلى 18 محاولة (مجموع 18 واجب).\n"
 "        "
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:43
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/consentverification_form.html:44
 msgid ""
 "\n"
 "                Please read the following statements and check the boxes if "
@@ -494,6 +494,10 @@ msgstr "المتحدث التحقق"
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
 msgid "Test for Native Iraqi Arabic Speakers"
 msgstr "إختبار لمعرفة المتحدثين باللهجة العراقية العربية"
+
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:10
+msgid "Please enter you answers strictly in Iraqi Arabic text"
+msgstr "الأجابة على الأسئلة تكون باللهجة العراقية العربية حصرا"
 
 # msgstr "التأكيد العربية رئيس العراقي"
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/testFailed.html:7

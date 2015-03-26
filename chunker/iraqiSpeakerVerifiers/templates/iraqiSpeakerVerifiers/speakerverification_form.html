@@ -7,11 +7,13 @@
 {% block content %}
 <center><h1>{% trans "Test for Native Iraqi Arabic Speakers" %}</h1></center>
 
+<p>{% trans "Please enter you answers strictly in Iraqi Arabic text" %}</p>
+
 <form role="form" action="" method="post">{% csrf_token %}
 
    <h1 >{{ title }}</h1>
    <div {% if LANGUAGE_BIDI %} style="direction:rtl;text-align:right" {% endif %}>
-      {{ form.as_p }} 
+      {{ form.as_p }}
       <input type="submit" value="Submit" />
    </div>
 
