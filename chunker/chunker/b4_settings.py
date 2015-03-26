@@ -20,7 +20,7 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'uabolt',
+#        'NAME': 'uabolt', # USE ANOTHER DATABASE
         'USER': 'enoriega',
         'PASSWORD': 'w7PxNoAojIWsDA',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
