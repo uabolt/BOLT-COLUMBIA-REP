@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
@@ -28,11 +28,16 @@ class SpeakerVerification(models.Model):
     answer7 = models.CharField(verbose_name=_("Complete the following well-known Iraqi proverb: Those who don't know "
                                               "how to dance always say the floor is _______."), max_length=200)
 
+    session_key = models.CharField(verbose_name=_('Session key'), max_length=80, default='anonymous-worker', null=False, blank=False)
+
+    time = models.DateTimeField(auto_now_add=True)
+    time.editable = True
+
     def get_absolute_url(self):
         return reverse('verification_done')
 
-    #def __str__(self):
-    #    return "user code: "# + self.user_code
+    def __str__(self):
+        return "user code: " + self.session_key
 
 
 class ConsentVerification(models.Model):
@@ -41,6 +46,8 @@ class ConsentVerification(models.Model):
     data_use_check = \
         models.BooleanField(verbose_name=_("By checking this box, I agree that my responses during the task can be "
                                            "used as part of this research project."))
+
+    time = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
         if not (self.age_check and self.data_use_check):

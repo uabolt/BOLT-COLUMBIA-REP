@@ -25,6 +25,30 @@ class SpeakerVerificationCreate(CreateView):
     model = SpeakerVerification
     fields = ['answer1', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6', 'answer7']
 
+    def get(self, request):
+        ''' GET handler - here we check if the same user, identified by its session id,
+            has already taken the test and direct him appropriately '''
+
+        key = request.session.session_key
+
+        qs = SpeakerVerification.objects.filter(session_key = key)
+
+        # If there is no record in the queryset, display the form
+        if qs.count() == 0:
+            return super(SpeakerVerificationCreate, self).get(request)
+        # If there is one record
+        elif qs.count() == 1:
+            record = qs[0]
+
+            if record.is_passing:
+                test_result = test_passed
+            else:
+                test_result = test_failed
+        else:
+            assert(False, "There shouln't be more than a single test for a given user")
+
+        return HttpResponseRedirect(reverse(test_result))
+
     def form_valid(self, form):
         """
         Have valid input, now check whether answers are right.
@@ -32,6 +56,7 @@ class SpeakerVerificationCreate(CreateView):
         If the submission succeeds, we take the user to a page with a token
         to give to AMTurk, and with a link to the rephrase experiment.
         """
+
         if is_correct_answer(form):
             form.instance.is_passing = True
             test_result = test_passed
@@ -44,7 +69,11 @@ class SpeakerVerificationCreate(CreateView):
         # set a flag so we know when a new task is initiated in this session
         self.request.session['finish_screen_seen'] = False
 
+        # Store which browser took this test
+        form.instance.session_key = self.request.session.session_key
+
         super(SpeakerVerificationCreate, self).form_valid(form)
+
         if form.is_valid():
             return HttpResponseRedirect(reverse(test_result))
         else:
