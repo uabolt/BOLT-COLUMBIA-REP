@@ -44,8 +44,6 @@ class SpeakerVerificationCreate(CreateView):
         # set a flag so we know when a new task is initiated in this session
         self.request.session['finish_screen_seen'] = False
 
-        ModelFormMixin.success_url = reverse(test_result)
-
         # super(SpeakerVerificationCreate, self).form_valid(form)
         if form.is_valid():
             return HttpResponseRedirect(reverse(test_result))

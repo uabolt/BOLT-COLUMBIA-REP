@@ -31,8 +31,8 @@ class SpeakerVerification(models.Model):
     def get_absolute_url(self):
         return reverse('verification_done')
 
-    def __str__(self):
-        return "user code: " + self.user_code
+    #def __str__(self):
+    #    return "user code: "# + self.user_code
 
 
 class ConsentVerification(models.Model):
