@@ -4,9 +4,35 @@ from django.http import HttpResponse, HttpResponseRedirect
 from os.path import basename, splitext
 from interface.models import DatasetAssignment as DSA
 from interface.models import *
+from iraqiSpeakerVerifiers.models import *
 import glob, random, os, shutil, re, pdb, chunker
 
 pattern = re.compile(r'^/admin/?')
+
+class VerifyTestTaken:
+
+    def process_request(self, request):
+
+        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
+
+            key = request.session.session_key
+
+            qs = SpeakerVerification.objects.filter(session_key = key)
+
+            # If there is no record in the queryset, display the form
+            if qs.count() == 0:
+                return HttpResponseRedirect(reverse('root'))
+            # If there is one record
+            elif qs.count() == 1:
+                record = qs[0]
+
+                if record.is_passing:
+                    return None
+                else:
+                    return HttpResponseRedirect(reverse('root'))
+            else:
+                assert(False, "There shouln't be more than a single test for a given user")
+
 
 class AssignDataset:
 
