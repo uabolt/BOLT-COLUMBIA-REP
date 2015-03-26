@@ -23,7 +23,7 @@ from django.http import HttpResponseRedirect
 
 class SpeakerVerificationCreate(CreateView):
     model = SpeakerVerification
-    fields = ['answer1', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6', 'answer7']
+    fields = ['amt_id', 'answer1', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6', 'answer7']
 
     def get(self, request):
         ''' GET handler - here we check if the same user, identified by its session id,

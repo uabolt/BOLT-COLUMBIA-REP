@@ -33,11 +33,13 @@ class SpeakerVerification(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     time.editable = True
 
+    amt_id = models.CharField(verbose_name=_('Paste your AMT Worker ID here'), max_length=80, null=True, blank=True)
+
     def get_absolute_url(self):
         return reverse('verification_done')
 
     def __str__(self):
-        return "user code: " + self.session_key
+        return "AMT ID: %s \t Session key: %s" % (self.amt_id, self.session_key)
 
 
 class ConsentVerification(models.Model):
