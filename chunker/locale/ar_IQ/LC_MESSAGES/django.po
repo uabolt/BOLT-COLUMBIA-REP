@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-26 18:55+0000\n"
-"PO-Revision-Date: 2015-03-26 11:55-0700\n"
+"POT-Creation-Date: 2015-03-27 17:34+0000\n"
+"PO-Revision-Date: 2015-03-27 10:35-0700\n"
 "Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
@@ -374,13 +374,21 @@ msgid ""
 msgstr ""
 "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
 
-#: iraqiSpeakerVerifiers/models.py:40
+#: iraqiSpeakerVerifiers/models.py:31
+msgid "Session key"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:36
+msgid "Paste your AMT Worker ID here"
+msgstr "رجاءا..قم بكتابة \"لصق\" رقم الأمازون الخاص بالواجب هنا"
+
+#: iraqiSpeakerVerifiers/models.py:47
 msgid "By checking this box, I attest that I am over the age of 18 years old"
 msgstr ""
 "بعد وضع علامة صح على هذا الصندوق. أنا أتعهد بأني أبلغ من العمر 18 سنة أو "
 "أكبر."
 
-#: iraqiSpeakerVerifiers/models.py:42
+#: iraqiSpeakerVerifiers/models.py:49
 msgid ""
 "By checking this box, I agree that my responses during the task can be used "
 "as part of this research project."
