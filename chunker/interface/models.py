@@ -50,7 +50,7 @@ class POSAnnotation(models.Model):
     continue_process = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return '%s - %s' % (self.masked, self.date)
+        return '%s - %s - %s' % (self.session_id, self.masked, self.date)
 
 class RephAnnotation(models.Model):
     '''Class that represents an annotation for the replica of AMU's experiment in IA'''
@@ -87,7 +87,7 @@ class RephAnnotation(models.Model):
     global_rephrase = models.CharField(blank=True, max_length=255) # Rephrased sentences
 
     def __unicode__(self):
-        return u'%s - %s' % (self.segmented, self.date)
+        return u'%s - %s - %s' % (self.session_id, self.segmented, self.date)
 
 class POSTag(models.Model):
 
