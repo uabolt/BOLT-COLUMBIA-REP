@@ -17,8 +17,8 @@ from iraqiSpeakerVerifiers.models import SpeakerVerification
 
 def instructions(request):
     # generate new task id for each task during the session
-    if 'finish_screen_seen' in request.session and request.session['finish_screen_seen']:
-        request.session['user_code'] = uuid4().hex
+    # if 'finish_screen_seen' in request.session and request.session['finish_screen_seen']:
+    #     request.session['user_code'] = uuid4().hex
 
     return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',}))
 
@@ -39,7 +39,7 @@ def pos_annotation(request):
         form_annotation = POSAnnotationForm(request.POST)
 
         if form_annotation.is_valid():
-
+            form_annotation.instance.user_code = user_code # Added the user code
             form_annotation.save()
             messages.success(request, _('POS Annotation saved correctly.'))
 
@@ -94,6 +94,7 @@ def reph_annotation(request):
 
         form = RephAnnotationForm(request.POST)
         if form.is_valid():
+            form.instance.user_code = user_code # Added the user code
             form.save()
             messages.success(request, _('Rephrase Annotation saved correctly.'))
 

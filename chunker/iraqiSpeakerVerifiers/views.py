@@ -71,6 +71,7 @@ class SpeakerVerificationCreate(CreateView):
 
         # Store which browser took this test
         form.instance.session_key = self.request.session.session_key
+        form.instance.user_code = self.request.session['user_code']
 
         super(SpeakerVerificationCreate, self).form_valid(form)
 
@@ -92,6 +93,9 @@ def is_correct_answer(form):
     :return: True if the proportion correct is greater than 0.85
     :rtype: bool
     """
+
+    return True
+    
     given_answers = (
         form.instance.answer1, form.instance.answer2, form.instance.answer3,
         form.instance.answer4, form.instance.answer5, form.instance.answer6,
@@ -132,6 +136,7 @@ class ConsentVerificationCreate(CreateView):
     def form_valid(self, form):
         # pass user_code in the session, so that rephrase experiment can use it
         self.request.session['user_code'] = form.instance.user_code
+        form.instance.session_key = self.request.session.session_key
 
         return super(ConsentVerificationCreate, self).form_valid(form)
 

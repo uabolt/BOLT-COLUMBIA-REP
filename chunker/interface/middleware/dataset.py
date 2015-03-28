@@ -31,7 +31,7 @@ class VerifyTestTaken:
                 else:
                     return HttpResponseRedirect(reverse('root'))
             else:
-                assert(False, "There shouln't be more than a single test for a given user")
+                raise  Exception("There shouln't be more than a single test for a given user")
 
 
 class AssignDataset:

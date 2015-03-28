@@ -35,6 +35,8 @@ class SpeakerVerification(models.Model):
 
     amt_id = models.CharField(verbose_name=_('Paste your AMT Worker ID here'), max_length=80, null=True, blank=True)
 
+    user_code = models.CharField(max_length=80, null=False, blank=False, editable=False)
+
     def get_absolute_url(self):
         return reverse('verification_done')
 
@@ -43,7 +45,10 @@ class SpeakerVerification(models.Model):
 
 
 class ConsentVerification(models.Model):
+
     user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
+    session_key = models.CharField(max_length=80, null=False, blank=False, editable=False)
+
     age_check = models.BooleanField(verbose_name=_('By checking this box, I attest that I am over the age of 18 years old'))
     data_use_check = \
         models.BooleanField(verbose_name=_("By checking this box, I agree that my responses during the task can be "
