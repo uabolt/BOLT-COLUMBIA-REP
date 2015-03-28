@@ -50,7 +50,7 @@ class POSAnnotation(models.Model):
     continue_process = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return '%s - %s - %s' % (self.session_id, self.masked, self.date)
+        return 'Survey code: %s - %s - %s' % (self.user_code, self.masked, self.date)
 
 class RephAnnotation(models.Model):
     '''Class that represents an annotation for the replica of AMU's experiment in IA'''
@@ -87,7 +87,7 @@ class RephAnnotation(models.Model):
     global_rephrase = models.CharField(blank=True, max_length=255) # Rephrased sentences
 
     def __unicode__(self):
-        return u'%s - %s - %s' % (self.session_id, self.segmented, self.date)
+        return u'Survey code: %s - %s - %s' % (self.user_code, self.segmented, self.date)
 
 class POSTag(models.Model):
 
@@ -95,8 +95,8 @@ class POSTag(models.Model):
         ('', '-----'),
         ('C', _('Coordinating conjunction')),
         ('D', _('Cardinal number')),
-        #('DT', _('Determiner')),
-        #('EX', _('Existential there')),
+        ('DT', _('Determiner')),
+        ('EX', _('Existential there')),
         ('FW', _('Foreign word')),
         ('IN', _('Preposition or subordinating conjunction')),
         ('JJ', _('Adjective')),
@@ -104,9 +104,9 @@ class POSTag(models.Model):
         #('JJS', _('Adjective, superlative')),
         ('MD', _('Modal')),
         ('NN', _('Noun, singular or mass')),
-        #('NNS', _('Noun, plural')),
+        ('NNS', _('Noun, plural')),
         ('NNP', _('Proper noun, singular')),
-        #('NNPS', _('Proper noun, plural')),
+        ('NNPS', _('Proper noun, plural')),
         ('PRP', _('Personal pronoun')),
         ('PRN', _('Pronoun')),
         ('7KQ', _('7 Key Questions')),
@@ -120,7 +120,7 @@ class POSTag(models.Model):
         #('TO', _('to')),
         #('UH', _('Interjection')),
         ('VB', _('Verb, base form')),
-        #('VBD', _('Verb, past tense')),
+        ('VBD', _('Verb, past tense')),
         #('VBG', _('Verb, gerund or present participle')),
         #('VBN', _('Verb, past participle')),
         #('VBP', _('Verb, non-3rd person singular present')),
