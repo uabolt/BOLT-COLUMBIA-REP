@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1> AMT HIT list </h1>
+  <h5> The latest HIT appears first </h5>
+  <br />
+
+  <center>
+    <table class="table">
+      <tr>
+        <th>Survery code</th>
+        <th> POS link </th>
+        <th> Reph link </th>
+      </tr>
+      {% for code in user_codes %}
+        <tr>
+          <td>
+            {{ code }}
+          </td>
+          <td>
+            <a href="{% url 'hit-pos-list' code %}">POS Annotations</a>
+          </td>
+          <td>
+            <a href="{% url 'hit-reph-list' code %}">Reph Annotations</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </center>
+{% endblock content %}
