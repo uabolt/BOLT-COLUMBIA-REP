@@ -17,7 +17,7 @@ class VerifyTestTaken:
 
             key = request.session.session_key
 
-            qs = SpeakerVerification.objects.filter(session_key = key)
+            qs = MultipleChoiceVerification.objects.filter(session_key = key)
 
             # If there is no record in the queryset, display the form
             if qs.count() == 0:

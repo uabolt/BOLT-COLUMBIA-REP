@@ -6,6 +6,58 @@ from django.core.exceptions import ValidationError
 import uuid
 
 
+class MultipleChoiceVerification(models.Model):
+    ''' This class implements the new test provided by Mudhafar '''
+
+    is_passing = models.BooleanField(default=False)
+
+    time = models.DateTimeField(auto_now_add=True)
+    time.editable = True  # This is to allow us to see the time in the admin interface
+    user_code = models.CharField(max_length=80, null=False, blank=False, editable=False)
+    session_key = models.CharField(verbose_name=_('Session key'), max_length=80, default='anonymous-worker', null=False, blank=False)
+
+    amt_id = models.CharField(verbose_name=_('Paste your AMT Worker ID here'), max_length=80, null=True, blank=True)
+
+    choices1 = (
+        (2, _('Mansour and Kadhimyia')),
+        (1, _('Karkh and Risafa')),
+        (3, _('Shula and Sadr City')),
+    )
+
+    choices2 = (
+        (3, _('Volleyball')),
+        (2, _('Basketball')),
+        (1, _('Soccer')),
+    )
+
+    choices3 = (
+        (2, _('French bread')),
+        (3, _('Electric oven bread')),
+        (1, _('Brick oven bread')),
+    )
+
+    choices4 = (
+        (2, _('Dog')),
+        (1, _('Cat')),
+        (3, _('Snake')),
+    )
+
+    answer1 = models.PositiveSmallIntegerField(verbose_name= _('What are the two major sides of Baghdad city?'), choices=choices1)
+    answer2 = models.PositiveSmallIntegerField(verbose_name= _('What\'s the most favorite sport in Iraq?'), choices=choices2)
+    answer3 = models.PositiveSmallIntegerField(verbose_name= _('What\'s the most common type of bread in Iraq?'), choices=choices3)
+    answer4 = models.PositiveSmallIntegerField(verbose_name= _('The word "Bazzon" in Iraqi refers to what animal?'), choices=choices4)
+
+    def get_answers(self):
+        ''' Returns a list of selected choices '''
+
+        return [self.answer1, self.answer2, self.answer3, self.answer4]
+
+    def get_absolute_url(self):
+        return reverse('verification_done')
+
+    def __str__(self):
+        return "AMT ID: %s \t Session key: %s" % (self.amt_id, self.session_key)
+
 class SpeakerVerification(models.Model):
     is_passing = models.BooleanField(default=False)
 

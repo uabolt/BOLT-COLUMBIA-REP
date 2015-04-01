@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic English Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-27 17:34+0000\n"
-"PO-Revision-Date: 2015-03-27 10:35-0700\n"
+"POT-Creation-Date: 2015-04-01 23:16+0000\n"
+"PO-Revision-Date: 2015-04-01 16:18-0700\n"
 "Last-Translator: Enrique Noriega <enoriega@email.arizona.edu>\n"
 "Language-Team: \n"
 "Language: ar_IQ\n"
@@ -161,6 +161,14 @@ msgstr "أداة ربط بالتزامن"
 msgid "Cardinal number"
 msgstr "العدد الأصلي"
 
+#: interface/models.py:98
+msgid "Determiner"
+msgstr "الأضافة"
+
+#: interface/models.py:99
+msgid "Existential there"
+msgstr "هناك الظاهرة"
+
 #: interface/models.py:100
 msgid "Foreign word"
 msgstr "كلمة أجنبية"
@@ -181,9 +189,17 @@ msgstr "شكلي"
 msgid "Noun, singular or mass"
 msgstr "إسم, مفرد أو جمع"
 
+#: interface/models.py:107
+msgid "Noun, plural"
+msgstr "إسم, جمع"
+
 #: interface/models.py:108
 msgid "Proper noun, singular"
 msgstr "إسم صحيح, مفرد"
+
+#: interface/models.py:109
+msgid "Proper noun, plural"
+msgstr "إسم صحيح, جملة"
 
 #: interface/models.py:110
 msgid "Personal pronoun"
@@ -213,15 +229,19 @@ msgstr "رمز"
 msgid "Verb, base form"
 msgstr "فعل رئيسي"
 
+#: interface/models.py:123
+msgid "Verb, past tense"
+msgstr "فعل ماضي"
+
 #: interface/views.py:44
 msgid "POS Annotation saved correctly."
 msgstr "جزء من الكلام.. حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:98
+#: interface/views.py:99
 msgid "Rephrase Annotation saved correctly."
 msgstr "إعادة صياغة..حفظ الملاحظات بصورة صحيحة"
 
-#: interface/views.py:121 interface/views.py:131
+#: interface/views.py:122 interface/views.py:132
 msgid "Reprhase"
 msgstr "أعد صياغة"
 
@@ -338,57 +358,121 @@ msgstr ""
 "لقد قمت من الإنتهاء للحد الأقصى من الواجبات والبالغ 18 واجب. لايوجد أي "
 "واجبات أخرى بعد ذلك. شكرا جزيلا لمشاركتك العظيمة معنا."
 
-#: iraqiSpeakerVerifiers/models.py:12
+#: iraqiSpeakerVerifiers/models.py:17 iraqiSpeakerVerifiers/models.py:83
+msgid "Session key"
+msgstr ""
+
+#: iraqiSpeakerVerifiers/models.py:19 iraqiSpeakerVerifiers/models.py:88
+msgid "Paste your AMT Worker ID here"
+msgstr "رجاءا..قم بكتابة \"لصق\" رقم الأمازون الخاص بالواجب هنا"
+
+#: iraqiSpeakerVerifiers/models.py:22
+msgid "Mansour and Kadhimyia"
+msgstr "المنصور والكاظمية"
+
+#: iraqiSpeakerVerifiers/models.py:23
+msgid "Karkh and Risafa"
+msgstr "الكرخ والرصافة"
+
+#: iraqiSpeakerVerifiers/models.py:24
+msgid "Shula and Sadr City"
+msgstr "لشعلة ومدينة الصدر"
+
+#: iraqiSpeakerVerifiers/models.py:28
+msgid "Volleyball"
+msgstr "كرة الطائرة"
+
+#: iraqiSpeakerVerifiers/models.py:29
+msgid "Basketball"
+msgstr "كرة السلة"
+
+#: iraqiSpeakerVerifiers/models.py:30
+msgid "Soccer"
+msgstr "كرة القدم"
+
+#: iraqiSpeakerVerifiers/models.py:34
+msgid "French bread"
+msgstr "الصمون الفرنسي"
+
+#: iraqiSpeakerVerifiers/models.py:35
+msgid "Electric oven bread"
+msgstr "الصمون الكهربائي"
+
+#: iraqiSpeakerVerifiers/models.py:36
+msgid "Brick oven bread"
+msgstr "الصمون الحجري"
+
+#: iraqiSpeakerVerifiers/models.py:40
+msgid "Dog"
+msgstr "كلب"
+
+#: iraqiSpeakerVerifiers/models.py:41
+msgid "Cat"
+msgstr "قطة"
+
+#: iraqiSpeakerVerifiers/models.py:42
+msgid "Snake"
+msgstr "أفعى"
+
+#: iraqiSpeakerVerifiers/models.py:45
+msgid "What are the two major sides of Baghdad city?"
+msgstr "تقسم بغداد الى جزئين رئيسيين. ماهما؟"
+
+#: iraqiSpeakerVerifiers/models.py:46
+msgid "What's the most favorite sport in Iraq?"
+msgstr "ماهي الرياضة الأكثر شعبية في العراق؟"
+
+#: iraqiSpeakerVerifiers/models.py:47
+msgid "What's the most common type of bread in Iraq?"
+msgstr "ماهو أشهر أنواع الصمون في العراق؟"
+
+#: iraqiSpeakerVerifiers/models.py:48
+msgid "The word \"Bazzon\" in Iraqi refers to what animal?"
+msgstr "كلمة \"بزونة\" باللهجة العراقية تشير الى أي حيوان؟"
+
+#: iraqiSpeakerVerifiers/models.py:64
 msgid "Baghdad is divided into two major halves. What are they?"
 msgstr "تنقسم بغداد الى قسمين رئيسيين؟ ماهما؟"
 
-#: iraqiSpeakerVerifiers/models.py:15
+#: iraqiSpeakerVerifiers/models.py:67
 msgid ""
 "what are the common nicknames for the following Iraqi Names (Nickname starts "
 "with Abu): Ali,Hussein and Mohammed?"
 msgstr ""
 "ماهي كنية الأسماء العراقية التالية (الكنية تبدأ بكلمة أبو) علي, حسين و محمد؟"
 
-#: iraqiSpeakerVerifiers/models.py:18
+#: iraqiSpeakerVerifiers/models.py:70
 msgid "What's the two favorite games in almost all Iraqi coffee shops?"
 msgstr "ماهي أهم لعبتين في المقاهي العراقية الشعبية؟"
 
-#: iraqiSpeakerVerifiers/models.py:21
+#: iraqiSpeakerVerifiers/models.py:73
 msgid ""
 "Complete the following well-known Iraqi proverb: When hungry ___ see nothing "
 "but food"
 msgstr "أكمل الأمثال الشعبية العرا قية التالية:عند البطون تعمى ___________"
 
-#: iraqiSpeakerVerifiers/models.py:24
+#: iraqiSpeakerVerifiers/models.py:76
 msgid "What's the most popular type of bread in Iraq?"
 msgstr "ماهو أكثر أنواع الصمون إستهلاكا في العراق؟"
 
-#: iraqiSpeakerVerifiers/models.py:26
+#: iraqiSpeakerVerifiers/models.py:78
 msgid "What's the most popular sport in Iraq?"
 msgstr "ماهي أكثر رياضة معروفة في العراق؟"
 
-#: iraqiSpeakerVerifiers/models.py:28
+#: iraqiSpeakerVerifiers/models.py:80
 msgid ""
 "Complete the following well-known Iraqi proverb: Those who don't know how to "
 "dance always say the floor is _______."
 msgstr ""
 "أكمل الأمثال الشعبية العراقية التالية:المايعرف يركص يكوا الكاع __________"
 
-#: iraqiSpeakerVerifiers/models.py:31
-msgid "Session key"
-msgstr ""
-
-#: iraqiSpeakerVerifiers/models.py:36
-msgid "Paste your AMT Worker ID here"
-msgstr "رجاءا..قم بكتابة \"لصق\" رقم الأمازون الخاص بالواجب هنا"
-
-#: iraqiSpeakerVerifiers/models.py:47
+#: iraqiSpeakerVerifiers/models.py:104
 msgid "By checking this box, I attest that I am over the age of 18 years old"
 msgstr ""
 "بعد وضع علامة صح على هذا الصندوق. أنا أتعهد بأني أبلغ من العمر 18 سنة أو "
 "أكبر."
 
-#: iraqiSpeakerVerifiers/models.py:49
+#: iraqiSpeakerVerifiers/models.py:106
 msgid ""
 "By checking this box, I agree that my responses during the task can be used "
 "as part of this research project."
@@ -495,15 +579,17 @@ msgstr ""
 "علامة صح على الصندوقين قبل الوصول الى المرحلة القادمة.\n"
 "        "
 
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/multiplechoiceverification_form.html:4
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:4
 msgid "speaker verification"
 msgstr "المتحدث التحقق"
 
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/multiplechoiceverification_form.html:8
 #: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:8
 msgid "Test for Native Iraqi Arabic Speakers"
 msgstr "إختبار لمعرفة المتحدثين باللهجة العراقية العربية"
 
-#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/speakerverification_form.html:10
+#: iraqiSpeakerVerifiers/templates/iraqiSpeakerVerifiers/multiplechoiceverification_form.html:10
 msgid "Please enter you answers strictly in Iraqi Arabic text"
 msgstr "الأجابة على الأسئلة تكون باللهجة العراقية العربية حصرا"
 
@@ -568,20 +654,8 @@ msgstr "لكي تكمل ماهو مطلوب."
 #~ msgid "What's the meaning of the word \"Hashash\" in Iraqi slang?"
 #~ msgstr "مامعنى كلمة حشاش باللهجة العراقية العامة؟"
 
-#~ msgid "Determiner"
-#~ msgstr "الأضافة"
-
-#~ msgid "Existential there"
-#~ msgstr "هناك الظاهرة"
-
 #~ msgid "Adjective, comparative"
 #~ msgstr "صفة, مقارنة"
-
-#~ msgid "Noun, plural"
-#~ msgstr "إسم, جمع"
-
-#~ msgid "Proper noun, plural"
-#~ msgstr "إسم صحيح, جملة"
 
 #~ msgid "Possessive pronoun"
 #~ msgstr "ضمير تملكي"
@@ -600,9 +674,6 @@ msgstr "لكي تكمل ماهو مطلوب."
 
 #~ msgid "Interjection"
 #~ msgstr "صيغة تعجب"
-
-#~ msgid "Verb, past tense"
-#~ msgstr "فعل ماضي"
 
 #~ msgid "Verb, gerund or present participle"
 #~ msgstr "فعل مضارع"
