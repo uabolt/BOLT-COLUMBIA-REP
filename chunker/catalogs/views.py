@@ -28,7 +28,7 @@ class HITListView(TemplateView):
         context = super(HITListView, self).get_context_data(**kwargs)
 
         # Retrieve the list of userc_codes
-        codes = [i[0] for i in SpeakerVerification.objects.order_by('-pk').values_list('user_code')]
+        codes = {i[0] for i in POSAnnotation.objects.order_by('-pk').values_list('user_code') if i[0] } # Unique list of user_codes
 
         # Add it to the template context
         context['user_codes'] = codes
