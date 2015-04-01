@@ -6,6 +6,7 @@ admin.autodiscover()
 import interface.urls
 import iraqiSpeakerVerifiers.urls
 import iraqiSpeakerVerifiers as verifier
+import catalogs.urls
 
 urlpatterns = patterns('',
     # Examples:
@@ -16,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^/?$', verifier.views.ConsentVerificationCreate.as_view(), name='root'),
     url(r'^annotations/', include(interface.urls)),
     url(r'^verify/', include(iraqiSpeakerVerifiers.urls)),
+    url(r'^catalogs/', include(catalogs.urls)),
     url(r'^admin/', include(admin.site.urls)),
 )

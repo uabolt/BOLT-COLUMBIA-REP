@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     'interface',
     'iraqiSpeakerVerifiers',
     'bootstrap_toolkit_bolt',
+    'catalogs',
 )
 
 MIDDLEWARE_CLASSES = (
