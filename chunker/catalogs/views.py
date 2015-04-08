@@ -4,6 +4,8 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.forms import ModelForm
 from interface.models import POSAnnotation, RephAnnotation
 from iraqiSpeakerVerifiers.models import SpeakerVerification
+from .utils import seems_legit_answers
+import chunker.settings as settings
 
 # Create your views here.
 class InterfaceListView(ListView):
@@ -27,11 +29,43 @@ class HITListView(TemplateView):
         # Perform the appropriate
         context = super(HITListView, self).get_context_data(**kwargs)
 
-        # Retrieve the list of userc_codes
-        codes = {i[0] for i in POSAnnotation.objects.order_by('-pk').values_list('user_code') if i[0] } # Unique list of user_codes
+        # Retrieve the list of userc_codes and order it by date in decreasing order
+        items = [i for i in POSAnnotation.objects.values('user_code', 'date', 'session_id').distinct() if i['user_code']] # Unique list of user_codes
+
+        items = reversed(sorted(items, key=lambda x: x['date']))
+
+        results = []
+
+        # Fetch metadata
+        for item in items:
+            code = item['user_code']
+            session_key = item['session_id']
+            date = item['date']
+
+            # Get the number of POS and REPH
+            pos = POSAnnotation.objects.filter(user_code = code)
+            reph = RephAnnotation.objects.filter(user_code = code)
+
+            npos = len(pos)
+            nreph= len(reph)
+
+            # If the number of annotations is equal to the task size for both datasets, set the flag
+            complete = npos == settings.TASK_SIZE and nreph == settings.TASK_SIZE
+
+            # This flag is on if the answers seem legit
+            seems_legit = seems_legit_answers(pos, reph)
+
+            # Get the AMT id for the code
+
+            try:
+                amt_id = SpeakerVerification.objects.get(session_key = session_key).amt_id
+            except Exception:
+                amt_id = "N/A"
+
+            results.append({'code':code, 'date':date, 'id':amt_id, 'complete':complete, 'legit':seems_legit})
 
         # Add it to the template context
-        context['user_codes'] = codes
+        context['items'] = results
 
         # Finish
         return context

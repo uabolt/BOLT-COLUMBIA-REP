@@ -9,19 +9,43 @@
     <table class="table">
       <tr>
         <th>Survery code</th>
+        <th> AMT ID </th>
+        <th> Date </th>
         <th> POS link </th>
         <th> Reph link </th>
+        <th> Status </th>
+        <th> Hint </th>
       </tr>
-      {% for code in user_codes %}
+      {% for i in items %}
         <tr>
           <td>
-            {{ code }}
+            {{ i.code }}
           </td>
           <td>
-            <a href="{% url 'hit-pos-list' code %}">POS Annotations</a>
+            {{ i.id }}
           </td>
           <td>
-            <a href="{% url 'hit-reph-list' code %}">Reph Annotations</a>
+            {{ i.date }}
+          </td>
+          <td>
+            <a href="{% url 'hit-pos-list' i.code %}">POS Annotations</a>
+          </td>
+          <td>
+            <a href="{% url 'hit-reph-list' i.code %}">Reph Annotations</a>
+          </td>
+          <td>
+            {% if i.complete %}
+              <span style="font-weight:bold; color:#5e98a5"> Complete </span>
+            {% else %}
+            <span style="color:#9a5959;"> Incomplete </span>
+            {% endif %}
+          </td>
+          <td>
+            {% if i.legit %}
+              <span style="font-weight:bold; color:green"> Seems legit </span>
+            {% else %}
+            <span style="color:orange"> Warning </span>
+            {% endif %}
           </td>
         </tr>
       {% endfor %}
