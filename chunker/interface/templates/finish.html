@@ -12,7 +12,11 @@
         {% endblocktrans %}
 
         {%  trans "You can continue with another task now by clicking" %}
-        <a href="{% url "root" %}">{% trans "here" %}</a>.
+        {% if sri %}
+          <a href="{% url "sri-root" %}">{% trans "here" %}</a>.
+        {% else %}
+          <a href="{% url "root" %}">{% trans "here" %}</a>.
+        {% endif %}
 
         {%  trans "Each task you complete will result in payment of $3 to your Amazon Mechanical Turk account." %}
     </p>

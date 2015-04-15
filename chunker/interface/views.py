@@ -15,17 +15,17 @@ from iraqiSpeakerVerifiers.models import SpeakerVerification
 
 # Create your views here.
 
-def instructions(request):
+def instructions(request, sri=False):
     # generate new task id for each task during the session
     # if 'finish_screen_seen' in request.session and request.session['finish_screen_seen']:
     #     request.session['user_code'] = uuid4().hex
 
-    return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english',}))
+    return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english', 'sri':sri}))
 
-def pos_annotation(request):
+def pos_annotation(request, sri=False): # The sri flag is the adaptation for SRI to use
 
     # If the user already commited this answer, redirect it to the following page
-    if 'committed' in request.session:
+    if 'committed' in request.session and not sri:
         return HttpResponseRedirect(reverse('reph_annotation'))
 
     user_code = request.session['user_code']
@@ -56,7 +56,14 @@ def pos_annotation(request):
 
             # Mark the session not to allow another commit of the answers
             request.session['committed'] = True
-            return HttpResponseRedirect(reverse('reph_annotation'))
+
+            if sri:
+                # Persist the change in the session
+                del request.session['item']
+                request.session.modified = True
+
+            url = reverse('reph_annotation') if not sri else reverse('sri-pos_annotation')
+            return HttpResponseRedirect(url)
         else:
             for error in form_annotation.errors:
                 messages.error(request, "%s: %s"%(error, form_annotation.errors[error]))
@@ -107,9 +114,11 @@ def reph_annotation(request):
             request.session.modified = True
 
             if remaining_sentences_in_task(request.session.session_key) < chunker.settings.TASK_SIZE:
-                return HttpResponseRedirect(reverse('pos_annotation'))
+                url = reverse('pos_annotation')
+                return HttpResponseRedirect(url)
             else:
-                return HttpResponseRedirect(reverse('finish'))
+                url = reverse('finish')
+                return HttpResponseRedirect(url)
 
         else:
             for error in form.errors:
@@ -132,10 +141,10 @@ def reph_annotation(request):
         'title': _('Reprhase')
     }))
 
-def finish_screen(request):
+def finish_screen(request, sri=False):
     request.session['finish_screen_seen'] = True
 
-    return render_to_response('finish.html', RequestContext(request, {'user_code': request.session['user_code']}))
+    return render_to_response('finish.html', RequestContext(request, {'user_code': request.session['user_code'], 'sri':sri}))
 
 def amt_landing(request):
     ''' Shows the screen that lands whenever a user is done with all the data '''

@@ -22,10 +22,13 @@ from django.http import HttpResponseRedirect
 class MultipleChoiceVerificationCreate(CreateView):
     model = MultipleChoiceVerification
     fields = ['amt_id', 'answer1', 'answer2', 'answer3', 'answer4']
+    sri = False
 
     def get(self, request):
         ''' GET handler - here we check if the same user, identified by its session id,
             has already taken the test and direct him appropriately '''
+
+        sri = self.sri
 
         key = request.session.session_key
 
@@ -39,9 +42,9 @@ class MultipleChoiceVerificationCreate(CreateView):
             record = qs[0]
 
             if record.is_passing:
-                test_result = test_passed
+                test_result = 'test_passed' if not sri else 'sri-test_passed'
             else:
-                test_result = test_failed
+                test_result = 'test_failed' if not sri else 'sri-test_failed'
         else:
             assert(False, "There shouln't be more than a single test for a given user")
 
@@ -55,13 +58,15 @@ class MultipleChoiceVerificationCreate(CreateView):
         to give to AMTurk, and with a link to the rephrase experiment.
         """
 
+        sri = self.sri
+
         if is_correct_answer_multiple_choice(form):
             form.instance.is_passing = True
-            test_result = test_passed
+            test_result = 'test_passed' if not sri else 'sri-test_passed'
 
         else:
             form.instance.is_passing = False  # for clarity. Default is False
-            test_result = test_failed
+            test_result = 'test_failed' if not sri else 'sri-test_failed'
 
 
         # set a flag so we know when a new task is initiated in this session
@@ -205,6 +210,7 @@ def is_correct_answer(form):
     return num_correct / (len(given_answers) * 1.) > 0.50
 
 class ConsentVerificationCreate(CreateView):
+    sri = False
     model = ConsentVerification
     fields = ['age_check', 'data_use_check']
 
@@ -213,15 +219,22 @@ class ConsentVerificationCreate(CreateView):
         self.request.session['user_code'] = form.instance.user_code
         form.instance.session_key = self.request.session.session_key
 
-        return super(ConsentVerificationCreate, self).form_valid(form)
+        ret = super(ConsentVerificationCreate, self).form_valid(form)
+
+        if self.sri:
+            ret = HttpResponseRedirect(reverse('sri-answer1_add'))
+
+        return ret
 
 
 
-def test_passed(request):
+def test_passed(request, sri=False):
     context = RequestContext(request)
+    context['sri'] = sri
     return render(request, 'iraqiSpeakerVerifiers/testPassed.html', context)
 
 
-def test_failed(request):
+def test_failed(request, sri=False):
     context = RequestContext(request)
+    context['sri'] = sri
     return render(request, 'iraqiSpeakerVerifiers/testFailed.html', context)

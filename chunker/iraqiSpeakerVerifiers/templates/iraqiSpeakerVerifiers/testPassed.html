@@ -11,7 +11,11 @@
 <div style="padding-top:2em {% if LANGUAGE_BIDI %} ;direction:rtl;text-align:right{% endif %}">
 <p>
     {%  trans "Congratulations, you've passed." %}
-   <a href="{% url 'instructions' %}">{% trans "Click here" %}</a>
+    {% if sri %}
+      <a href="{% url 'sri-instructions' %}">{% trans "Click here" %}</a>
+    {% else %}
+      <a href="{% url 'instructions' %}">{% trans "Click here" %}</a>
+    {% endif %}
    {% trans "to continue to the task." %}
 </p>
 </div>

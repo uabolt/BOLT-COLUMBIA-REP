@@ -15,7 +15,12 @@
 
 <p><b>{% blocktrans %}This experiment relies on your best guess. The next page will tell you the right words and how hard was it to make the guess. Keep in mind that once you proceed to the second screen, you can’t go back to the first.{% endblocktrans %}</b></p>
 
-<center>	<a href="{% url "pos_annotation" %}" style="font-size:2em">{% trans "Start" %}</a>
+<center>
+    {% if sri %}
+    <a href="{% url "sri-pos_annotation" %}" style="font-size:2em">{% trans "Start" %}</a>
+    {% else %}
+    <a href="{% url "pos_annotation" %}" style="font-size:2em">{% trans "Start" %}</a>
+    {% endif %}
     </center>
 {% endblock %}
 </div>

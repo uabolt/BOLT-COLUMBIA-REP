@@ -13,7 +13,12 @@ class VerifyTestTaken:
 
     def process_request(self, request):
 
-        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
+        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path or reverse('sri-pos_annotation') in request.path:
+
+            if reverse('sri-pos_annotation') in request.path:
+                sri = True
+            else:
+                sri = False
 
             key = request.session.session_key
 
@@ -21,7 +26,10 @@ class VerifyTestTaken:
 
             # If there is no record in the queryset, display the form
             if qs.count() == 0:
-                return HttpResponseRedirect(reverse('root'))
+                if sri:
+                    return HttpResponseRedirect(reverse('sri-root'))
+                else:
+                    return HttpResponseRedirect(reverse('root'))
             # If there is one record
             elif qs.count() == 1:
                 record = qs[0]
@@ -29,7 +37,10 @@ class VerifyTestTaken:
                 if record.is_passing:
                     return None
                 else:
-                    return HttpResponseRedirect(reverse('root'))
+                    if sri:
+                        return HttpResponseRedirect(reverse('sri-root'))
+                    else:
+                        return HttpResponseRedirect(reverse('root'))
             else:
                 raise  Exception("There shouln't be more than a single test for a given user")
 
@@ -39,7 +50,7 @@ class AssignDataset:
     def process_request(self, request):
         ''' Assigns a dataset to the session if it doesn't exist yet. This middleware should go after the session middleware'''
 
-        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path:
+        if reverse('pos_annotation') in request.path or reverse('reph_annotation') in request.path or reverse('sri-pos_annotation') in request.path:
 
             # Check wether we are done with all annotations to show the landing page
             if AnnotationRecord.objects.filter(annotator = request.session.session_key).count() == DataItem.objects.count():
@@ -55,7 +66,10 @@ class AssignDataset:
 
 
                     if not 'finish_screen_seen' in request.session:
-                        return HttpResponseRedirect(reverse('finish'))
+                        if reverse('sri-pos_annotation') in request.path:
+                            return HttpResponseRedirect(reverse('sri-finish'))
+                        else:
+                            return HttpResponseRedirect(reverse('finish'))
 
                 try:
                     item = assign_sentence(user_id)
