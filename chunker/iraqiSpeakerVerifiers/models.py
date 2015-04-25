@@ -98,7 +98,7 @@ class SpeakerVerification(models.Model):
 
 class ConsentVerification(models.Model):
 
-    user_code = models.CharField(max_length=32, default=lambda: uuid.uuid4().hex)
+    user_code = models.CharField(max_length=40, default=lambda: uuid.uuid4().hex)
     session_key = models.CharField(max_length=80, null=False, blank=False, editable=False)
 
     age_check = models.BooleanField(verbose_name=_('By checking this box, I attest that I am over the age of 18 years old'))

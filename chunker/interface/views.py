@@ -20,6 +20,9 @@ def instructions(request, sri=False):
     # if 'finish_screen_seen' in request.session and request.session['finish_screen_seen']:
     #     request.session['user_code'] = uuid4().hex
 
+    if sri:
+        request.session['user_code'] = 'SRI-' + request.session['user_code']
+
     return render_to_response('instructions.html', RequestContext(request, {'lang':'arabic' if settings.LANGUAGE_CODE == 'ar-iq' else 'english', 'sri':sri}))
 
 def pos_annotation(request, sri=False): # The sri flag is the adaptation for SRI to use
