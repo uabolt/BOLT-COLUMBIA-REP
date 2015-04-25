@@ -42,6 +42,8 @@ class HITListView(TemplateView):
             session_key = item['session_id']
             date = item['date']
 
+            #code = code[4:] if code.startswith('SRI-') else code
+
             # Get the number of POS and REPH
             pos = POSAnnotation.objects.filter(user_code = code)
             reph = RephAnnotation.objects.filter(user_code = code)
