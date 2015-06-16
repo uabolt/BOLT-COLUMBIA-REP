@@ -82,7 +82,7 @@ class SpeakerVerification(models.Model):
 
     session_key = models.CharField(verbose_name=_('Session key'), max_length=80, default='anonymous-worker', null=False, blank=False)
 
-    time = models.DateTimeField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True, null=True)
     time.editable = True
 
     amt_id = models.CharField(verbose_name=_('Paste your AMT Worker ID here'), max_length=80, null=True, blank=True)
@@ -106,7 +106,7 @@ class ConsentVerification(models.Model):
         models.BooleanField(verbose_name=_("By checking this box, I agree that my responses during the task can be "
                                            "used as part of this research project."))
 
-    time = models.DateTimeField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True, null=True)
 
     def clean(self):
         if not (self.age_check and self.data_use_check):
